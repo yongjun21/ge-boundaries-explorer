@@ -1,4 +1,4 @@
-# election-boundaries-visualizer
+# historical-boundaries-explorer
 
 ## Project setup
 ```
