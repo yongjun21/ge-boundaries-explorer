@@ -1,6 +1,4 @@
-const ASSETS_ENDPOINT = (process.env.APP_NODE_ENV || process.env.NODE_ENV) === 'production'
-                      ? 'https://graphics.straitstimes.com/STI/STIMEDIA/Interactives/commons/fonts/'
-                      : 'https://st-graphics-dev-assets.s3-ap-southeast-1.amazonaws.com/fonts/v1/'
+const ASSETS_ENDPOINT = 'https://st-graphics-dev-assets.s3-ap-southeast-1.amazonaws.com/fonts/v1/'
 
 module.exports = {
   plugins: [
