@@ -2,10 +2,13 @@ const fs = require('fs')
 const {sheets} = require('@st-graphics/backend/client/googleapis')
 const _sortBy = require('lodash/sortBy')
 
+const {isLinearRing, nestedMap, round} = require('./helpers')
+
 let uid = 0
 
 getConstituencies().then(constituencies => {
   const filenames = fs.readdirSync('data/raw/geojson')
+    .filter(filename => /\.json$/.test(filename))
 
   const recipe = {
     version: 1,
@@ -95,20 +98,4 @@ function getDescription (xml) {
   description[splited[1].slice(4, -5)] = splited[2].slice(4, -5).trim()
   description[splited[4].slice(4, -5)] = splited[5].slice(4, -5).trim()
   return description
-}
-
-function nestedMap (arr, fn, levels = 1) {
-  if (levels === 0) return fn(arr)
-  return arr.map(v => nestedMap(v, fn, levels - 1))
-}
-
-function isLinearRing (linestring) {
-  const first = linestring[0]
-  const last = linestring[linestring.length - 1]
-  return first[0] === last[0] && first[1] === last[1]
-}
-
-function round (dp) {
-  const f = Math.pow(10, dp)
-  return v => Math.round(v * f) / f
 }

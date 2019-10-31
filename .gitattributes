@@ -1,0 +1,12 @@
+data/raw/geojson/1968.json filter=lfs diff=lfs merge=lfs -text
+data/raw/geojson/1972.json filter=lfs diff=lfs merge=lfs -text
+data/raw/geojson/1976.json filter=lfs diff=lfs merge=lfs -text
+data/raw/geojson/1980.json filter=lfs diff=lfs merge=lfs -text
+data/raw/geojson/1984.json filter=lfs diff=lfs merge=lfs -text
+data/raw/geojson/1988.json filter=lfs diff=lfs merge=lfs -text
+data/raw/geojson/1991.json filter=lfs diff=lfs merge=lfs -text
+data/raw/geojson/1997.json filter=lfs diff=lfs merge=lfs -text
+data/raw/geojson/2001.json filter=lfs diff=lfs merge=lfs -text
+data/raw/geojson/2006.json filter=lfs diff=lfs merge=lfs -text
+data/raw/geojson/2011.json filter=lfs diff=lfs merge=lfs -text
+data/raw/geojson/2015.json filter=lfs diff=lfs merge=lfs -text

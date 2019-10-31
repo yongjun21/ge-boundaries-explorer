@@ -1,4 +1,4 @@
-data/processed/geojson/
+data/processed/geojson/*.jsonl
 
 .DS_Store
 node_modules

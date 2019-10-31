@@ -2,6 +2,8 @@ const fs = require('fs')
 const {sheets} = require('@st-graphics/backend/client/googleapis')
 const _sortBy = require('lodash/sortBy')
 
+const {isLinearRing, nestedMap, round} = require('./helpers')
+
 let uid = 563
 
 getConstituencies().then(constituencies => {
@@ -68,20 +70,4 @@ function getCoordinates (geometry) {
     if (!isLinearRing(linestring)) linestring.push(linestring[0])
     return linestring
   }, geometry.type === 'MultiPolygon' ? 2 : 1)
-}
-
-function nestedMap (arr, fn, levels = 1) {
-  if (levels === 0) return fn(arr)
-  return arr.map(v => nestedMap(v, fn, levels - 1))
-}
-
-function isLinearRing (linestring) {
-  const first = linestring[0]
-  const last = linestring[linestring.length - 1]
-  return first[0] === last[0] && first[1] === last[1]
-}
-
-function round (dp) {
-  const f = Math.pow(10, dp)
-  return v => Math.round(v * f) / f
 }
