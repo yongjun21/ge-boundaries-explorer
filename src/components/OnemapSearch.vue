@@ -1,6 +1,7 @@
 <template>
   <span class="onemap-search">
     <v-suggest
+      ref="suggest"
       v-model="value"
       :data="suggestions"
       v-bind="$attrs"
@@ -58,6 +59,7 @@ export default {
             this.suggestions = json.results.length > 0
                              ? json.results.map(Object.freeze)
                              : DUMMY_SUGGESTIONS
+            this.$refs.suggest.highlight = 0
           })
       } else {
         this.suggestions = DUMMY_SUGGESTIONS
