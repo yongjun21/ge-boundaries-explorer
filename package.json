@@ -5,7 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "clean-geojson": "node scripts/cleanGeojsonNew.js",
+    "upload-geojson": "scripts/uploadGeojson.sh 2020",
+    "update-tileset": "tilesets update-recipe chachopazos.ge-boundaries-new data/processed/recipe-new.json",
+    "publish-tileset": "tilesets publish chachopazos.ge-boundaries-new",
+    "check-tileset": "tilesets status chachopazos.ge-boundaries-new"
   },
   "dependencies": {
     "core-js": "^3.3.2",
@@ -14,13 +19,16 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
+    "@st-graphics/backend": "^0.1.57",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-service": "^4.0.0",
     "@vue/eslint-config-standard": "^4.0.0",
+    "axios": "^0.19.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "lodash": "^4.17.15",
     "postcss-font-magician": "^2.2.2",
     "sass": "^1.19.0",
     "sass-loader": "^8.0.0",
