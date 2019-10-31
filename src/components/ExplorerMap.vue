@@ -2,7 +2,7 @@
   <div class="locator-map">
     <onemap-search ref="search" placeholder="eg. 1000 Toa Payoh or 318994" :max-length="0"></onemap-search>
     <div class="legend" ref="legend"></div>
-    <input class="control" type="range" min="0" max="7" step="1" v-model="activeLayerIndex" />
+    <input class="control" type="range" min="0" max="11" step="1" v-model="activeLayerIndex" />
     <h1 class="map-title">GE {{activeLayer.slice(-4)}} Boundaries</h1>
   </div>
 </template>
@@ -21,16 +21,7 @@ const SINGAPORE = {
   zoom: 11
 }
 
-const TILESETS = {
-  'ge-boundaries-2015': 'mapbox://chachopazos.ck1m9x5hj0r4r2uqe7tomyjrr-1ee8k',
-  'ge-boundaries-2011': 'mapbox://chachopazos.ck1m9yos507hv2nr1dq3t6vzu-7cp30',
-  'ge-boundaries-2006': 'mapbox://chachopazos.ck1ma056008j32op91wg7w2b9-1wo9k',
-  'ge-boundaries-2001': 'mapbox://chachopazos.ck1pyuuot6bk12pmsa6r0p28m-8nmol',
-  'ge-boundaries-1997': 'mapbox://chachopazos.ck1ma2skb0jfm2jpats0hxl1d-53n12',
-  'ge-boundaries-1991': 'mapbox://chachopazos.ck1ma4il700go2qoejylw8nd4-3qt1l',
-  'ge-boundaries-1988': 'mapbox://chachopazos.ck1ma62oo08by2or1cst0281q-89qsd',
-  'ge-boundaries-1984': 'mapbox://chachopazos.ck1maoead1jwr2umqou0rchpa-7226w'
-}
+const YEARS = [1968, 1972, 1976, 1980, 1984, 1988, 1991, 1997, 2001, 2006, 2011, 2015]
 
 export default {
   components: {
@@ -43,7 +34,7 @@ export default {
   },
   computed: {
     activeLayer () {
-      return Object.keys(TILESETS)[this.activeLayerIndex]
+      return 'ge-boundaries-' + YEARS[YEARS.length - this.activeLayerIndex - 1]
     }
   },
   mounted () {
@@ -63,11 +54,16 @@ export default {
     const nav = new mapboxgl.NavigationControl({showCompass: false})
     map.addControl(nav, 'top-left')
 
-    const marker = new mapboxgl.Marker()
+    let point = null
+    let unhighlight = null
     const popover = createPopup(PopoverContent, {
       closeButton: false,
       closeOnClick: false
-    }).on('close', () => popover.remove())
+    }).on('close', () => {
+      popover.remove()
+      point = null
+      if (unhighlight) unhighlight()
+    })
     const tooltip = createPopup(TooltipContent, {
       closeButton: false,
       closeOnClick: false,
@@ -75,28 +71,33 @@ export default {
     })
 
     map.on('load', () => {
-      Object.entries(TILESETS).forEach(([source, url]) => {
-        map.addSource(source, {
-          type: 'vector',
-          url
-        })
+      map.addSource('ge-boundaries', {
+        type: 'vector',
+        url: 'mapbox://chachopazos.ge-boundaries'
+      })
 
+      YEARS.forEach(year => {
+        const layer = 'ge-boundaries-' + year
         map.addLayer({
-          id: source + '_fill',
-          source,
-          'source-layer': source,
+          id: layer + '_fill',
+          source: 'ge-boundaries',
+          'source-layer': layer,
           type: 'fill',
           paint: {
-            'fill-color': ['match',
-              ['get', 'grc'],
-              'SMC', 'rgba(25, 45, 86, 0.2)',
-              '3-Member GRC', 'rgba(25, 45, 86, 0.35)',
-              '4-Member GRC', 'rgba(25, 45, 86, 0.35)',
-              '5-Member GRC', 'rgba(25, 45, 86, 0.60)',
-              '6-Member GRC', 'rgba(25, 45, 86, 0.8)',
-              'white'
+            'fill-color': ['case',
+              ['boolean', ['feature-state', 'highlighted'], false],
+              'rgba(255, 0, 0, 0.6)',
+              ['match',
+                ['get', 'grc'],
+                'SMC', 'rgba(25, 45, 86, 0.2)',
+                '3-Member GRC', 'rgba(25, 45, 86, 0.35)',
+                '4-Member GRC', 'rgba(25, 45, 86, 0.35)',
+                '5-Member GRC', 'rgba(25, 45, 86, 0.60)',
+                '6-Member GRC', 'rgba(25, 45, 86, 0.8)',
+                'white'
+              ]
             ],
-            'fill-opacity': this.activeLayer === source ? 1 : 0,
+            'fill-opacity': this.activeLayer === layer ? 1 : 0,
             'fill-opacity-transition': {
               duration: 500,
               delay: 0
@@ -105,14 +106,14 @@ export default {
         })
 
         map.addLayer({
-          id: source + '_outline',
-          source,
-          'source-layer': source,
+          id: layer + '_outline',
+          source: 'ge-boundaries',
+          'source-layer': layer,
           type: 'line',
           paint: {
             'line-color': 'white',
             'line-width': 1.2,
-            'line-opacity': this.activeLayer === source ? 1 : 0,
+            'line-opacity': this.activeLayer === layer ? 1 : 0,
             'line-opacity-transition': {
               duration: 500,
               delay: 0
@@ -126,6 +127,7 @@ export default {
         map.setPaintProperty(prevLayer + '_outline', 'line-opacity', 0)
         map.setPaintProperty(layer + '_fill', 'fill-opacity', 1)
         map.setPaintProperty(layer + '_outline', 'line-opacity', 1)
+        if (point) openPopover.call(this, point)
       })
 
       map.on('mousemove', e => {
@@ -141,36 +143,56 @@ export default {
       })
 
       map.on('click', e => {
-        if (popover.isOpen()) return popover.remove()
-        const features = map.queryRenderedFeatures(e.point, {
-          layers: [this.activeLayer + '_fill']
-        })
-        if (features.length > 0) {
-          tooltip.setData(null).remove()
-          popover.setData(features[0].properties).setLngLat(e.lngLat).addTo(map)
-        } else {
-          popover.setData(null).remove()
-        }
+        point = openPopover.call(this, e.lngLat)
       })
     })
 
     this.$refs.search.$on('select', row => {
-      const coordinates = [+row.LONGITUDE, +row.LATITUDE]
+      point = [+row.LONGITUDE, +row.LATITUDE]
       map.flyTo({
-        center: coordinates,
-        zoom: 14
+        center: point,
+        zoom: 12
       })
-      marker.setLngLat(coordinates).addTo(map)
+      openPopover.call(this, point)
     })
 
     this.$refs.search.$on('clear', row => {
       map.flyTo(SINGAPORE)
-      marker.remove()
     })
 
     fetch('/assets/legend.svg').then(res => res.text()).then(xml => {
       this.$refs.legend.innerHTML = xml
     })
+
+    function openPopover (pt) {
+      const layer = this.activeLayer
+      const features = map.queryRenderedFeatures(map.project(pt), {
+        layers: [layer + '_fill']
+      })
+      if (features.length > 0) {
+        tooltip.setData(null).remove()
+        popover.setData(features[0].properties).setLngLat(pt).addTo(map)
+        if (unhighlight) unhighlight()
+        map.setFeatureState({
+          source: 'ge-boundaries',
+          sourceLayer: layer,
+          id: features[0].id
+        }, {highlighted: true})
+        unhighlight = function () {
+          map.setFeatureState({
+            source: 'ge-boundaries',
+            sourceLayer: layer,
+            id: features[0].id
+          }, {highlighted: false})
+          unhighlight = null
+        }
+      } else {
+        popover.setData(null).remove()
+        point = null
+        if (unhighlight) unhighlight()
+      }
+      return pt
+    }
   }
 }
 
