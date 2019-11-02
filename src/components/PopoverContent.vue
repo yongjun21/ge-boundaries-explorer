@@ -5,7 +5,7 @@
     <div class="other-data">
       <div>{{data.grc}}</div>
       <div>{{data.voters.toLocaleString()}} voters</div>
-      <div>{{data.winner}}</div>
+      <div v-if="data.uncontested">{{winningMargin}}</div>
     </div>
   </div>
 </template>
@@ -15,6 +15,14 @@ export default {
   data () {
     return {
       data: null
+    }
+  },
+  computed: {
+    winningMargin () {
+      const {data} = this
+      return data.winner + (
+        data.uncontested === 'Y' ? ' walkover' : ' wins by ' + (data.margin * 100).toFixed(1) + '%'
+      )
     }
   }
 }
