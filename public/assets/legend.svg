@@ -107,7 +107,7 @@
 	<rect x="14" y="119.1" style="opacity:0.6;fill:#192C56;enable-background:new    ;" width="15" height="15"/>
 	<rect x="13.8" y="94.2" style="opacity:0.3;fill:#192C56;enable-background:new    ;" width="15" height="15"/>
 	<rect x="14" y="69.4" style="opacity:0.15;fill:#1D315C;enable-background:new    ;" width="15" height="15"/>
-	<text transform="matrix(1 0 0 1 35.3164 57.3994)" style="fill:#333333; font-family:'CuratorRegular'; font-size:14px;">New</text>
+	<text transform="matrix(1 0 0 1 35.3164 57.3994)" style="fill:#333333; font-family:'CuratorRegular'; font-size:14px;">Opposition</text>
 	<pattern  id="SVGID_1_" xlink:href="#blue-pattern" patternTransform="matrix(1 0 0 1 -172.2 83.2)">
 	</pattern>
 	<rect x="14.5" y="44.5" style="fill:url(#SVGID_1_);" width="15" height="15"/>

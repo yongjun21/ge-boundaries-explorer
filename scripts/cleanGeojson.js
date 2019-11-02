@@ -30,7 +30,8 @@ getConstituencies().then(constituencies => {
           election,
           constituency: matched.constituency,
           grc: matched.constituency_type === 'GRC' ? matched.mp + '-Member GRC' : 'SMC',
-          voters: matched.voters
+          voters: matched.voters,
+          winner: matched.winner
         }
         f.geometry.coordinates = getCoordinates(f.geometry)
       } catch (err) {

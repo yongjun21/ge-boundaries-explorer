@@ -5,6 +5,7 @@
     <div class="other-data">
       <div>{{data.grc}}</div>
       <div>{{data.voters.toLocaleString()}} voters</div>
+      <div>{{data.winner}}</div>
     </div>
   </div>
 </template>

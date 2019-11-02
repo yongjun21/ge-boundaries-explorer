@@ -122,11 +122,37 @@ export default {
         })
       })
 
+      map.loadImage(require('../assets/pattern.png'), (err, image) => {
+        if (err) return console.error(err)
+
+        map.addImage('pattern', image)
+        YEARS.forEach(year => {
+          const layer = 'ge-boundaries-' + year
+          map.addLayer({
+            id: layer + '_pattern',
+            source: 'ge-boundaries',
+            'source-layer': layer,
+            type: 'fill',
+            filter: ['!=', ['get', 'winner'], 'PAP'],
+            paint: {
+              'fill-pattern': 'pattern',
+              'fill-opacity': this.activeLayer === layer ? 1 : 0,
+              'fill-opacity-transition': {
+                duration: 500,
+                delay: 0
+              }
+            }
+          })
+        })
+      })
+
       this.$watch('activeLayer', (layer, prevLayer) => {
         map.setPaintProperty(prevLayer + '_fill', 'fill-opacity', 0)
         map.setPaintProperty(prevLayer + '_outline', 'line-opacity', 0)
+        map.setPaintProperty(prevLayer + '_pattern', 'fill-opacity', 0)
         map.setPaintProperty(layer + '_fill', 'fill-opacity', 1)
         map.setPaintProperty(layer + '_outline', 'line-opacity', 1)
+        map.setPaintProperty(layer + '_pattern', 'fill-opacity', 1)
         if (point) openPopover.call(this, point)
       })
 
