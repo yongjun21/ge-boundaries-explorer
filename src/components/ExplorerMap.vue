@@ -52,7 +52,7 @@ export default {
   mounted () {
     const map = new mapboxgl.Map(Object.assign({
       container: this.$el,
-      style: 'mapbox://styles/chachopazos/ck1bl0hnl08yg1cpfebi9u94l',
+      style: 'mapbox://styles/chachopazos/ck3fc0qpp0fyd1ct5ai5owqu0',
       minZoom: 10,
       maxZoom: 16,
       maxBounds: [[103.42295489648154, 1.0774867904165433], [104.21671710351262, 1.6266481512753188]],
