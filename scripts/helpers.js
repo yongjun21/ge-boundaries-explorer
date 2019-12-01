@@ -1,6 +1,33 @@
-exports.nestedMap = nestedMap
+exports.promiseMap = function (iterable, mapper, options) {
+  options = options || {}
+  let concurrency = options.concurrency || Infinity
 
-function nestedMap (arr, fn, levels = 1) {
+  let index = 0
+  const results = []
+  const iterator = iterable[Symbol.iterator]()
+  const promises = []
+
+  while (concurrency-- > 0) {
+    const promise = wrappedMapper()
+    if (promise) promises.push(promise)
+    else break
+  }
+
+  return Promise.all(promises).then(() => results)
+
+  function wrappedMapper () {
+    const next = iterator.next()
+    if (next.done) return null
+    const i = index++
+    const mapped = mapper(next.value, i)
+    return Promise.resolve(mapped).then(resolved => {
+      results[i] = resolved
+      return wrappedMapper()
+    })
+  }
+}
+
+exports.nestedMap = function nestedMap (arr, fn, levels = 1) {
   if (levels === 0) return fn(arr)
   return arr.map(v => nestedMap(v, fn, levels - 1))
 }
