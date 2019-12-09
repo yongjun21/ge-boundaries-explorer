@@ -21,7 +21,7 @@ export default {
     winningMargin () {
       const {data} = this
       return data.winner + (
-        data.uncontested === 'Y' ? ' walkover' : ' wins by ' + (data.margin * 100).toFixed(1) + '%'
+        data.uncontested === 'Y' ? ' walkover' : ` wins ${data.up_against} by ${(data.margin * 100).toFixed(1)}%`
       )
     }
   }
