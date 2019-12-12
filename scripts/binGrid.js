@@ -67,6 +67,7 @@ function binGrid (year) {
         lat: pt[1]
       }
       binned[grid.id][matched.properties.election] = matched.properties.constituency
+      if (matched.properties.grc !== 'SMC') binned[grid.id][matched.properties.election] += ' GRC'
     }
   })
 }
