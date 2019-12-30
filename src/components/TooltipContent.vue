@@ -1,5 +1,5 @@
 <template>
-  <div class="tooltip-content" v-if="data">{{data}}</div>
+  <div class="tooltip-content" v-if="data" v-html="data"></div>
 </template>
 
 <script>

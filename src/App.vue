@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <explorer-map></explorer-map>
+    <router-view></router-view>
   </div>
 </template>
 

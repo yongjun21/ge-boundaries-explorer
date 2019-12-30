@@ -1,5 +1,5 @@
 <template>
-  <div class="locator-map">
+  <div class="explorer-map">
     <onemap-search ref="search" placeholder="eg. 1000 Toa Payoh or 318994" :max-length="0"></onemap-search>
     <div class="legend" ref="legend"></div>
     <input class="control" type="range" min="0" max="11" step="1" v-model="activeLayerIndex" />
@@ -262,7 +262,7 @@ function createPopup (Content, options) {
 $font-CuratorRegular: 'CuratorRegular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-CuratorBold: 'CuratorBold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-.locator-map {
+.explorer-map {
   width: 100%;
   height: 800px;
 

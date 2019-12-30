@@ -1,4 +1,5 @@
 data/processed/geojson/*.jsonl
+data/onemap.json
 
 .DS_Store
 node_modules
