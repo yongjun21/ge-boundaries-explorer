@@ -15,7 +15,7 @@ import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 import OnemapSearch from './OnemapSearch'
-import PopoverContent from './PopoverContent'
+// import PopoverContent from './PopoverContent'
 import TooltipContent from './TooltipContent'
 
 const SINGAPORE = {
@@ -68,8 +68,7 @@ export default {
     // })
     const tooltip = createPopup(TooltipContent, {
       closeButton: false,
-      closeOnClick: false,
-      anchor: 'center'
+      closeOnClick: false
     })
 
     map.on('load', () => {
@@ -78,26 +77,24 @@ export default {
         url: 'mapbox://chachopazos.ge-boundaries-grid'
       })
 
-      map.addLayer({
-        id: 'fill',
-        source: 'ge-boundaries-grid',
-        'source-layer': 'ge-boundaries-grid',
-        type: 'fill',
-        paint: {
-          'fill-color': getFillColor(this.activeLayer),
-          'fill-opacity': getFillOpacity(this.activeLayer),
-          'fill-color-transition': {
-            duration: 500,
-            delay: 0
-          },
-          'fill-opacity-transition': {
-            duration: 500,
-            delay: 0
-          }
-        }
-      })
-
       YEARS.forEach(year => {
+        map.addLayer({
+          id: 'fill_' + year,
+          source: 'ge-boundaries-grid',
+          'source-layer': 'ge-boundaries-grid',
+          type: 'fill',
+          filter: ['has', 'GE ' + year + '_constituency'],
+          paint: {
+            'fill-color': getFillColor(year),
+            'fill-outline-color': 'transparent',
+            'fill-opacity': this.activeLayer === year ? 1 : 0,
+            'fill-opacity-transition': {
+              duration: 500,
+              delay: 0
+            }
+          }
+        })
+
         map.addLayer({
           id: 'outline_' + year,
           source: 'ge-boundaries-grid',
@@ -117,8 +114,8 @@ export default {
       })
 
       this.$watch('activeLayer', (currlayer, prevLayer) => {
-        map.setPaintProperty('fill', 'fill-color', getFillColor(currlayer))
-        map.setPaintProperty('fill', 'fill-opacity', getFillOpacity(currlayer))
+        map.setPaintProperty('fill_' + prevLayer, 'fill-opacity', 0)
+        map.setPaintProperty('fill_' + currlayer, 'fill-opacity', 1)
         map.setPaintProperty('outline_' + prevLayer, 'line-opacity', 0)
         map.setPaintProperty('outline_' + currlayer, 'line-opacity', 1)
         // if (point) openPopover.call(this, point)
@@ -127,7 +124,7 @@ export default {
       map.on('mousemove', e => {
         // if (popover.isOpen()) return
         const features = map.queryRenderedFeatures(e.point, {
-          layers: ['fill']
+          layers: ['fill_' + this.activeLayer]
         })
         if (features.length > 0) {
           tooltip.setData(getTooltipData(features[0].properties, this.activeLayer)).trackPointer().addTo(map)
@@ -221,28 +218,16 @@ function getFillColor (year) {
   ]
 }
 
-function getFillOpacity (year) {
-  return ['case', ['has', 'GE ' + year + '_constituency'], 1, 0]
-}
-
 function getTooltipData (prop, year) {
   const index = YEARS.indexOf(year)
   const curr = 'GE ' + year
-  if (index === 0) return prop[curr + '_constituency']
+  const after = prop[curr + '_constituency'] + (prop[curr + '_grc'] === 'GRC' ? ' GRC' : '')
+  if (index === 0) return after
   const prev = 'GE ' + YEARS[index - 1]
-  if (prop[prev + '_constituency'] == null) {
-    return prop[curr + '_constituency']
-  } else if (prop[curr + '_constituency'] !== prop[prev + '_constituency']) {
-    const after = prop[curr + '_constituency']
-    const before = prop[prev + '_constituency']
-    return `${after}<br>(previously ${before})`
-  } else if (prop[curr + '_grc'] !== prop[prev + '_grc']) {
-    const after = prop[curr + '_constituency'] + (prop[curr + '_grc'] === 'GRC' ? ' GRC' : 'SMC')
-    const before = prop[prev + '_constituency'] + (prop[prev + '_grc'] === 'GRC' ? ' GRC' : ' SMC')
-    return `${after}<br>(previously ${before})`
-  } else {
-    return prop[curr + '_constituency']
-  }
+  if (prop[prev + '_constituency'] == null) return after
+  const before = prop[prev + '_constituency'] + (prop[prev + '_grc'] === 'GRC' ? ' GRC' : '')
+  if (before !== after) return `${after}<br>(<small>previously</small> ${before})`
+  else return after
 }
 
 function createPopup (Content, options) {
@@ -279,10 +264,6 @@ $font-CuratorBold: 'CuratorBold', 'Helvetica Neue', Helvetica, Arial, sans-serif
     z-index: 1;
     top: 20px;
     right: 20px;
-  }
-
-  .tooltip {
-    position: absolute;
   }
 
   .legend {
