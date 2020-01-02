@@ -1,10 +1,8 @@
 const fs = require('fs')
 
-const years = fs.readdirSync('data/processed/geojson')
-  .filter(filename => /\.jsonl$/.test(filename))
-  .map(filename => filename.slice(0, 4))
+const {YEARS} = require('./constants')
 
-years.forEach(year => {
+YEARS.forEach(year => {
   const ld = fs.readFileSync(`data/processed/geojson/${year}.jsonl`, 'utf-8')
   const prefix = '{"type":"FeatureCollection","features":['
   const suffix = ']}'

@@ -1,5 +1,7 @@
-data/processed/geojson/*.jsonl
+data/**/*.jsonl
 data/onemap.json
+
+data/semi/
 
 .DS_Store
 node_modules

@@ -79,4 +79,4 @@ for (const constituency of constituencies) {
   }
 }
 
-fs.writeFileSync('data/processed/grid-outline.jsonl', outlines.join('\n'))
+fs.writeFileSync('data/processed/grid/outline.jsonl', outlines.join('\n'))

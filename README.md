@@ -1,5 +1,17 @@
 # historical-boundaries-explorer
 
+## Prototype
+
+- https://historical-boundaries-explorer.netlify.com/
+- https://historical-boundaries-explorer.netlify.com/grid
+
+## Tilesets:
+
+- Historical boundaries: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries/
+- Latest boundaries: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries-new/
+- Boundaries change: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries-change/
+- Grid format: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries-grid/
+
 ## Project setup
 ```
 npm install
