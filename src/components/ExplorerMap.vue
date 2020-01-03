@@ -23,22 +23,12 @@ const SINGAPORE = {
 
 const YEARS = [1968, 1972, 1976, 1980, 1984, 1988, 1991, 1997, 2001, 2006, 2011, 2015]
 
-let additionalInfo
-
-window.fetch('https://st-graphics-dev-json.s3-ap-southeast-1.amazonaws.com/1HH5MLZu2lukbjDGMWhW_wdT7Jm0PxJN37i6EC3CaaD0/690133933.json')
-  .then(res => res.json())
-  .then(data => {
-    additionalInfo = {}
-    data.forEach(row => {
-      additionalInfo[row.election] = additionalInfo[row.election] || {}
-      additionalInfo[row.election][row.constituency] = row
-    })
-  })
-
 export default {
+  name: 'ExplorerMap',
   components: {
     OnemapSearch
   },
+  inject: ['additionalInfo'],
   data () {
     return {
       activeLayerIndex: 0
@@ -208,9 +198,7 @@ export default {
       if (features.length > 0) {
         tooltip.setData(null).remove()
         const data = Object.assign({}, features[0].properties)
-        if (additionalInfo) {
-          Object.assign(data, additionalInfo[data.election][data.constituency])
-        }
+        Object.assign(data, this.additionalInfo[data.election][data.constituency])
         popover.setData(data).setLngLat(pt).addTo(map)
         if (unhighlight) unhighlight()
         map.setFeatureState({

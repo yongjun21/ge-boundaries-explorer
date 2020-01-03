@@ -15,7 +15,7 @@ import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 import OnemapSearch from './OnemapSearch'
-// import PopoverContent from './PopoverContent'
+import PopoverContent from './PopoverContent'
 import TooltipContent from './TooltipContent'
 
 const SINGAPORE = {
@@ -26,9 +26,11 @@ const SINGAPORE = {
 const YEARS = [1968, 1972, 1976, 1980, 1984, 1988, 1991, 1997, 2001, 2006, 2011, 2015]
 
 export default {
+  name: 'GridMap',
   components: {
     OnemapSearch
   },
+  inject: ['additionalInfo'],
   data () {
     return {
       activeLayerIndex: 0
@@ -57,15 +59,15 @@ export default {
     map.addControl(nav, 'top-left')
 
     let point = null
-    // let unhighlight = null
-    // const popover = createPopup(PopoverContent, {
-    //   closeButton: false,
-    //   closeOnClick: false
-    // }).on('close', () => {
-    //   popover.remove()
-    //   point = null
-    //   if (unhighlight) unhighlight()
-    // })
+    let unhighlight = null
+    const popover = createPopup(PopoverContent, {
+      closeButton: false,
+      closeOnClick: false
+    }).on('close', () => {
+      popover.remove()
+      point = null
+      if (unhighlight) unhighlight()
+    })
     const tooltip = createPopup(TooltipContent, {
       closeButton: false,
       closeOnClick: false
@@ -118,11 +120,11 @@ export default {
         map.setPaintProperty('fill_' + currlayer, 'fill-opacity', 1)
         map.setPaintProperty('outline_' + prevLayer, 'line-opacity', 0)
         map.setPaintProperty('outline_' + currlayer, 'line-opacity', 1)
-        // if (point) openPopover.call(this, point)
+        if (point) openPopover.call(this, point)
       })
 
       map.on('mousemove', e => {
-        // if (popover.isOpen()) return
+        if (popover.isOpen()) return
         const features = map.queryRenderedFeatures(e.point, {
           layers: ['fill_' + this.activeLayer]
         })
@@ -133,9 +135,9 @@ export default {
         }
       })
 
-      // map.on('click', e => {
-      //   point = openPopover.call(this, e.lngLat)
-      // })
+      map.on('click', e => {
+        point = openPopover.call(this, e.lngLat)
+      })
     })
 
     this.$refs.search.$on('select', row => {
@@ -144,44 +146,47 @@ export default {
         center: point,
         zoom: 12
       })
-      // openPopover.call(this, point)
+      openPopover.call(this, point)
     })
 
     this.$refs.search.$on('clear', row => {
       map.flyTo(SINGAPORE)
     })
 
-    /*
-    fetch('/assets/legend.svg').then(res => res.text()).then(xml => {
-      this.$refs.legend.innerHTML = xml
-    })
+    // fetch('/assets/legend.svg').then(res => res.text()).then(xml => {
+    //   this.$refs.legend.innerHTML = xml
+    // })
 
     function openPopover (pt) {
-      const layer = this.activeLayer
       const features = map.queryRenderedFeatures(map.project(pt), {
-        layers: [layer + '_fill']
+        layers: ['fill_' + this.activeLayer]
       })
       if (features.length > 0) {
         tooltip.setData(null).remove()
-        const data = Object.assign({}, features[0].properties)
-        if (additionalInfo) {
-          Object.assign(data, additionalInfo[data.election][data.constituency])
+        const election = 'GE ' + this.activeLayer
+        const data = {
+          election,
+          constituency: features[0].properties[election + '_constituency'],
+          grc: features[0].properties[election + '_grc']
         }
+        Object.assign(data, this.additionalInfo[data.election][data.constituency])
         popover.setData(data).setLngLat(pt).addTo(map)
         if (unhighlight) unhighlight()
+        /*
         map.setFeatureState({
-          source: 'ge-boundaries',
-          sourceLayer: layer,
+          source: 'ge-boundaries-grid',
+          sourceLayer: 'ge-boundaries-grid-outline',
           id: features[0].id
         }, {highlighted: true})
         unhighlight = function () {
           map.setFeatureState({
-            source: 'ge-boundaries',
-            sourceLayer: layer,
+            source: 'ge-boundaries-grid',
+            sourceLayer: 'ge-boundaries-grid-outline',
             id: features[0].id
           }, {highlighted: false})
           unhighlight = null
         }
+        */
       } else {
         popover.setData(null).remove()
         point = null
@@ -189,7 +194,6 @@ export default {
       }
       return pt
     }
-    */
   }
 }
 
