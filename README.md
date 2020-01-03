@@ -3,6 +3,7 @@
 ## Prototype
 
 - https://historical-boundaries-explorer.netlify.com/
+- https://historical-boundaries-explorer.netlify.com/changes
 - https://historical-boundaries-explorer.netlify.com/grid
 
 ## Tilesets:
