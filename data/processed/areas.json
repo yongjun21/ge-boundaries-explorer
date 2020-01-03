@@ -1,0 +1,2382 @@
+[
+  {
+    "election": "GE 1988",
+    "constituency": "Eunos",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Kampong Ubi",
+    "prev_grc": "SMC",
+    "area": 0.23002471761756554,
+    "percent_prev": 0.06064611594179641,
+    "percent_curr": 0.00682714268799535
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Kebun Baru",
+    "grc": "SMC",
+    "prev_constituency": "Thomson",
+    "prev_grc": "SMC",
+    "area": 0.6655038672929845,
+    "percent_prev": 0.07036769896845906,
+    "percent_curr": 0.28254307265186407
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Sembawang",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Nee Soon",
+    "prev_grc": "SMC",
+    "area": 16.86268383024763,
+    "percent_prev": 0.5314258821187985,
+    "percent_curr": 0.47130203150956146
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Boon Lay",
+    "grc": "SMC",
+    "prev_constituency": "Hong Kah",
+    "prev_grc": "SMC",
+    "area": 0.10458533901112427,
+    "percent_prev": 0.009850559978287985,
+    "percent_curr": 0.07937192914408119
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Pasir Panjang",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Pasir Panjang",
+    "prev_grc": "SMC",
+    "area": 20.968758846361357,
+    "percent_prev": 0.9980520902248468,
+    "percent_curr": 0.8327659859239188
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Tiong Bahru",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Henderson",
+    "prev_grc": "SMC",
+    "area": 0.8349245819301386,
+    "percent_prev": 1.0015306838313902,
+    "percent_curr": 0.19070402118152047
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Tanjong Pagar",
+    "grc": "SMC",
+    "prev_constituency": "Anson",
+    "prev_grc": "SMC",
+    "area": 1.3722054543723066,
+    "percent_prev": 0.4106542220117326,
+    "percent_curr": 0.6365185053306249
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Kebun Baru",
+    "grc": "SMC",
+    "prev_constituency": "Bo Wen",
+    "prev_grc": "SMC",
+    "area": 0.19888030474181848,
+    "percent_prev": 0.4395079293787891,
+    "percent_curr": 0.08443565117098582
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Cheng San",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Cheng San",
+    "prev_grc": "SMC",
+    "area": 0.969002864696924,
+    "percent_prev": 1.002938375686879,
+    "percent_curr": 0.0385609383081042
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Sembawang",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Sembawang",
+    "prev_grc": "SMC",
+    "area": 18.09374894242373,
+    "percent_prev": 0.9853076869206113,
+    "percent_curr": 0.5057095726892399
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Tiong Bahru",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Radin Mas",
+    "prev_grc": "SMC",
+    "area": 1.9225910025624888,
+    "percent_prev": 1.0013478502863893,
+    "percent_curr": 0.4391364719774848
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Aljunied",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Geylang Serai",
+    "prev_grc": "SMC",
+    "area": 0.6916532585872996,
+    "percent_prev": 0.2572536613955172,
+    "percent_curr": 0.05387465250937114
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Tiong Bahru",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Tiong Bahru",
+    "prev_grc": "SMC",
+    "area": 1.2516980957036867,
+    "percent_prev": 0.9852949758257794,
+    "percent_curr": 0.2858987090835445
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Toa Payoh",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Kuo Chuan",
+    "prev_grc": "SMC",
+    "area": 1.2451781068578338,
+    "percent_prev": 1.002205082722584,
+    "percent_curr": 0.41294825296385335
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Ang Mo Kio",
+    "grc": "SMC",
+    "prev_constituency": "Bo Wen",
+    "prev_grc": "SMC",
+    "area": 0.24599003147436327,
+    "percent_prev": 0.543616269702886,
+    "percent_curr": 0.24705962552275784
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Eunos",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Kaki Bukit",
+    "prev_grc": "SMC",
+    "area": 0.5389191877419433,
+    "percent_prev": 0.9985186199166098,
+    "percent_curr": 0.01599514273996369
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Toa Payoh",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Toa Payoh",
+    "prev_grc": "SMC",
+    "area": 0.6147189877062001,
+    "percent_prev": 1.0049829341849967,
+    "percent_curr": 0.20386411440975194
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Brickworks",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Alexandra",
+    "prev_grc": "SMC",
+    "area": 0.8660203639964454,
+    "percent_prev": 1.0016155177451873,
+    "percent_curr": 0.3342722073276595
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Aljunied",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Braddell Heights",
+    "prev_grc": "SMC",
+    "area": 1.3164598484058376,
+    "percent_prev": 0.34875874290071956,
+    "percent_curr": 0.10254244593637231
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Hong Kah",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Bukit Batok",
+    "prev_grc": "SMC",
+    "area": 4.843027824826259,
+    "percent_prev": 0.2517903136387481,
+    "percent_curr": 0.30354442593163344
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Bedok",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Kampong Chai Chee",
+    "prev_grc": "SMC",
+    "area": 0.7702567655376141,
+    "percent_prev": 1.0007811554615431,
+    "percent_curr": 0.2357623379875233
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Kreta Ayer",
+    "grc": "SMC",
+    "prev_constituency": "Anson",
+    "prev_grc": "SMC",
+    "area": 1.5341908262142898,
+    "percent_prev": 0.4591309108625864,
+    "percent_curr": 0.20780965570259738
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Changi",
+    "grc": "SMC",
+    "prev_constituency": "Tampines",
+    "prev_grc": "SMC",
+    "area": 0.9748567649158917,
+    "percent_prev": 0.03413092404969144,
+    "percent_curr": 0.013751538543102383
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Chua Chu Kang",
+    "grc": "SMC",
+    "prev_constituency": "Bukit Batok",
+    "prev_grc": "SMC",
+    "area": 3.804287542180717,
+    "percent_prev": 0.19778592815580784,
+    "percent_curr": 0.04972301192822004
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Nee Soon Central",
+    "grc": "SMC",
+    "prev_constituency": "Nee Soon",
+    "prev_grc": "SMC",
+    "area": 1.43042675434504,
+    "percent_prev": 0.04507976354099617,
+    "percent_curr": 0.9999389141602534
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Kreta Ayer",
+    "grc": "SMC",
+    "prev_constituency": "Telok Ayer",
+    "prev_grc": "SMC",
+    "area": 4.701238000974842,
+    "percent_prev": 0.7594873867649642,
+    "percent_curr": 0.6367934377298191
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Toa Payoh",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Khe Bong",
+    "prev_grc": "SMC",
+    "area": 0.41134022371058127,
+    "percent_prev": 1.0075165919009947,
+    "percent_curr": 0.13641600813532362
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Eunos",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Eunos",
+    "prev_grc": "SMC",
+    "area": 7.458445796268929,
+    "percent_prev": 1.0003669295262891,
+    "percent_curr": 0.22136696529485772
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Hong Kah",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Hong Kah",
+    "prev_grc": "SMC",
+    "area": 10.517379740049813,
+    "percent_prev": 0.9905984999749525,
+    "percent_curr": 0.6591934035838296
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Hougang",
+    "grc": "SMC",
+    "prev_constituency": "Punggol",
+    "prev_grc": "SMC",
+    "area": 1.4792245948058576,
+    "percent_prev": 0.08140908520380874,
+    "percent_curr": 0.9992340373813196
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Changi",
+    "grc": "SMC",
+    "prev_constituency": "Tanah Merah",
+    "prev_grc": "SMC",
+    "area": 0.28074834763879986,
+    "percent_prev": 0.1524837971022725,
+    "percent_curr": 0.003960296386516184
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Aljunied",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Kampong Kembangan",
+    "prev_grc": "SMC",
+    "area": 3.3856333388962616,
+    "percent_prev": 1.0003812563487338,
+    "percent_curr": 0.2637156948117751
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Bedok",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Bedok",
+    "prev_grc": "SMC",
+    "area": 0.937355602704629,
+    "percent_prev": 1.0012785994446045,
+    "percent_curr": 0.2869084158775306
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Kampong Glam",
+    "grc": "SMC",
+    "prev_constituency": "Rochore",
+    "prev_grc": "SMC",
+    "area": 0.4751887318013658,
+    "percent_prev": 1.0012320310485008,
+    "percent_curr": 0.10088629259459168
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Thomson",
+    "grc": "SMC",
+    "prev_constituency": "Tanglin",
+    "prev_grc": "SMC",
+    "area": 0.31980404621688246,
+    "percent_prev": 0.014089787788674877,
+    "percent_curr": 0.037688743228102825
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Tanglin",
+    "grc": "SMC",
+    "prev_constituency": "River Valley",
+    "prev_grc": "SMC",
+    "area": 2.3091589331401474,
+    "percent_prev": 0.3489684901751289,
+    "percent_curr": 0.09095443506933491
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Leng Kee",
+    "grc": "SMC",
+    "prev_constituency": "Delta",
+    "prev_grc": "SMC",
+    "area": 0.7759609114761106,
+    "percent_prev": 1.0007630207755187,
+    "percent_curr": 0.5122375805864371
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Aljunied",
+    "grc": "3-Member GRC",
+    "prev_constituency": "MacPherson",
+    "prev_grc": "SMC",
+    "area": 0.15420008408821778,
+    "percent_prev": 0.2937711836717195,
+    "percent_curr": 0.012011041434455968
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Aljunied",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Aljunied",
+    "prev_grc": "SMC",
+    "area": 2.35302510380989,
+    "percent_prev": 0.9985627148326649,
+    "percent_curr": 0.18328318162269489
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Kebun Baru",
+    "grc": "SMC",
+    "prev_constituency": "Bukit Panjang",
+    "prev_grc": "SMC",
+    "area": 0.8307342343487762,
+    "percent_prev": 0.013575374875068713,
+    "percent_curr": 0.35269247057081865
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Pasir Panjang",
+    "grc": "3-Member GRC",
+    "prev_constituency": "West Coast",
+    "prev_grc": "SMC",
+    "area": 2.4657628762953867,
+    "percent_prev": 1.0017136839231642,
+    "percent_curr": 0.09792679994929915
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Marine Parade",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Marine Parade",
+    "prev_grc": "SMC",
+    "area": 1.063475541603892,
+    "percent_prev": 1.0021018392471845,
+    "percent_curr": 0.12843591956354244
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Sembawang",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Bukit Panjang",
+    "prev_grc": "SMC",
+    "area": 0.785225795498179,
+    "percent_prev": 0.012831702480418579,
+    "percent_curr": 0.021946596184657788
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Aljunied",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Kampong Ubi",
+    "prev_grc": "SMC",
+    "area": 3.5673427265563897,
+    "percent_prev": 0.9405314474010336,
+    "percent_curr": 0.2778695067057219
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Chua Chu Kang",
+    "grc": "SMC",
+    "prev_constituency": "Bukit Panjang",
+    "prev_grc": "SMC",
+    "area": 1.3563313081010286,
+    "percent_prev": 0.02216437604343795,
+    "percent_curr": 0.017727597365751923
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Changi",
+    "grc": "SMC",
+    "prev_constituency": "Changkat",
+    "prev_grc": "SMC",
+    "area": 1.854666626914159,
+    "percent_prev": 0.38315928685051315,
+    "percent_curr": 0.026162325094821713
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Marine Parade",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Geylang Serai",
+    "prev_grc": "SMC",
+    "area": 2.0024841872345167,
+    "percent_prev": 0.7448043982397932,
+    "percent_curr": 0.24183997462793816
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Tiong Bahru",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Anson",
+    "prev_grc": "SMC",
+    "area": 0.3766742752962297,
+    "percent_prev": 0.11272574451641688,
+    "percent_curr": 0.08603567379530888
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Tampines",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Changkat",
+    "prev_grc": "SMC",
+    "area": 2.9896986590318475,
+    "percent_prev": 0.6176478238563774,
+    "percent_curr": 0.5809397243783079
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Bukit Panjang",
+    "grc": "SMC",
+    "prev_constituency": "Sembawang",
+    "prev_grc": "SMC",
+    "area": 0.1284245871231787,
+    "percent_prev": 0.006993450239899453,
+    "percent_curr": 0.002257287768118857
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Tanglin",
+    "grc": "SMC",
+    "prev_constituency": "Thomson",
+    "prev_grc": "SMC",
+    "area": 0.24956937732639883,
+    "percent_prev": 0.0263884609519758,
+    "percent_curr": 0.009830177299429138
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Tanglin",
+    "grc": "SMC",
+    "prev_constituency": "Bukit Panjang",
+    "prev_grc": "SMC",
+    "area": 0.5445547338952982,
+    "percent_prev": 0.008898796205764973,
+    "percent_curr": 0.021449224423208117
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Cairnhill",
+    "grc": "SMC",
+    "prev_constituency": "River Valley",
+    "prev_grc": "SMC",
+    "area": 4.211944992058399,
+    "percent_prev": 0.6365244347129169,
+    "percent_curr": 0.5645336984230274
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Cheng San",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Chong Boon",
+    "prev_grc": "SMC",
+    "area": 0.8872634601712202,
+    "percent_prev": 1.0008011281162208,
+    "percent_curr": 0.035308163471114755
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Hong Kah",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Yuhua",
+    "prev_grc": "SMC",
+    "area": 0.5536629930158763,
+    "percent_prev": 0.35574845349410744,
+    "percent_curr": 0.03470170344945793
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Cheng San",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Jalan Kayu",
+    "prev_grc": "SMC",
+    "area": 23.23297017214251,
+    "percent_prev": 0.9974940471185395,
+    "percent_curr": 0.9245433240305428
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Pasir Panjang",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Clementi",
+    "prev_grc": "SMC",
+    "area": 1.145615503578505,
+    "percent_prev": 1.0011342484746755,
+    "percent_curr": 0.04549766780749783
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Kampong Glam",
+    "grc": "SMC",
+    "prev_constituency": "Telok Ayer",
+    "prev_grc": "SMC",
+    "area": 1.4968722453157721,
+    "percent_prev": 0.24182047147584176,
+    "percent_curr": 0.3177977111224428
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Bedok",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Tanah Merah",
+    "prev_grc": "SMC",
+    "area": 1.5617762964859114,
+    "percent_prev": 0.8482528282548801,
+    "percent_curr": 0.47803284248469613
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Jalan Besar",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Kolam Ayer",
+    "prev_grc": "SMC",
+    "area": 0.987223140142035,
+    "percent_prev": 1.0015270741875393,
+    "percent_curr": 0.20738576368848566
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Aljunied",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Paya Lebar",
+    "prev_grc": "SMC",
+    "area": 1.3889355131678998,
+    "percent_prev": 0.16358101492967494,
+    "percent_curr": 0.10818776200474003
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Tampines",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Tampines",
+    "prev_grc": "SMC",
+    "area": 2.1474813327779403,
+    "percent_prev": 0.07518594003242905,
+    "percent_curr": 0.41728527047457475
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Eunos",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Tampines",
+    "prev_grc": "SMC",
+    "area": 25.439000108803768,
+    "percent_prev": 0.8906504133338858,
+    "percent_curr": 0.7550305262040676
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Nee Soon South",
+    "grc": "SMC",
+    "prev_constituency": "Bukit Panjang",
+    "prev_grc": "SMC",
+    "area": 1.26191052522211,
+    "percent_prev": 0.020621406618825746,
+    "percent_curr": 0.0875271733228461
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Toa Payoh",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Boon Teck",
+    "prev_grc": "SMC",
+    "area": 0.7380695796259801,
+    "percent_prev": 1.0015818727352497,
+    "percent_curr": 0.24477184572528982
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Marine Parade",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Joo Chiat",
+    "prev_grc": "SMC",
+    "area": 4.751608821446291,
+    "percent_prev": 1.0009298577985293,
+    "percent_curr": 0.573851700875319
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Jalan Besar",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Geylang West",
+    "prev_grc": "SMC",
+    "area": 1.6930267470786609,
+    "percent_prev": 1.0013287415922045,
+    "percent_curr": 0.3556537834368686
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Brickworks",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Brickworks",
+    "prev_grc": "SMC",
+    "area": 0.8623239481163091,
+    "percent_prev": 0.9860951352584569,
+    "percent_curr": 0.3328454405369201
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Nee Soon South",
+    "grc": "SMC",
+    "prev_constituency": "Nee Soon",
+    "prev_grc": "SMC",
+    "area": 13.163026916904457,
+    "percent_prev": 0.41483154526812444,
+    "percent_curr": 0.9129985964784618
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Bukit Gombak",
+    "grc": "SMC",
+    "prev_constituency": "Bukit Batok",
+    "prev_grc": "SMC",
+    "area": 9.173123924580764,
+    "percent_prev": 0.47691316952120827,
+    "percent_curr": 0.9894078981920064
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Bukit Panjang",
+    "grc": "SMC",
+    "prev_constituency": "Thomson",
+    "prev_grc": "SMC",
+    "area": 0.36926784059002243,
+    "percent_prev": 0.03904489443625138,
+    "percent_curr": 0.00649053112332786
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Brickworks",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Queenstown",
+    "prev_grc": "SMC",
+    "area": 0.8652545751448573,
+    "percent_prev": 1.0013129882697671,
+    "percent_curr": 0.33397662313540566
+  },
+  {
+    "election": "GE 1988",
+    "constituency": "Jalan Besar",
+    "grc": "3-Member GRC",
+    "prev_constituency": "Jalan Besar",
+    "prev_grc": "SMC",
+    "area": 2.085703893309246,
+    "percent_prev": 1.0007154933214515,
+    "percent_curr": 0.4381433914522649
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Brickworks",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Pasir Panjang",
+    "prev_grc": "3-Member GRC",
+    "area": 25.13276652740522,
+    "percent_prev": 0.9981379083780221,
+    "percent_curr": 0.9055901487381446
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Kampong Glam",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Moulmein",
+    "prev_grc": "SMC",
+    "area": 2.2605405844625337,
+    "percent_prev": 0.9997977258387835,
+    "percent_curr": 0.1513809883358355
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Tanjong Pagar",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Telok Blangah",
+    "prev_grc": "SMC",
+    "area": 5.330307070823446,
+    "percent_prev": 0.6499371080881058,
+    "percent_curr": 0.35923640949980734
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Tanjong Pagar",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Tanjong Pagar",
+    "prev_grc": "SMC",
+    "area": 2.1554482586704222,
+    "percent_prev": 0.9998376697562297,
+    "percent_curr": 0.14526658277264226
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Jalan Besar",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Whampoa",
+    "prev_grc": "SMC",
+    "area": 0.5747657861416287,
+    "percent_prev": 0.9997451894920542,
+    "percent_curr": 0.08445872111915166
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Tanjong Pagar",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Tiong Bahru",
+    "prev_grc": "3-Member GRC",
+    "area": 4.377853767372086,
+    "percent_prev": 0.9999397977389801,
+    "percent_curr": 0.29504575398936606
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Thomson",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Thomson",
+    "prev_grc": "SMC",
+    "area": 8.484922679087882,
+    "percent_prev": 0.9999437966634707,
+    "percent_curr": 0.6450270118124976
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Ang Mo Kio",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Yio Chu Kang",
+    "prev_grc": "SMC",
+    "area": 0.9202550268428171,
+    "percent_prev": 0.9998798456570849,
+    "percent_curr": 0.18941355295923396
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Hong Kah",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Boon Lay",
+    "prev_grc": "SMC",
+    "area": 0.10490396123819942,
+    "percent_prev": 0.07961373799673929,
+    "percent_curr": 0.006532041552017507
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Ang Mo Kio",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Kebun Baru",
+    "prev_grc": "SMC",
+    "area": 2.355078089398196,
+    "percent_prev": 0.9998604552371505,
+    "percent_curr": 0.4847392248861352
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Jalan Besar",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Kallang",
+    "prev_grc": "SMC",
+    "area": 1.4698654807074967,
+    "percent_prev": 0.9998641802386645,
+    "percent_curr": 0.21598877614324813
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Kampong Glam",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Kim Seng",
+    "prev_grc": "SMC",
+    "area": 0.5009364303944805,
+    "percent_prev": 0.9997198418901615,
+    "percent_curr": 0.033546069664823916
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Ang Mo Kio",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Teck Ghee",
+    "prev_grc": "SMC",
+    "area": 0.5867885994189964,
+    "percent_prev": 0.9998363250181774,
+    "percent_curr": 0.12077707832060436
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Cheng San",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Punggol",
+    "prev_grc": "SMC",
+    "area": 16.69077395320638,
+    "percent_prev": 0.9999887909294838,
+    "percent_curr": 0.39910863064196184
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Kampong Glam",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Kampong Glam",
+    "prev_grc": "SMC",
+    "area": 4.708829344348886,
+    "percent_prev": 0.9997213806209527,
+    "percent_curr": 0.31533485616308915
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Toa Payoh",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Kim Keat",
+    "prev_grc": "SMC",
+    "area": 0.9374519525903038,
+    "percent_prev": 0.9999478083205091,
+    "percent_curr": 0.23715911635592254
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Sembawang",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Bukit Panjang",
+    "prev_grc": "SMC",
+    "area": 56.89042238275062,
+    "percent_prev": 0.9999491331401034,
+    "percent_curr": 0.6138792618903581
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Bedok",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Fengshan",
+    "prev_grc": "SMC",
+    "area": 0.5900213130991627,
+    "percent_prev": 0.999865618189547,
+    "percent_curr": 0.065147530439554
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Thomson",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Serangoon Gardens",
+    "prev_grc": "SMC",
+    "area": 4.666215741718722,
+    "percent_prev": 0.9999062040175646,
+    "percent_curr": 0.3547274748621301
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Aljunied",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Paya Lebar",
+    "prev_grc": "SMC",
+    "area": 7.109734910183373,
+    "percent_prev": 0.9999805326778146,
+    "percent_curr": 0.3564122908957611
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Ang Mo Kio",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Ang Mo Kio",
+    "prev_grc": "SMC",
+    "area": 0.9955322210689787,
+    "percent_prev": 0.9998609141150274,
+    "percent_curr": 0.20490765013803153
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Bedok",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Siglap",
+    "prev_grc": "SMC",
+    "area": 5.199276945354095,
+    "percent_prev": 0.999953750655706,
+    "percent_curr": 0.5740810468048292
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Marine Parade",
+    "grc": "4-Member GRC",
+    "prev_constituency": "MacPherson",
+    "prev_grc": "SMC",
+    "area": 0.3788750041547475,
+    "percent_prev": 0.9998368461535434,
+    "percent_curr": 0.043754351844812994
+  },
+  {
+    "election": "GE 1991",
+    "constituency": "Kampong Glam",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Cairnhill",
+    "prev_grc": "SMC",
+    "area": 7.460842131517395,
+    "percent_prev": 0.9999885586818839,
+    "percent_curr": 0.4996281258782522
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "West Coast",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Brickworks",
+    "prev_grc": "4-Member GRC",
+    "area": 24.296704461277436,
+    "percent_prev": 0.8754649506230309,
+    "percent_curr": 0.7026212555627046
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Tampines",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Eunos",
+    "prev_grc": "4-Member GRC",
+    "area": 1.9592328413480922,
+    "percent_prev": 0.058150107977215676,
+    "percent_curr": 0.40514951673433863
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Tanjong Pagar",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Kreta Ayer",
+    "prev_grc": "SMC",
+    "area": 0.28804422772068317,
+    "percent_prev": 0.03902632997505983,
+    "percent_curr": 0.02303303045226292
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Bukit Timah",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Ulu Pandan",
+    "prev_grc": "SMC",
+    "area": 7.608138492657549,
+    "percent_prev": 0.9742250244715833,
+    "percent_curr": 0.08761689092121898
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Ang Mo Kio",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Thomson",
+    "prev_grc": "4-Member GRC",
+    "area": 1.6860515670283245,
+    "percent_prev": 0.1281742739650951,
+    "percent_curr": 0.07859463063893528
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "MacPherson",
+    "grc": "SMC",
+    "prev_constituency": "Marine Parade",
+    "prev_grc": "4-Member GRC",
+    "area": 0.6742484316488933,
+    "percent_prev": 0.07786553028219703,
+    "percent_curr": 0.8136905309095641
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "East Coast",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Tampines",
+    "prev_grc": "4-Member GRC",
+    "area": 0.6842596986058064,
+    "percent_prev": 0.13296110613367562,
+    "percent_curr": 0.007258556302284173
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Ang Mo Kio",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Nee Soon Central",
+    "prev_grc": "SMC",
+    "area": 0.1496806413030821,
+    "percent_prev": 0.10463415724067986,
+    "percent_curr": 0.0069773042219277905
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Bukit Timah",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Brickworks",
+    "prev_grc": "4-Member GRC",
+    "area": 0.9793211910153843,
+    "percent_prev": 0.03528714684342397,
+    "percent_curr": 0.011278064674143592
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "East Coast",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Changi",
+    "prev_grc": "SMC",
+    "area": 68.07496013321233,
+    "percent_prev": 0.9601059740518235,
+    "percent_curr": 0.7221321552467057
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "West Coast",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Tanjong Pagar",
+    "prev_grc": "4-Member GRC",
+    "area": 8.251826202166207,
+    "percent_prev": 0.556132391116573,
+    "percent_curr": 0.23862941972610263
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Bukit Timah",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Jurong",
+    "prev_grc": "SMC",
+    "area": 65.18226125362011,
+    "percent_prev": 0.7273189739878458,
+    "percent_curr": 0.7506523546815638
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Bishan-Toa Payoh",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Toa Payoh",
+    "prev_grc": "4-Member GRC",
+    "area": 3.796410693056829,
+    "percent_prev": 0.9604261880320774,
+    "percent_curr": 0.3023930333136641
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Ang Mo Kio",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Nee Soon South",
+    "prev_grc": "SMC",
+    "area": 13.938813335358851,
+    "percent_prev": 0.9668077936857083,
+    "percent_curr": 0.649752301211313
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Bishan-Toa Payoh",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Thomson",
+    "prev_grc": "4-Member GRC",
+    "area": 8.452702850217575,
+    "percent_prev": 0.6425776483093337,
+    "percent_curr": 0.6732776459751912
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Aljunied",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Eunos",
+    "prev_grc": "4-Member GRC",
+    "area": 7.600511638568597,
+    "percent_prev": 0.2255834850954933,
+    "percent_curr": 0.3124159665381889
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "East Coast",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Bedok",
+    "prev_grc": "4-Member GRC",
+    "area": 8.872591354125515,
+    "percent_prev": 0.9796720940205572,
+    "percent_curr": 0.09411953388793856
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "MacPherson",
+    "grc": "SMC",
+    "prev_constituency": "Aljunied",
+    "prev_grc": "4-Member GRC",
+    "area": 0.15647924781687195,
+    "percent_prev": 0.007844332861436942,
+    "percent_curr": 0.1888409023378242
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Hong Kah",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Jurong",
+    "prev_grc": "SMC",
+    "area": 24.357027901581557,
+    "percent_prev": 0.27178143565536017,
+    "percent_curr": 0.22135201524429987
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Marine Parade",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Aljunied",
+    "prev_grc": "4-Member GRC",
+    "area": 6.733703541494504,
+    "percent_prev": 0.33756177069266513,
+    "percent_curr": 0.3094819503007135
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Kampong Glam",
+    "grc": "SMC",
+    "prev_constituency": "Jalan Besar",
+    "prev_grc": "4-Member GRC",
+    "area": 0.41272037077709905,
+    "percent_prev": 0.06064702446827015,
+    "percent_curr": 0.08499664285423318
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Marine Parade",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Bedok",
+    "prev_grc": "4-Member GRC",
+    "area": 0.15178602492649612,
+    "percent_prev": 0.016759538104237744,
+    "percent_curr": 0.006976106793709382
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Bukit Timah",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Yuhua",
+    "prev_grc": "SMC",
+    "area": 1.0780004184154794,
+    "percent_prev": 1.0032425924644301,
+    "percent_curr": 0.012414474994703389
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Marine Parade",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Thomson",
+    "prev_grc": "4-Member GRC",
+    "area": 1.1836250969500668,
+    "percent_prev": 0.08997962483189666,
+    "percent_curr": 0.054399573900409254
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Pasir Ris",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Eunos",
+    "prev_grc": "4-Member GRC",
+    "area": 23.56096193508118,
+    "percent_prev": 0.6992902791632113,
+    "percent_curr": 0.9433270572734519
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Hong Kah",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Chua Chu Kang",
+    "prev_grc": "SMC",
+    "area": 69.56586741336669,
+    "percent_prev": 0.9092436932906115,
+    "percent_curr": 0.6322013098801199
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Tanjong Pagar",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Brickworks",
+    "prev_grc": "4-Member GRC",
+    "area": 2.388427932022462,
+    "percent_prev": 0.08606043444728041,
+    "percent_curr": 0.19098710544081668
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Pasir Ris",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Changi",
+    "prev_grc": "SMC",
+    "area": 0.33609643204817036,
+    "percent_prev": 0.0047401892213451095,
+    "percent_curr": 0.013456532847754242
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Tanjong Pagar",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Leng Kee",
+    "prev_grc": "SMC",
+    "area": 1.5229913822767296,
+    "percent_prev": 1.0053772160087002,
+    "percent_curr": 0.12178375232198774
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Aljunied",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Tampines",
+    "prev_grc": "4-Member GRC",
+    "area": 1.5536510046309557,
+    "percent_prev": 0.3018958394631885,
+    "percent_curr": 0.06386219814620543
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "East Coast",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Marine Parade",
+    "prev_grc": "4-Member GRC",
+    "area": 1.830324741420827,
+    "percent_prev": 0.21137491744819217,
+    "percent_curr": 0.01941589606129999
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Tanjong Pagar",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Buona Vista",
+    "prev_grc": "SMC",
+    "area": 0.6766674551943141,
+    "percent_prev": 0.9485781282681889,
+    "percent_curr": 0.054108711793590836
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "East Coast",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Eunos",
+    "prev_grc": "4-Member GRC",
+    "area": 0.5289806574962377,
+    "percent_prev": 0.015700166770428108,
+    "percent_curr": 0.005611372251031415
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Marine Parade",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Mountbatten",
+    "prev_grc": "SMC",
+    "area": 5.057526107198454,
+    "percent_prev": 0.9923147613897254,
+    "percent_curr": 0.23244460254410956
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Boon Lay",
+    "grc": "SMC",
+    "prev_constituency": "Hong Kah",
+    "prev_grc": "4-Member GRC",
+    "area": 0.10525896281910048,
+    "percent_prev": 0.006554146390100906,
+    "percent_curr": 0.07577031327537508
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Aljunied",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Changi",
+    "prev_grc": "SMC",
+    "area": 1.9125902542992685,
+    "percent_prev": 0.02697451934562555,
+    "percent_curr": 0.07861625128712495
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Kreta Ayer-Tanglin",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Kreta Ayer",
+    "prev_grc": "SMC",
+    "area": 6.741472148039007,
+    "percent_prev": 0.9133837489087583,
+    "percent_curr": 0.16018075617062927
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Marine Parade",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Braddell Heights",
+    "prev_grc": "SMC",
+    "area": 2.208013990363809,
+    "percent_prev": 0.9363472814772339,
+    "percent_curr": 0.10148062976312576
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Tanjong Pagar",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Bukit Merah",
+    "prev_grc": "SMC",
+    "area": 0.5866129929363849,
+    "percent_prev": 0.9875877925343028,
+    "percent_curr": 0.04690763997221614
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "East Coast",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Aljunied",
+    "prev_grc": "4-Member GRC",
+    "area": 1.33138038177819,
+    "percent_prev": 0.06674233820498364,
+    "percent_curr": 0.01412314575969327
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Jalan Besar",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Kampong Glam",
+    "prev_grc": "4-Member GRC",
+    "area": 0.11357480110701833,
+    "percent_prev": 0.007605731903156342,
+    "percent_curr": 0.017275728529790386
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Bukit Timah",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Bukit Timah",
+    "prev_grc": "SMC",
+    "area": 10.649691873577435,
+    "percent_prev": 0.9944797905578221,
+    "percent_curr": 0.12264404652101617
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Bukit Timah",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Bukit Batok",
+    "prev_grc": "SMC",
+    "area": 1.2934077909553736,
+    "percent_prev": 0.9996520279634089,
+    "percent_curr": 0.014895150692401127
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Kreta Ayer-Tanglin",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Kampong Glam",
+    "prev_grc": "4-Member GRC",
+    "area": 9.822068405341533,
+    "percent_prev": 0.6577517045801256,
+    "percent_curr": 0.23337726683108892
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Aljunied",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Thomson",
+    "prev_grc": "4-Member GRC",
+    "area": 1.7592450521512133,
+    "percent_prev": 0.13373847021986104,
+    "percent_curr": 0.07231305857836395
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Kreta Ayer-Tanglin",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Tanglin",
+    "prev_grc": "SMC",
+    "area": 25.009034194796907,
+    "percent_prev": 0.9850696334239964,
+    "percent_curr": 0.5942271836849418
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Pasir Ris",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Tampines",
+    "prev_grc": "4-Member GRC",
+    "area": 0.12560566822709004,
+    "percent_prev": 0.024406915412615027,
+    "percent_curr": 0.005028963830594046
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Ang Mo Kio",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Cheng San",
+    "prev_grc": "4-Member GRC",
+    "area": 0.5479984559406598,
+    "percent_prev": 0.013103701120005324,
+    "percent_curr": 0.025544732484827644
+  },
+  {
+    "election": "GE 1997",
+    "constituency": "Kampong Glam",
+    "grc": "SMC",
+    "prev_constituency": "Kampong Glam",
+    "prev_grc": "4-Member GRC",
+    "area": 4.304197206627499,
+    "percent_prev": 0.28823796909911764,
+    "percent_curr": 0.8864169027011484
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Hong Kah",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Bukit Gombak",
+    "prev_grc": "SMC",
+    "area": 3.861359401215987,
+    "percent_prev": 0.4150653375507503,
+    "percent_curr": 0.034069535809090896
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "West Coast",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Ayer Rajah",
+    "prev_grc": "SMC",
+    "area": 5.846186951623148,
+    "percent_prev": 0.6794093807236785,
+    "percent_curr": 0.04782649049896742
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Bukit Timah",
+    "grc": "SMC",
+    "prev_constituency": "Bukit Timah",
+    "prev_grc": "5-Member GRC",
+    "area": 6.206998873046797,
+    "percent_prev": 0.0714810782864582,
+    "percent_curr": 0.9999525386012814
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Aljunied",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Pasir Ris",
+    "prev_grc": "4-Member GRC",
+    "area": 6.882328908417384,
+    "percent_prev": 0.2755527170008566,
+    "percent_curr": 0.24947853206020112
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Nee Soon East",
+    "grc": "SMC",
+    "prev_constituency": "Sembawang",
+    "prev_grc": "6-Member GRC",
+    "area": 5.5301613639973475,
+    "percent_prev": 0.059598348336876855,
+    "percent_curr": 0.9836365024853385
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Tampines",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Pasir Ris",
+    "prev_grc": "4-Member GRC",
+    "area": 4.0653686487124165,
+    "percent_prev": 0.1627680675639791,
+    "percent_curr": 0.4713603079822341
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Holland-Bukit Panjang",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Bukit Timah",
+    "prev_grc": "5-Member GRC",
+    "area": 10.499846627638988,
+    "percent_prev": 0.12091839778563594,
+    "percent_curr": 0.1780856019773869
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Jalan Besar",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Kreta Ayer-Tanglin",
+    "prev_grc": "4-Member GRC",
+    "area": 7.448416107328887,
+    "percent_prev": 0.1769780988700649,
+    "percent_curr": 0.3932033074482387
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Marine Parade",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Ang Mo Kio",
+    "prev_grc": "5-Member GRC",
+    "area": 1.8458815406401783,
+    "percent_prev": 0.08604504199449935,
+    "percent_curr": 0.07307009254212683
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "West Coast",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Bukit Timah",
+    "prev_grc": "5-Member GRC",
+    "area": 60.19128494585824,
+    "percent_prev": 0.693175242879566,
+    "percent_curr": 0.492412908003989
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "East Coast",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Aljunied",
+    "prev_grc": "5-Member GRC",
+    "area": 3.463412455679412,
+    "percent_prev": 0.14236217261621925,
+    "percent_curr": 0.036874800901653924
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "West Coast",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Hong Kah",
+    "prev_grc": "5-Member GRC",
+    "area": 0.3031959586866493,
+    "percent_prev": 0.0027553869355653,
+    "percent_curr": 0.00248038572105983
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Marine Parade",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Aljunied",
+    "prev_grc": "5-Member GRC",
+    "area": 2.066463209473226,
+    "percent_prev": 0.08494113707123681,
+    "percent_curr": 0.08180192207715627
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Joo Chiat",
+    "grc": "SMC",
+    "prev_constituency": "East Coast",
+    "prev_grc": "6-Member GRC",
+    "area": 4.862543476763677,
+    "percent_prev": 0.051581359636272875,
+    "percent_curr": 0.9778901825990601
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Aljunied",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Cheng San",
+    "prev_grc": "5-Member GRC",
+    "area": 2.175220216372871,
+    "percent_prev": 0.04847134225073873,
+    "percent_curr": 0.07884987098257791
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Hong Kah",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Chua Chu Kang",
+    "prev_grc": "SMC",
+    "area": 1.765980413559533,
+    "percent_prev": 0.2539483700773065,
+    "percent_curr": 0.015581593601199786
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Holland-Bukit Panjang",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Chua Chu Kang",
+    "prev_grc": "SMC",
+    "area": 1.3990957752850346,
+    "percent_prev": 0.20119027877525353,
+    "percent_curr": 0.023729757414721445
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Tanjong Pagar",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Kreta Ayer-Tanglin",
+    "prev_grc": "4-Member GRC",
+    "area": 30.231209351697277,
+    "percent_prev": 0.7183086820756306,
+    "percent_curr": 0.7265783261603226
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Jurong",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Bukit Gombak",
+    "prev_grc": "SMC",
+    "area": 0.3870461449945219,
+    "percent_prev": 0.04160437351914911,
+    "percent_curr": 0.031582359279416515
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Holland-Bukit Panjang",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Tanjong Pagar",
+    "prev_grc": "6-Member GRC",
+    "area": 1.143321322332841,
+    "percent_prev": 0.0914239977742241,
+    "percent_curr": 0.01939162286478177
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Holland-Bukit Panjang",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Kreta Ayer-Tanglin",
+    "prev_grc": "4-Member GRC",
+    "area": 4.308677863192001,
+    "percent_prev": 0.10237634496828783,
+    "percent_curr": 0.07307854278303186
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Holland-Bukit Panjang",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Bukit Gombak",
+    "prev_grc": "SMC",
+    "area": 4.939994446248224,
+    "percent_prev": 0.5310100017328482,
+    "percent_curr": 0.08378616525781417
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Jurong",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Bukit Timah",
+    "prev_grc": "5-Member GRC",
+    "area": 9.716569253534786,
+    "percent_prev": 0.11189801411173485,
+    "percent_curr": 0.7928568339901976
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Ang Mo Kio",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Cheng San",
+    "prev_grc": "5-Member GRC",
+    "area": 30.632910782832493,
+    "percent_prev": 0.6826059685887428,
+    "percent_curr": 0.6086236188409924
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Pasir Ris-Punggol",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Pasir Ris",
+    "prev_grc": "4-Member GRC",
+    "area": 13.852823689448506,
+    "percent_prev": 0.5546353940005377,
+    "percent_curr": 0.5433148870373986
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "MacPherson",
+    "grc": "SMC",
+    "prev_constituency": "Marine Parade",
+    "prev_grc": "6-Member GRC",
+    "area": 0.4845019810873635,
+    "percent_prev": 0.02226777836408839,
+    "percent_curr": 0.369288632687612
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "West Coast",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Boon Lay",
+    "prev_grc": "SMC",
+    "area": 1.389304783567512,
+    "percent_prev": 1.0000864141783605,
+    "percent_curr": 0.011365625591739505
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Pasir Ris-Punggol",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Cheng San",
+    "prev_grc": "5-Member GRC",
+    "area": 11.168457608712297,
+    "percent_prev": 0.24887141407110008,
+    "percent_curr": 0.4380326654039058
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Holland-Bukit Panjang",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Sembawang",
+    "prev_grc": "6-Member GRC",
+    "area": 36.57502084094157,
+    "percent_prev": 0.39416767233919214,
+    "percent_curr": 0.6203409282807004
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Jurong",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Hong Kah",
+    "prev_grc": "5-Member GRC",
+    "area": 1.9250978697612642,
+    "percent_prev": 0.01749492157811649,
+    "percent_curr": 0.15708497128087962
+  },
+  {
+    "election": "GE 2001",
+    "constituency": "Jalan Besar",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Kampong Glam",
+    "prev_grc": "SMC",
+    "area": 4.86105181591044,
+    "percent_prev": 1.001096903249311,
+    "percent_curr": 0.25661585284051774
+  },
+  {
+    "election": "GE 2006",
+    "constituency": "Tanjong Pagar",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Holland-Bukit Panjang",
+    "prev_grc": "5-Member GRC",
+    "area": 2.0313663301062443,
+    "percent_prev": 0.03445355999594358,
+    "percent_curr": 0.04688467725319686
+  },
+  {
+    "election": "GE 2006",
+    "constituency": "Bukit Panjang",
+    "grc": "SMC",
+    "prev_constituency": "Holland-Bukit Panjang",
+    "prev_grc": "5-Member GRC",
+    "area": 1.5303118349111344,
+    "percent_prev": 0.025955284300619316,
+    "percent_curr": 0.9999057349284515
+  },
+  {
+    "election": "GE 2006",
+    "constituency": "Nee Soon East",
+    "grc": "SMC",
+    "prev_constituency": "Sembawang",
+    "prev_grc": "6-Member GRC",
+    "area": 0.2130102081721551,
+    "percent_prev": 0.004242067759232647,
+    "percent_curr": 0.03589148045822567
+  },
+  {
+    "election": "GE 2006",
+    "constituency": "West Coast",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Ayer Rajah",
+    "prev_grc": "SMC",
+    "area": 2.763668164119353,
+    "percent_prev": 0.9999948808908845,
+    "percent_curr": 0.018625358615592558
+  },
+  {
+    "election": "GE 2006",
+    "constituency": "Holland-Bukit Timah",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Bukit Timah",
+    "prev_grc": "SMC",
+    "area": 6.033002540236472,
+    "percent_prev": 0.9719215886591892,
+    "percent_curr": 0.09820784472455092
+  },
+  {
+    "election": "GE 2006",
+    "constituency": "Marine Parade",
+    "grc": "6-Member GRC",
+    "prev_constituency": "East Coast",
+    "prev_grc": "6-Member GRC",
+    "area": 1.5387413853289205,
+    "percent_prev": 0.016382912214250943,
+    "percent_curr": 0.06214929314771596
+  },
+  {
+    "election": "GE 2006",
+    "constituency": "Marine Parade",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Aljunied",
+    "prev_grc": "5-Member GRC",
+    "area": 1.5103118962441167,
+    "percent_prev": 0.0547475135004388,
+    "percent_curr": 0.061001034793181884
+  },
+  {
+    "election": "GE 2006",
+    "constituency": "Jurong",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Bukit Timah",
+    "prev_grc": "SMC",
+    "area": 0.173865805358502,
+    "percent_prev": 0.028009921864034396,
+    "percent_curr": 0.01398869882135841
+  },
+  {
+    "election": "GE 2006",
+    "constituency": "Holland-Bukit Timah",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Holland-Bukit Panjang",
+    "prev_grc": "5-Member GRC",
+    "area": 55.39580861821418,
+    "percent_prev": 0.9395561930238493,
+    "percent_curr": 0.90175711594434
+  },
+  {
+    "election": "GE 2006",
+    "constituency": "Aljunied",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Marine Parade",
+    "prev_grc": "6-Member GRC",
+    "area": 3.5533866338387337,
+    "percent_prev": 0.14066248806112647,
+    "percent_curr": 0.11993283566636256
+  },
+  {
+    "election": "GE 2006",
+    "constituency": "Yio Chu Kang",
+    "grc": "SMC",
+    "prev_constituency": "Ang Mo Kio",
+    "prev_grc": "6-Member GRC",
+    "area": 2.7495750880289824,
+    "percent_prev": 0.05462936095805461,
+    "percent_curr": 0.9984543556654155
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Marine Parade",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Joo Chiat",
+    "prev_grc": "SMC",
+    "area": 1.0771966028712716,
+    "percent_prev": 0.2166314785072039,
+    "percent_curr": 0.06113540176999907
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Ang Mo Kio",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Aljunied",
+    "prev_grc": "5-Member GRC",
+    "area": 0.8654127990436838,
+    "percent_prev": 0.029209152199446087,
+    "percent_curr": 0.021671252652743753
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Moulmein-Kallang",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Jalan Besar",
+    "prev_grc": "5-Member GRC",
+    "area": 10.842894763977123,
+    "percent_prev": 0.5663374782508073,
+    "percent_curr": 0.37515773557921206
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Chua Chu Kang",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Hong Kah",
+    "prev_grc": "5-Member GRC",
+    "area": 99.00078382620613,
+    "percent_prev": 0.8735025248262372,
+    "percent_curr": 0.9616725621912119
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Joo Chiat",
+    "grc": "SMC",
+    "prev_constituency": "East Coast",
+    "prev_grc": "5-Member GRC",
+    "area": 1.1053336005421075,
+    "percent_prev": 0.009859792227354152,
+    "percent_curr": 0.2210297127840732
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Hong Kah North",
+    "grc": "SMC",
+    "prev_constituency": "Hong Kah",
+    "prev_grc": "5-Member GRC",
+    "area": 14.189583785476952,
+    "percent_prev": 0.1251973649482017,
+    "percent_curr": 0.999980511409717
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Moulmein-Kallang",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Tanjong Pagar",
+    "prev_grc": "6-Member GRC",
+    "area": 18.05689389074765,
+    "percent_prev": 0.41675970981494376,
+    "percent_curr": 0.6247578318432611
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Jurong",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Holland-Bukit Timah",
+    "prev_grc": "5-Member GRC",
+    "area": 3.728786342214568,
+    "percent_prev": 0.060698809202371216,
+    "percent_curr": 0.2491449858006878
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Tanjong Pagar",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Holland-Bukit Timah",
+    "prev_grc": "5-Member GRC",
+    "area": 3.209000259108429,
+    "percent_prev": 0.05223750480224587,
+    "percent_curr": 0.09802968200137856
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Nee Soon",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Sembawang",
+    "prev_grc": "6-Member GRC",
+    "area": 14.345089014424715,
+    "percent_prev": 0.2872849002802234,
+    "percent_curr": 0.4791057569563689
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Nee Soon",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Nee Soon East",
+    "prev_grc": "SMC",
+    "area": 5.918051572753212,
+    "percent_prev": 0.9971711412186194,
+    "percent_curr": 0.19765458238841505
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Whampoa",
+    "grc": "SMC",
+    "prev_constituency": "Jalan Besar",
+    "prev_grc": "5-Member GRC",
+    "area": 1.0485721091043212,
+    "percent_prev": 0.054768186629199724,
+    "percent_curr": 0.8086049073133067
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Ang Mo Kio",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Pasir Ris-Punggol",
+    "prev_grc": "6-Member GRC",
+    "area": 0.27866959668103286,
+    "percent_prev": 0.010606590519734282,
+    "percent_curr": 0.006978310516075492
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Jurong",
+    "grc": "5-Member GRC",
+    "prev_constituency": "West Coast",
+    "prev_grc": "5-Member GRC",
+    "area": 0.4651559890309194,
+    "percent_prev": 0.0031348543288851087,
+    "percent_curr": 0.031080161652111228
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Nee Soon",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Ang Mo Kio",
+    "prev_grc": "6-Member GRC",
+    "area": 8.404718051158417,
+    "percent_prev": 0.17639264289951692,
+    "percent_curr": 0.28070573837889823
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Nee Soon",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Nee Soon Central",
+    "prev_grc": "SMC",
+    "area": 1.2591922931821367,
+    "percent_prev": 0.9999293847329747,
+    "percent_curr": 0.04205524804844492
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Marine Parade",
+    "grc": "5-Member GRC",
+    "prev_constituency": "MacPherson",
+    "prev_grc": "SMC",
+    "area": 1.3104384833343226,
+    "percent_prev": 0.9988195190568262,
+    "percent_curr": 0.07437285167811278
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Aljunied",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Marine Parade",
+    "prev_grc": "6-Member GRC",
+    "area": 0.7852040265617493,
+    "percent_prev": 0.031714150079301125,
+    "percent_curr": 0.026714818706160375
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Yuhua",
+    "grc": "SMC",
+    "prev_constituency": "Jurong",
+    "prev_grc": "5-Member GRC",
+    "area": 1.7580103339241493,
+    "percent_prev": 0.14144401215289396,
+    "percent_curr": 0.9999165960257049
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Ang Mo Kio",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Yio Chu Kang",
+    "prev_grc": "SMC",
+    "area": 2.7534823940021353,
+    "percent_prev": 0.9998732173232758,
+    "percent_curr": 0.06895138678471283
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Sengkang West",
+    "grc": "SMC",
+    "prev_constituency": "Ang Mo Kio",
+    "prev_grc": "6-Member GRC",
+    "area": 3.224928430950344,
+    "percent_prev": 0.0676826570070032,
+    "percent_curr": 0.999944100879235
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Mountbatten",
+    "grc": "SMC",
+    "prev_constituency": "Marine Parade",
+    "prev_grc": "6-Member GRC",
+    "area": 8.72857542151244,
+    "percent_prev": 0.3525444872060589,
+    "percent_curr": 0.9980626480693496
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Pasir Ris-Punggol",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Aljunied",
+    "prev_grc": "5-Member GRC",
+    "area": 0.19469654560281127,
+    "percent_prev": 0.00657133917998808,
+    "percent_curr": 0.00785445471045815
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "West Coast",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Holland-Bukit Timah",
+    "prev_grc": "5-Member GRC",
+    "area": 0.6488865409804188,
+    "percent_prev": 0.010562857919492621,
+    "percent_curr": 0.004399357313157548
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Radin Mas",
+    "grc": "SMC",
+    "prev_constituency": "Tanjong Pagar",
+    "prev_grc": "6-Member GRC",
+    "area": 2.8341053201027253,
+    "percent_prev": 0.06541218649992823,
+    "percent_curr": 0.9998272337716343
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Punggol East",
+    "grc": "SMC",
+    "prev_constituency": "Pasir Ris-Punggol",
+    "prev_grc": "6-Member GRC",
+    "area": 1.398769355492696,
+    "percent_prev": 0.053239298301512424,
+    "percent_curr": 0.9999454972598568
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Whampoa",
+    "grc": "SMC",
+    "prev_constituency": "Tanjong Pagar",
+    "prev_grc": "6-Member GRC",
+    "area": 0.24790479808788213,
+    "percent_prev": 0.005721733335641822,
+    "percent_curr": 0.1911714364132803
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Pioneer",
+    "grc": "SMC",
+    "prev_constituency": "West Coast",
+    "prev_grc": "5-Member GRC",
+    "area": 1.0695607201040713,
+    "percent_prev": 0.007208156258310263,
+    "percent_curr": 0.9794140096980035
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Chua Chu Kang",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Chua Chu Kang",
+    "prev_grc": "SMC",
+    "area": 3.7291827547707777,
+    "percent_prev": 0.9999634818969,
+    "percent_curr": 0.03622448829248958
+  },
+  {
+    "election": "GE 2011",
+    "constituency": "Tanjong Pagar",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Jalan Besar",
+    "prev_grc": "5-Member GRC",
+    "area": 7.246362530345529,
+    "percent_prev": 0.3784862595513874,
+    "percent_curr": 0.2213644615640633
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Marsiling-Yew Tee",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Chua Chu Kang",
+    "prev_grc": "5-Member GRC",
+    "area": 9.114033304555013,
+    "percent_prev": 0.08853178147835414,
+    "percent_curr": 0.39853210031794145
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Sembawang",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Nee Soon",
+    "prev_grc": "5-Member GRC",
+    "area": 6.802131099057495,
+    "percent_prev": 0.22718159265887922,
+    "percent_curr": 0.23709007590159972
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Holland-Bukit Timah",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Moulmein-Kallang",
+    "prev_grc": "4-Member GRC",
+    "area": 3.223887395914419,
+    "percent_prev": 0.11154459409047972,
+    "percent_curr": 0.05592953851608508
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Ang Mo Kio",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Sengkang West",
+    "prev_grc": "SMC",
+    "area": 0.42845724333187957,
+    "percent_prev": 0.13285048090894788,
+    "percent_curr": 0.012448899016909926
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Nee Soon",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Ang Mo Kio",
+    "prev_grc": "6-Member GRC",
+    "area": 6.6454567207718815,
+    "percent_prev": 0.16641234304353283,
+    "percent_curr": 0.22337026186842945
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Jalan Besar",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Mountbatten",
+    "prev_grc": "SMC",
+    "area": 0.010936286197742956,
+    "percent_prev": 0.0012505017411732812,
+    "percent_curr": 0.0005444596733453705
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Holland-Bukit Timah",
+    "grc": "4-Member GRC",
+    "prev_constituency": "West Coast",
+    "prev_grc": "5-Member GRC",
+    "area": 0.5697617977551344,
+    "percent_prev": 0.0038629029474468372,
+    "percent_curr": 0.009884499828661382
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Bishan-Toa Payoh",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Moulmein-Kallang",
+    "prev_grc": "4-Member GRC",
+    "area": 11.199982345936172,
+    "percent_prev": 0.3875127543788297,
+    "percent_curr": 0.4650651616951962
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Jalan Besar",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Tanjong Pagar",
+    "prev_grc": "5-Member GRC",
+    "area": 7.468001357789294,
+    "percent_prev": 0.22813516334627734,
+    "percent_curr": 0.37179217023818323
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Ang Mo Kio",
+    "grc": "6-Member GRC",
+    "prev_constituency": "Pasir Ris-Punggol",
+    "prev_grc": "6-Member GRC",
+    "area": 0.7119072244313195,
+    "percent_prev": 0.02871978562861069,
+    "percent_curr": 0.020684587048722936
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Bukit Batok",
+    "grc": "SMC",
+    "prev_constituency": "Jurong",
+    "prev_grc": "5-Member GRC",
+    "area": 1.424666424990398,
+    "percent_prev": 0.09519142789343661,
+    "percent_curr": 0.9997571243038434
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "MacPherson",
+    "grc": "SMC",
+    "prev_constituency": "Marine Parade",
+    "prev_grc": "5-Member GRC",
+    "area": 2.1390080973493064,
+    "percent_prev": 0.12139763444497093,
+    "percent_curr": 0.9999475017940173
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Pasir Ris-Punggol",
+    "grc": "6-Member GRC",
+    "prev_constituency": "East Coast",
+    "prev_grc": "5-Member GRC",
+    "area": 0.9684883224189713,
+    "percent_prev": 0.008718420048638993,
+    "percent_curr": 0.037874443380766266
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Marsiling-Yew Tee",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Sembawang",
+    "prev_grc": "5-Member GRC",
+    "area": 13.737013737494776,
+    "percent_prev": 0.3856913172303714,
+    "percent_curr": 0.6006825687332182
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Jurong",
+    "grc": "5-Member GRC",
+    "prev_constituency": "West Coast",
+    "prev_grc": "5-Member GRC",
+    "area": 2.0379117250783763,
+    "percent_prev": 0.013816748052358848,
+    "percent_curr": 0.1308387226349073
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Jalan Besar",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Whampoa",
+    "prev_grc": "SMC",
+    "area": 1.2960323398496942,
+    "percent_prev": 0.9994335162456127,
+    "percent_curr": 0.06452257481568387
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Marine Parade",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Joo Chiat",
+    "prev_grc": "SMC",
+    "area": 5.000644189809371,
+    "percent_prev": 0.9999614129768813,
+    "percent_curr": 0.24346567513583992
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Tanjong Pagar",
+    "grc": "5-Member GRC",
+    "prev_constituency": "Moulmein-Kallang",
+    "prev_grc": "4-Member GRC",
+    "area": 3.1807494117392245,
+    "percent_prev": 0.11005204539265562,
+    "percent_curr": 0.11187673968991421
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Fengshan",
+    "grc": "SMC",
+    "prev_constituency": "East Coast",
+    "prev_grc": "5-Member GRC",
+    "area": 1.5369552353557878,
+    "percent_prev": 0.013835810951564326,
+    "percent_curr": 0.9998947419230633
+  },
+  {
+    "election": "GE 2015",
+    "constituency": "Jalan Besar",
+    "grc": "4-Member GRC",
+    "prev_constituency": "Moulmein-Kallang",
+    "prev_grc": "4-Member GRC",
+    "area": 11.287789274996047,
+    "percent_prev": 0.39055082210809583,
+    "percent_curr": 0.5619591468559128
+  }
+]
