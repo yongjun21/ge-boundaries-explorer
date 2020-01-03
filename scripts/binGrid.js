@@ -9,8 +9,8 @@ const features = getFeatures(YEARS)
 
 const gridded = hextile(features, {
   shape: 'hexagon',
-  center: [103.86, 1.35]
-  // width: 500
+  center: [103.86, 1.35],
+  width: 500
 })
 gridded.sort((a, b) => (
   b.properties.center[1] - a.properties.center[1] ||
@@ -33,7 +33,7 @@ gridded.forEach(grid => {
       const value = f.properties.constituency + (f.properties.grc !== 'SMC' ? ' GRC' : '')
       row[key] = value
       properties[key + '_constituency'] = f.properties.constituency
-      properties[key + '_grc'] = f.properties.grc === 'SMC' ? 'SMC' : 'GRC'
+      properties[key + '_grc'] = f.properties.grc
     }
   })
 
@@ -76,14 +76,14 @@ function getFeatures (years) {
   return features
 }
 
-const params = {
-  spreadsheetId: '1K-ph37IQl_j0yAAa8MU8ahvY0DqABS7ECLKs1hNMw8o',
-  range: 'Grid!A1:P',
-  valueInputOption: 'USER_ENTERED',
-  resource: {
-    fields: ['id', 'lon', 'lat', 'changed', ...YEARS.map(y => 'GE ' + y)],
-    data: table
-  }
-}
+// const params = {
+//   spreadsheetId: '1K-ph37IQl_j0yAAa8MU8ahvY0DqABS7ECLKs1hNMw8o',
+//   range: 'Grid!A1:P',
+//   valueInputOption: 'USER_ENTERED',
+//   resource: {
+//     fields: ['id', 'lon', 'lat', 'changed', ...YEARS.map(y => 'GE ' + y)],
+//     data: table
+//   }
+// }
 
-sheets.spreadsheets.values.upload(params).catch(console.error)
+// sheets.spreadsheets.values.upload(params).catch(console.error)

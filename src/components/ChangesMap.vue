@@ -1,8 +1,8 @@
 <template>
-  <div class="explorer-map">
+  <div class="changes-map">
     <onemap-search ref="search" placeholder="eg. 1000 Toa Payoh or 318994" :max-length="0"></onemap-search>
-    <div class="legend" ref="legend"></div>
-    <input class="control" type="range" min="0" max="11" step="1" v-model="activeLayerIndex" />
+    <!-- <div class="legend" ref="legend"></div> -->
+    <input class="control" type="range" min="0" max="6" step="1" v-model="activeLayerIndex" />
     <h1 class="map-title">GE {{activeLayer}} Boundaries</h1>
   </div>
 </template>
@@ -21,10 +21,9 @@ const SINGAPORE = {
   zoom: 11
 }
 
-const YEARS = [1968, 1972, 1976, 1980, 1984, 1988, 1991, 1997, 2001, 2006, 2011, 2015]
+const YEARS = [1988, 1991, 1997, 2001, 2006, 2011, 2015]
 
 let additionalInfo
-
 window.fetch('https://st-graphics-dev-json.s3-ap-southeast-1.amazonaws.com/1HH5MLZu2lukbjDGMWhW_wdT7Jm0PxJN37i6EC3CaaD0/690133933.json')
   .then(res => res.json())
   .then(data => {
@@ -88,6 +87,11 @@ export default {
         url: 'mapbox://chachopazos.ge-boundaries'
       })
 
+      map.addSource('ge-boundaries-change', {
+        type: 'vector',
+        url: 'mapbox://chachopazos.ge-boundaries-change'
+      })
+
       YEARS.forEach(year => {
         map.addLayer({
           id: 'fill_' + year,
@@ -98,15 +102,7 @@ export default {
             'fill-color': ['case',
               ['boolean', ['feature-state', 'highlighted'], false],
               'rgba(255, 0, 0, 0.6)',
-              ['match',
-                ['get', 'grc'],
-                'SMC', 'rgba(25, 45, 86, 0.2)',
-                '3-Member GRC', 'rgba(25, 45, 86, 0.35)',
-                '4-Member GRC', 'rgba(25, 45, 86, 0.35)',
-                '5-Member GRC', 'rgba(25, 45, 86, 0.60)',
-                '6-Member GRC', 'rgba(25, 45, 86, 0.8)',
-                'white'
-              ]
+              'rgba(255, 255, 255, 0.6)'
             ],
             'fill-opacity': this.activeLayer === year ? 1 : 0,
             'fill-opacity-transition': {
@@ -122,7 +118,7 @@ export default {
           'source-layer': 'ge-boundaries-' + year,
           type: 'line',
           paint: {
-            'line-color': 'white',
+            'line-color': 'darkgrey',
             'line-width': 1.2,
             'line-opacity': this.activeLayer === year ? 1 : 0,
             'line-opacity-transition': {
@@ -140,10 +136,9 @@ export default {
         YEARS.forEach(year => {
           map.addLayer({
             id: 'pattern_' + year,
-            source: 'ge-boundaries',
-            'source-layer': 'ge-boundaries-' + year,
+            source: 'ge-boundaries-change',
+            'source-layer': 'ge-boundaries-change-' + year,
             type: 'fill',
-            filter: ['!=', ['get', 'winner'], 'PAP'],
             paint: {
               'fill-pattern': 'pattern',
               'fill-opacity': this.activeLayer === year ? 1 : 0,
@@ -153,6 +148,18 @@ export default {
               }
             }
           })
+        })
+
+        map.on('mousemove', e => {
+          if (popover.isOpen()) return
+          const features = map.queryRenderedFeatures(e.point, {
+            layers: ['pattern_' + this.activeLayer, 'fill_' + this.activeLayer]
+          })
+          if (features.length > 0) {
+            tooltip.setData(getTooltipData(features[0].properties)).trackPointer().addTo(map)
+          } else {
+            tooltip.setData(null).remove()
+          }
         })
       })
 
@@ -164,18 +171,6 @@ export default {
         map.setPaintProperty('outline_' + currLayer, 'line-opacity', 1)
         map.setPaintProperty('pattern_' + currLayer, 'fill-opacity', 1)
         if (point) openPopover.call(this, point)
-      })
-
-      map.on('mousemove', e => {
-        if (popover.isOpen()) return
-        const features = map.queryRenderedFeatures(e.point, {
-          layers: ['fill_' + this.activeLayer]
-        })
-        if (features.length > 0) {
-          tooltip.setData(features[0].properties.constituency).trackPointer().addTo(map)
-        } else {
-          tooltip.setData(null).remove()
-        }
       })
 
       map.on('click', e => {
@@ -196,9 +191,9 @@ export default {
       map.flyTo(SINGAPORE)
     })
 
-    fetch('/assets/legend.svg').then(res => res.text()).then(xml => {
-      this.$refs.legend.innerHTML = xml
-    })
+    // fetch('/assets/legend.svg').then(res => res.text()).then(xml => {
+    //   this.$refs.legend.innerHTML = xml
+    // })
 
     function openPopover (pt) {
       const sourceLayer = 'ge-boundaries-' + this.activeLayer
@@ -236,6 +231,13 @@ export default {
   }
 }
 
+function getTooltipData (prop) {
+  const after = prop.constituency + (prop.grc === 'SMC' ? '' : ' GRC')
+  if (!prop.prev_constituency) return after
+  const before = prop.prev_constituency + (prop.prev_grc === 'SMC' ? '' : ' GRC')
+  return `${after}<br>(<small>previously</small> ${before})`
+}
+
 function createPopup (Content, options) {
   const popup = new mapboxgl.Popup(options)
   const $el = document.createElement('div')
@@ -260,7 +262,7 @@ function createPopup (Content, options) {
 $font-CuratorRegular: 'CuratorRegular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-CuratorBold: 'CuratorBold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-.explorer-map {
+.changes-map {
   width: 100%;
   height: 800px;
 

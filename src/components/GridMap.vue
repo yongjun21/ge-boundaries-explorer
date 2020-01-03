@@ -208,8 +208,8 @@ function getFillColor (year) {
           ['get', prev + '_constituency']
         ],
         ['!=',
-          ['get', curr + '_grc'],
-          ['get', prev + '_grc']
+          ['match', ['get', curr + '_grc'], 'SMC', 'SMC', 'GRC'],
+          ['match', ['get', prev + '_grc'], 'SMC', 'SMC', 'GRC']
         ]
       ]
     ],
@@ -221,11 +221,11 @@ function getFillColor (year) {
 function getTooltipData (prop, year) {
   const index = YEARS.indexOf(year)
   const curr = 'GE ' + year
-  const after = prop[curr + '_constituency'] + (prop[curr + '_grc'] === 'GRC' ? ' GRC' : '')
+  const after = prop[curr + '_constituency'] + (prop[curr + '_grc'] === 'SMC' ? '' : ' GRC')
   if (index === 0) return after
   const prev = 'GE ' + YEARS[index - 1]
   if (prop[prev + '_constituency'] == null) return after
-  const before = prop[prev + '_constituency'] + (prop[prev + '_grc'] === 'GRC' ? ' GRC' : '')
+  const before = prop[prev + '_constituency'] + (prop[prev + '_grc'] === 'SMC' ? '' : ' GRC')
   if (before !== after) return `${after}<br>(<small>previously</small> ${before})`
   else return after
 }
