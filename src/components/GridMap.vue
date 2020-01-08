@@ -31,6 +31,7 @@ export default {
     OnemapSearch
   },
   inject: ['additionalInfo'],
+  props: ['cumulative'],
   data () {
     return {
       activeLayerIndex: 0
@@ -87,7 +88,7 @@ export default {
           type: 'fill',
           filter: ['has', 'GE ' + year + '_constituency'],
           paint: {
-            'fill-color': getFillColor(year),
+            'fill-color': this.cumulative ? getFillColor2(year) : getFillColor(year),
             'fill-outline-color': 'transparent',
             'fill-opacity': this.activeLayer === year ? 1 : 0,
             'fill-opacity-transition': {
@@ -203,22 +204,48 @@ function getFillColor (year) {
   const curr = 'GE ' + year
   const prev = 'GE ' + YEARS[index - 1]
   return ['case',
-    ['all',
-      ['has', curr + '_constituency'],
-      ['has', prev + '_constituency'],
-      ['any',
-        ['!=',
-          ['get', curr + '_constituency'],
-          ['get', prev + '_constituency']
-        ],
-        ['!=',
-          ['match', ['get', curr + '_grc'], 'SMC', 'SMC', 'GRC'],
-          ['match', ['get', prev + '_grc'], 'SMC', 'SMC', 'GRC']
-        ]
-      ]
-    ],
+    compareExp(curr, prev),
     'rgba(0,0,0,0.6)',
     'rgba(255,255,255,0.6)'
+  ]
+}
+
+function getFillColor2 (year) {
+  const index = YEARS.indexOf(year)
+  if (index === 0) return 'rgba(255,255,255,0.6)'
+  const exp = ['match',
+    ['+'],
+    1, 'rgba(255,255,178,0.6)',
+    2, 'rgba(254,217,118,0.6)',
+    3, 'rgba(254,178,76,0.6)',
+    4, 'rgba(253,141,60,0.6)',
+    5, 'rgba(252,78,42,0.6)',
+    6, 'rgba(227,26,28,0.6)',
+    7, 'rgba(177,0,38,0.6)',
+    'rgba(255,255,255,0.6)'
+  ]
+  for (let i = 0; i < index; i++) {
+    const curr = 'GE ' + YEARS[i + 1]
+    const prev = 'GE ' + YEARS[i]
+    exp[1].push(['case', compareExp(curr, prev), 1, 0])
+  }
+  return exp
+}
+
+function compareExp (curr, prev) {
+  return ['all',
+    ['has', curr + '_constituency'],
+    ['has', prev + '_constituency'],
+    ['any',
+      ['!=',
+        ['get', curr + '_constituency'],
+        ['get', prev + '_constituency']
+      ],
+      ['!=',
+        ['match', ['get', curr + '_grc'], 'SMC', 'SMC', 'GRC'],
+        ['match', ['get', prev + '_grc'], 'SMC', 'SMC', 'GRC']
+      ]
+    ]
   ]
 }
 
