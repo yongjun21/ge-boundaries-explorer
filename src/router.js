@@ -13,7 +13,7 @@ export default new VueRouter({
     {path: '/', component: ExplorerMap},
     {path: '/changes', component: ChangesMap},
     {path: '/grid', component: GridMap},
-    {path: '/grid/cum', component: GridMap, props: {cumulative: true}},
+    {path: '/grid/cumulative', component: GridMap, props: {cumulative: true}},
     {path: '*', redirect: '/'}
   ]
 })
