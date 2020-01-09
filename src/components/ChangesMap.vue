@@ -92,9 +92,31 @@ export default {
           paint: {
             'fill-color': ['case',
               ['boolean', ['feature-state', 'highlighted'], false],
-              'rgba(255, 0, 0, 0.6)',
-              'rgba(255, 255, 255, 0.6)'
+              'rgba(0, 0, 0, 0.6)',
+              'transparent'
             ],
+            'fill-opacity': this.activeLayer === year ? 1 : 0,
+            'fill-opacity-transition': {
+              duration: 500,
+              delay: 0
+            }
+          }
+        })
+
+        map.addLayer({
+          id: 'pattern_' + year,
+          source: 'ge-boundaries-change',
+          'source-layer': 'ge-boundaries-change-' + year,
+          type: 'fill',
+          paint: {
+            'fill-color': ['case',
+              ['==', ['get', 'formation'], 1],
+              'rgba(255,0,0,0.4)',
+              ['==', ['get', 'dissolution'], 1],
+              'rgba(0,0,255,0.4)',
+              'rgba(0,255,0,0.4)'
+            ],
+            // 'fill-outline-color': 'transparent',
             'fill-opacity': this.activeLayer === year ? 1 : 0,
             'fill-opacity-transition': {
               duration: 500,
@@ -120,40 +142,6 @@ export default {
         })
       })
 
-      map.loadImage(require('../assets/pattern.png'), (err, image) => {
-        if (err) return console.error(err)
-
-        map.addImage('pattern', image)
-        YEARS.forEach(year => {
-          map.addLayer({
-            id: 'pattern_' + year,
-            source: 'ge-boundaries-change',
-            'source-layer': 'ge-boundaries-change-' + year,
-            type: 'fill',
-            paint: {
-              'fill-pattern': 'pattern',
-              'fill-opacity': this.activeLayer === year ? 1 : 0,
-              'fill-opacity-transition': {
-                duration: 500,
-                delay: 0
-              }
-            }
-          })
-        })
-
-        map.on('mousemove', e => {
-          if (popover.isOpen()) return
-          const features = map.queryRenderedFeatures(e.point, {
-            layers: ['pattern_' + this.activeLayer, 'fill_' + this.activeLayer]
-          })
-          if (features.length > 0) {
-            tooltip.setData(getTooltipData(features[0].properties)).trackPointer().addTo(map)
-          } else {
-            tooltip.setData(null).remove()
-          }
-        })
-      })
-
       this.$watch('activeLayer', (currLayer, prevLayer) => {
         map.setPaintProperty('fill_' + prevLayer, 'fill-opacity', 0)
         map.setPaintProperty('outline_' + prevLayer, 'line-opacity', 0)
@@ -162,6 +150,18 @@ export default {
         map.setPaintProperty('outline_' + currLayer, 'line-opacity', 1)
         map.setPaintProperty('pattern_' + currLayer, 'fill-opacity', 1)
         if (point) openPopover.call(this, point)
+      })
+
+      map.on('mousemove', e => {
+        if (popover.isOpen()) return
+        const features = map.queryRenderedFeatures(e.point, {
+          layers: ['pattern_' + this.activeLayer, 'fill_' + this.activeLayer]
+        })
+        if (features.length > 0) {
+          tooltip.setData(getTooltipData(features[0].properties)).trackPointer().addTo(map)
+        } else {
+          tooltip.setData(null).remove()
+        }
       })
 
       map.on('click', e => {

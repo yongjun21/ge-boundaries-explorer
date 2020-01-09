@@ -1,14 +1,12 @@
 const fs = require('fs')
 const _buffer = require('@turf/buffer').default
 const _intersect = require('@turf/intersect').default
-const _area = require('@turf/area').default
 const _simplify = require('@turf/simplify').default
 
 const {YEARS} = require('./constants')
 const {isLinearRing} = require('./helpers')
 
 const BUFFER = 0.010
-const MIN_AREA = 10000
 
 mapChanges(process.argv[2])
 
@@ -32,8 +30,6 @@ function mapChanges (year) {
       if (!intersection) return
       normGeometry(intersection.geometry).forEach(geometry => {
         geometry = _buffer(geometry, BUFFER).geometry
-        const area = _area(geometry)
-        if (area < MIN_AREA) return
 
         const feature = {
           id: n++,
@@ -61,9 +57,11 @@ function normGeometry (geometry) {
   const geometries = []
   if (geometry.type === 'MultiPolygon') {
     geometry.coordinates.forEach(coordinates => {
-      coordinates = coordinates.slice(0, 1)
-      if (!isLinearRing(coordinates[0])) coordinates[0].push(coordinates[0][0])
-      if (coordinates[0].length >= 4) {
+      coordinates = coordinates.filter(linestring => {
+        if (!isLinearRing(linestring)) linestring.push(linestring[0])
+        return linestring.length >= 4
+      })
+      if (coordinates.length >= 1) {
         geometries.push({
           type: 'Polygon',
           coordinates
@@ -71,9 +69,11 @@ function normGeometry (geometry) {
       }
     })
   } else {
-    let coordinates = geometry.coordinates.slice(0, 1)
-    if (!isLinearRing(coordinates[0])) coordinates[0].push(coordinates[0][0])
-    if (coordinates[0].length >= 4) {
+    const coordinates = geometry.coordinates.filter(linestring => {
+      if (!isLinearRing(linestring)) linestring.push(linestring[0])
+      return linestring.length >= 4
+    })
+    if (coordinates.length >= 1) {
       geometries.push({
         type: 'Polygon',
         coordinates

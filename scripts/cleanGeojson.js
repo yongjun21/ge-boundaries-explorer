@@ -1,6 +1,7 @@
 const fs = require('fs')
 const {sheets} = require('@st-graphics/backend/client/googleapis')
 const _sortBy = require('lodash/sortBy')
+const _clockwise = require('@turf/boolean-clockwise').default
 
 const {isLinearRing, nestedMap, round} = require('./helpers')
 
@@ -63,7 +64,7 @@ getConstituencies().then(constituencies => {
     }
   })
 
-  fs.writeFileSync('data/processed/recipe.json', JSON.stringify(recipe))
+  fs.writeFileSync('data/recipes/base.json', JSON.stringify(recipe))
 }).catch(console.error)
 
 function getConstituencies () {
@@ -87,10 +88,17 @@ function getConstituencies () {
 function getCoordinates (geometry) {
   const round7 = round(7)
   const rounded = nestedMap(geometry.coordinates, round7, geometry.type === 'MultiPolygon' ? 4 : 3)
-  return nestedMap(rounded, linestring => {
+  const closedLoop = nestedMap(rounded, linestring => {
     if (!isLinearRing(linestring)) linestring.push(linestring[0])
     return linestring
   }, geometry.type === 'MultiPolygon' ? 2 : 1)
+  return nestedMap(closedLoop, polygon => {
+    polygon.forEach((linestring, i) => {
+      if (i === 0 && !_clockwise(linestring)) linestring.reverse()
+      else if (i > 0 && _clockwise(linestring)) linestring.reverse()
+    })
+    return polygon
+  }, geometry.type === 'MultiPolygon' ? 1 : 0)
 }
 
 function getDescription (xml) {

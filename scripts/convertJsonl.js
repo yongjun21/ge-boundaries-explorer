@@ -9,3 +9,11 @@ YEARS.forEach(year => {
   const json = prefix + ld.replace(/\n/g, ',') + suffix
   fs.writeFileSync(`data/processed/geojson/${year}.json`, json)
 })
+
+YEARS.slice(5).forEach(year => {
+  const ld = fs.readFileSync(`data/processed/changes/${year}.jsonl`, 'utf-8')
+  const prefix = '{"type":"FeatureCollection","features":['
+  const suffix = ']}'
+  const json = prefix + ld.replace(/\n/g, ',') + suffix
+  fs.writeFileSync(`data/processed/changes/${year}.json`, json)
+})
