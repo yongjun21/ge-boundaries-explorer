@@ -118,12 +118,42 @@ export default {
             //   'rgba(0,0,255,0.4)',
             //   'rgba(0,255,0,0.4)'
             // ],
-            'fill-color': ['case',
-              ['>', ['get', 'net_effect'], 0.15],
-              'rgba(255,0,0,0.4)',
-              ['<', ['get', 'net_effect'], -0.15],
-              'rgba(0,0,255,0.4)',
-              'rgba(0,255,0,0.4)'
+            // 'fill-color': ['case',
+            //   ['>', ['get', 'net_effect'], 0.15],
+            //   'rgba(255,0,0,0.4)',
+            //   ['<', ['get', 'net_effect'], -0.15],
+            //   'rgba(0,0,255,0.4)',
+            //   'rgba(0,255,0,0.4)'
+            // ],
+            'fill-color': ['let',
+              'delta',
+              ['-',
+                ['match',
+                  ['get', 'grc'],
+                  '3-Member GRC', 3,
+                  '4-Member GRC', 4,
+                  '5-Member GRC', 5,
+                  '6-Member GRC', 6,
+                  1
+                ],
+                ['match',
+                  ['get', 'prev_grc'],
+                  '3-Member GRC', 3,
+                  '4-Member GRC', 4,
+                  '5-Member GRC', 5,
+                  '6-Member GRC', 6,
+                  1
+                ]
+              ],
+              ['case',
+                ['==', ['get', 'voters'], 0],
+                'rgba(0,255,0,0.4)',
+                ['<', ['var', 'delta'], 0],
+                'rgba(255,0,0,0.4)',
+                ['>', ['var', 'delta'], 0],
+                'rgba(0,0,255,0.4)',
+                'rgba(0,255,0,0.4)'
+              ]
             ],
             // 'fill-outline-color': 'transparent',
             'fill-opacity': this.activeLayer === year ? 1 : 0,
