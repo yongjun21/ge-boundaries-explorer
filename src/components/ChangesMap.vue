@@ -109,10 +109,19 @@ export default {
           'source-layer': 'ge-boundaries-change-' + year,
           type: 'fill',
           paint: {
+            // 'fill-color': ['case',
+            //   // ['==', ['+', ['get', 'formation'], ['get', 'dissolution']], 2],
+            //   // 'rgba(0,255,0,0.4)',
+            //   ['==', ['get', 'formation'], 1],
+            //   'rgba(255,0,0,0.4)',
+            //   ['==', ['get', 'dissolution'], 1],
+            //   'rgba(0,0,255,0.4)',
+            //   'rgba(0,255,0,0.4)'
+            // ],
             'fill-color': ['case',
-              ['==', ['get', 'formation'], 1],
+              ['>', ['get', 'net_effect'], 0.15],
               'rgba(255,0,0,0.4)',
-              ['==', ['get', 'dissolution'], 1],
+              ['<', ['get', 'net_effect'], -0.15],
               'rgba(0,0,255,0.4)',
               'rgba(0,255,0,0.4)'
             ],
