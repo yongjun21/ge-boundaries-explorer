@@ -147,12 +147,12 @@ export default {
               ],
               ['case',
                 ['==', ['get', 'voters'], 0],
-                'rgba(0,255,0,0.4)',
+                'rgba(0,0,0,0.2)',
                 ['<', ['var', 'delta'], 0],
                 'rgba(255,0,0,0.4)',
                 ['>', ['var', 'delta'], 0],
                 'rgba(0,0,255,0.4)',
-                'rgba(0,255,0,0.4)'
+                'rgba(0,0,0,0.2)'
               ]
             ],
             // 'fill-outline-color': 'transparent',
@@ -170,7 +170,7 @@ export default {
           'source-layer': 'ge-boundaries-' + year,
           type: 'line',
           paint: {
-            'line-color': 'darkgrey',
+            'line-color': 'rgb(96,96,96)',
             'line-width': 1.2,
             'line-opacity': this.activeLayer === year ? 1 : 0,
             'line-opacity-transition': {
