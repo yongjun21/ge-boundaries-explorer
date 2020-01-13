@@ -17,14 +17,14 @@ function mapChanges (year) {
   const curr = require(`../data/processed/geojson/${year}.json`).features
   const prev = require(`../data/processed/geojson/${prevYear}.json`).features
   const _curr = curr.map(f => _buffer(f, -BUFFER))
-  const _prev = prev.map(g => _buffer(g, -BUFFER))
+  const _prev = prev.map(g => _buffer(g, -BUFFER + 0.0001))
   curr.forEach((f, i) => {
     if (!_curr[i]) return
     prev.forEach((g, j) => {
       if (!_prev[j]) return
       if (
         f.properties.constituency === g.properties.constituency &&
-        (f.properties.grc === 'SMC') === (g.properties.grc === 'SMC')
+        f.properties.grc === g.properties.grc
       ) return
       const intersection = _intersect(_curr[i], _prev[j])
       if (!intersection) return

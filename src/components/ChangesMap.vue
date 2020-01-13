@@ -68,8 +68,7 @@ export default {
     })
     const tooltip = createPopup(TooltipContent, {
       closeButton: false,
-      closeOnClick: false,
-      anchor: 'center'
+      closeOnClick: false
     })
 
     map.on('load', () => {
@@ -145,13 +144,25 @@ export default {
                   1
                 ]
               ],
+              'same',
+              ['all',
+                ['==', ['get', 'constituency'], ['get', 'prev_constituency']],
+                ['!=', ['get', 'grc'], 'SMC'],
+                ['!=', ['get', 'prev_grc'], 'SMC']
+              ],
               ['case',
                 ['==', ['get', 'voters'], 0],
                 'rgba(0,0,0,0.2)',
                 ['<', ['var', 'delta'], 0],
-                'rgba(255,0,0,0.4)',
+                ['case',
+                  ['var', 'same'], 'rgba(255,0,0,0.1)',
+                  'rgba(255,0,0,0.4)'
+                ],
                 ['>', ['var', 'delta'], 0],
-                'rgba(0,0,255,0.4)',
+                ['case',
+                  ['var', 'same'], 'rgba(0,0,255,0.1)',
+                  'rgba(0,0,255,0.4)'
+                ],
                 'rgba(0,0,0,0.2)'
               ]
             ],
@@ -262,8 +273,15 @@ export default {
 function getTooltipData (prop) {
   const after = prop.constituency + (prop.grc === 'SMC' ? '' : ' GRC')
   if (!prop.prev_constituency) return after
-  const before = prop.prev_constituency + (prop.prev_grc === 'SMC' ? '' : ' GRC')
-  return `${after}<br>(<small>previously</small> ${before})`
+  if (
+    prop.constituency !== prop.prev_constituency ||
+    (prop.grc === 'SMC') !== (prop.prev_grc === 'SMC')
+  ) {
+    const before = prop.prev_constituency + (prop.prev_grc === 'SMC' ? ' SMC' : ' GRC')
+    return `${after}<br>(<small>previously</small> ${before})`
+  }
+  const change = prop.grc < prop.prev_grc ? 'downsized' : 'upsized'
+  return `${after}<br>(<small>${change} to ${prop.grc}</small>)`
 }
 
 function createPopup (Content, options) {

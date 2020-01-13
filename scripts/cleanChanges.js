@@ -1,50 +1,61 @@
 const fs = require('fs')
 const {sheets} = require('@st-graphics/backend/client/googleapis')
+const _area = require('@turf/area').default
 const {nestedMap, round} = require('./helpers')
 
 const {YEARS} = require('./constants')
+const MIN_AREA = 50000
+
+const round7 = round(7)
 
 let uid = 0
-const idCache = {}
+const featureTemplates = {}
 
-getMeta().then(data => {
-  const changes = {}
-  data.forEach(row => {
-    const key = [row.election, row.constituency, row.prev_constituency]
-    changes[key] = row
-  })
+getVoters().then(voters => {
   YEARS.slice(5).forEach(year => {
-    const round7 = round(7)
     const data = require(`../data/raw/changes/${year}.json`).features
-    const features = []
-    data.forEach(f => {
+    const features = data.map(f => {
       const props = Object.assign({election: 'GE ' + year}, f.properties)
-      const changeKey = [props.election, props.constituency, props.prev_constituency]
-      if (!(changeKey in changes)) return
-      Object.assign(props, changes[changeKey])
-      f.geometry.coordinates = nestedMap(f.geometry.coordinates, round7, 3)
-      features.push({
-        id: getId(props),
-        type: 'Feature',
-        properties: props,
-        geometry: f.geometry
-      })
+      const featureTemplate = getFeatureTemplate(props)
+      if (!(voters in featureTemplate.properties)) {
+        const matched = voters.find(row => (
+          row.election === props.election &&
+          row.constituency === props.constituency &&
+          row.prev_constituency === props.prev_constituency
+        ))
+        featureTemplate.properties.voters = matched ? matched.voters : 0
+      }
+      featureTemplate.area += _area(f)
+      const geometry = {
+        type: 'Polygon',
+        coordinates: nestedMap(f.geometry.coordinates, round7, 3)
+      }
+      return Object.assign({}, featureTemplate, {geometry})
     })
-    features.sort((a, b) => a.id - b.id)
-    fs.writeFileSync(`data/processed/changes/${year}.jsonl`, features.map(f => JSON.stringify(f)).join('\n'))
+    const filtered = features.filter(f => f.properties.voters > 0 || f.area >= MIN_AREA)
+    filtered.forEach(f => { delete f.area })
+    filtered.sort((a, b) => a.id - b.id)
+    fs.writeFileSync(`data/processed/changes/${year}.jsonl`, filtered.map(f => JSON.stringify(f)).join('\n'))
   })
 }).catch(console.error)
 
-function getMeta () {
+function getVoters () {
   return sheets.spreadsheets.values.download({
     spreadsheetId: '1K-ph37IQl_j0yAAa8MU8ahvY0DqABS7ECLKs1hNMw8o',
-    range: 'Changes!A1:L',
+    range: 'Voters!A1:E',
     valueRenderOption: 'UNFORMATTED_VALUE'
   }).then(res => res.data.values)
 }
 
-function getId (props) {
+function getFeatureTemplate (props) {
   const key = [props.election, props.constituency, props.prev_constituency]
-  if (!(key in idCache)) idCache[key] = uid++
-  return idCache[key]
+  if (!(key in featureTemplates)) {
+    featureTemplates[key] = {
+      id: uid++,
+      type: 'Feature',
+      properties: props,
+      area: 0
+    }
+  }
+  return featureTemplates[key]
 }
