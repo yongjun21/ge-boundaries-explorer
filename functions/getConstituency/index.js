@@ -1,6 +1,13 @@
 const {YEARS} = require('./constants')
 const {isInsideFeature} = require('./helpers')
 
+const ALLOWED_ORIGINS = [
+  'https://www.straitstimes.com',
+  'https://qa.st-visuals.com',
+  'https://dev.st-visuals.com',
+  'https://remote.st-visuals.com'
+]
+
 exports.handler = async function (event) {
   const q = event.queryStringParameters
   const mq = event.multiValueQueryStringParameters
@@ -16,8 +23,20 @@ exports.handler = async function (event) {
     if (constituency == null) return
     result['GE ' + y] = constituency
   })
+
+  const headers = {}
+  if (process.env.NODE_ENV === 'production') {
+    const origin = event.headers && (event.headers.origin || event.headers.Origin)
+    if (ALLOWED_ORIGINS.includes(origin)) headers['Access-Control-Allow-Origin'] = origin
+    else headers['Access-Control-Allow-Origin'] = ALLOWED_ORIGINS[0]
+    headers['Vary'] = 'Origin'
+  } else {
+    headers['Access-Control-Allow-Origin'] = '*'
+  }
+
   return {
     statusCode: 200,
+    headers,
     body: JSON.stringify(result)
   }
 }
