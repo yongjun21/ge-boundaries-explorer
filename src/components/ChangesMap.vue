@@ -273,10 +273,11 @@ export default {
 function getTooltipData (prop) {
   const after = prop.constituency + (prop.grc === 'SMC' ? '' : ' GRC')
   if (!prop.prev_constituency) return after
-  if (
-    prop.constituency !== prop.prev_constituency ||
-    (prop.grc === 'SMC') !== (prop.prev_grc === 'SMC')
-  ) {
+  if (prop.constituency !== prop.prev_constituency) {
+    const before = prop.prev_constituency + (prop.prev_grc === 'SMC' ? '' : ' GRC')
+    return `${after}<br>(<small>previously</small> ${before})`
+  }
+  if ((prop.grc === 'SMC') !== (prop.prev_grc === 'SMC')) {
     const before = prop.prev_constituency + (prop.prev_grc === 'SMC' ? ' SMC' : ' GRC')
     return `${after}<br>(<small>previously</small> ${before})`
   }
