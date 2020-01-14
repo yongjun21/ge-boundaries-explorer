@@ -23,7 +23,7 @@ const SINGAPORE = {
   zoom: 11
 }
 
-const YEARS = [1968, 1972, 1976, 1980, 1984, 1988, 1991, 1997, 2001, 2006, 2011, 2015]
+const YEARS = ['1968', '1972', '1976', '1980', '1984', '1988', '1991', '1997', '2001', '2006', '2011', '2015']
 
 export default {
   name: 'GridMap',
@@ -33,13 +33,23 @@ export default {
   inject: ['additionalInfo'],
   props: ['cumulative'],
   data () {
+    const year = this.$route.query.year || '2015'
+    const index = YEARS.filter(y => year < y).length
     return {
-      activeLayerIndex: 0
+      activeLayerIndex: Math.min(index, YEARS.length - 1)
     }
   },
   computed: {
     activeLayer () {
       return YEARS[YEARS.length - this.activeLayerIndex - 1]
+    }
+  },
+  watch: {
+    activeLayer: {
+      handler (year) {
+        this.$router.replace(this.$route.path + '?year=' + year)
+      },
+      immediate: true
     }
   },
   mounted () {
