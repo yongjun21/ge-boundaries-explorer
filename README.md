@@ -41,3 +41,17 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Requirements:
+https://github.com/mapbox/tilesets-cli
+
+python >2.7
+or install https://docs.conda.io/en/latest/miniconda.html
+
+#### bash_profile
+```
+MAPBOX_ACCESS_TOKEN
+GOOGLE_OAUTH_CLIENT_ID
+GOOGLE_OAUTH_CLIENT_SECRET
+```
