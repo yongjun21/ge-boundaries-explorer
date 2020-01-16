@@ -1,6 +1,7 @@
 const fs = require('fs')
 const {sheets} = require('@st-graphics/backend/client/googleapis')
 const _area = require('@turf/area').default
+const _simplify = require('@turf/clean-coords').default
 const {nestedMap, round} = require('./helpers')
 
 const {YEARS} = require('./constants')
@@ -30,7 +31,7 @@ getVoters().then(voters => {
         type: 'Polygon',
         coordinates: nestedMap(f.geometry.coordinates, round7, 3)
       }
-      return Object.assign({}, featureTemplate, {geometry})
+      return Object.assign({}, featureTemplate, {geometry: _simplify(geometry, {mutate: true})})
     })
     const filtered = features.filter(f => f.properties.voters > 0 || f.area >= MIN_AREA)
     filtered.forEach(f => { delete f.area })

@@ -1,16 +1,13 @@
 const fs = require('fs')
 const _buffer = require('@turf/buffer').default
 const _intersect = require('@turf/intersect').default
-const _simplify = require('@turf/simplify').default
 
 const {YEARS} = require('./constants')
 const {isLinearRing} = require('./helpers')
 
 const BUFFER = 0.010
 
-mapChanges(process.argv[2])
-
-function mapChanges (year) {
+YEARS.slice(5).forEach(year => {
   const prevYear = YEARS[YEARS.indexOf(year) - 1]
   const changes = []
   let n = 0
@@ -29,8 +26,6 @@ function mapChanges (year) {
       const intersection = _intersect(_curr[i], _prev[j])
       if (!intersection) return
       normGeometry(intersection.geometry).forEach(geometry => {
-        geometry = _buffer(geometry, BUFFER).geometry
-
         const feature = {
           id: n++,
           type: 'Feature',
@@ -40,7 +35,7 @@ function mapChanges (year) {
             prev_constituency: g.properties.constituency,
             prev_grc: g.properties.grc
           },
-          geometry: _simplify(geometry, {tolerance: 0.0000001})
+          geometry: _buffer(geometry, BUFFER).geometry
         }
         changes.push(feature)
       })
@@ -51,7 +46,7 @@ function mapChanges (year) {
     features: changes
   }
   fs.writeFileSync(`data/raw/changes/${year}.json`, JSON.stringify(geojson))
-}
+})
 
 function normGeometry (geometry) {
   const geometries = []

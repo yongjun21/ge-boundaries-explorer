@@ -1,24 +1,24 @@
 const fs = require('fs')
 const {sheets} = require('@st-graphics/backend/client/googleapis')
 const _sortBy = require('lodash/sortBy')
+const _simplify = require('@turf/clean-coords').default
 const _clockwise = require('@turf/boolean-clockwise').default
-
 const {isLinearRing, nestedMap, round} = require('./helpers')
+
+const {YEARS} = require('./constants')
+
+const round7 = round(7)
 
 let uid = 0
 
 getConstituencies().then(constituencies => {
-  const filenames = fs.readdirSync('data/raw/geojson')
-    .filter(filename => /\.json$/.test(filename))
-
   const recipe = {
     version: 1,
     layers: {}
   }
 
-  filenames.forEach(filename => {
-    const year = filename.slice(0, 4)
-    const geojson = require(`../data/raw/geojson/${filename}`)
+  YEARS.forEach(year => {
+    const geojson = require(`../data/raw/geojson/${year}.json`)
     delete geojson.name
     delete geojson.crs
     geojson.features.forEach(f => {
@@ -41,20 +41,22 @@ getConstituencies().then(constituencies => {
       }
     })
 
-    const ld = []
+    const features = []
     _sortBy(geojson.features, f => f.properties.constituency)
       .forEach(f => {
         const id = uid++
         if (f.geometry.type === 'MultiPolygon') {
           f.geometry.coordinates.forEach(coordinates => {
-            ld.push(Object.assign({id}, f, {geometry: {type: 'Polygon', coordinates}}))
+            const geometry = {type: 'Polygon', coordinates}
+            features.push(Object.assign({id}, f, {geometry: _simplify(geometry, {mutate: true})}))
           })
         } else {
-          ld.push(Object.assign({id}, f))
+          const geometry = f.geometry
+          features.push(Object.assign({id}, f, {geometry: _simplify(geometry, {mutate: true})}))
         }
       })
 
-    fs.writeFileSync(`data/processed/geojson/${year}.jsonl`, ld.map(f => JSON.stringify(f)).join('\n'))
+    fs.writeFileSync(`data/processed/geojson/${year}.jsonl`, features.map(f => JSON.stringify(f)).join('\n'))
 
     const layer = 'ge-boundaries-' + year
     recipe.layers[layer] = {
@@ -86,7 +88,6 @@ function getConstituencies () {
 }
 
 function getCoordinates (geometry) {
-  const round7 = round(7)
   const rounded = nestedMap(geometry.coordinates, round7, geometry.type === 'MultiPolygon' ? 4 : 3)
   const closedLoop = nestedMap(rounded, linestring => {
     if (!isLinearRing(linestring)) linestring.push(linestring[0])

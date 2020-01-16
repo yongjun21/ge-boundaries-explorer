@@ -69,14 +69,12 @@ export default {
     const nav = new mapboxgl.NavigationControl({showCompass: false})
     map.addControl(nav, 'top-left')
 
-    let point = null
     let unhighlight = null
     const popover = createPopup(PopoverContent, {
       closeButton: false,
       closeOnClick: false
     }).on('close', () => {
       popover.remove()
-      point = null
       if (unhighlight) unhighlight()
     })
     const tooltip = createPopup(TooltipContent, {
@@ -131,7 +129,7 @@ export default {
         map.setPaintProperty('fill_' + currlayer, 'fill-opacity', 1)
         map.setPaintProperty('outline_' + prevLayer, 'line-opacity', 0)
         map.setPaintProperty('outline_' + currlayer, 'line-opacity', 1)
-        if (point) openPopover.call(this, point)
+        if (popover.isOpen()) openPopover.call(this)
       })
 
       map.on('mousemove', e => {
@@ -147,17 +145,17 @@ export default {
       })
 
       map.on('click', e => {
-        point = openPopover.call(this, e.lngLat)
+        openPopover.call(this, e.lngLat)
       })
     })
 
     this.$refs.search.$on('select', row => {
-      point = [+row.LONGITUDE, +row.LATITUDE]
+      const lngLat = [+row.LONGITUDE, +row.LATITUDE]
       map.flyTo({
-        center: point,
+        center: lngLat,
         zoom: 12
       })
-      openPopover.call(this, point)
+      openPopover.call(this, lngLat)
     })
 
     this.$refs.search.$on('clear', row => {
@@ -168,7 +166,7 @@ export default {
     //   this.$refs.legend.innerHTML = xml
     // })
 
-    function openPopover (pt) {
+    function openPopover (pt = popover.getLngLat()) {
       const features = map.queryRenderedFeatures(map.project(pt), {
         layers: ['fill_' + this.activeLayer]
       })
@@ -200,7 +198,6 @@ export default {
         */
       } else {
         popover.setData(null).remove()
-        point = null
         if (unhighlight) unhighlight()
       }
       return pt
