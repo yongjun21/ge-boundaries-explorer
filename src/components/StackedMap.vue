@@ -29,7 +29,6 @@ export default {
   components: {
     OnemapSearch
   },
-  inject: ['additionalInfo'],
   data () {
     return {
       activeLayerIndex: 0,
@@ -47,6 +46,10 @@ export default {
         this.activeLayerIndex = this.activeLayerIndex === 0 ? YEARS.length - 1 : this.activeLayerIndex - 1
         this.startAnimating()
       }, 1000)
+    },
+    stopAnimating () {
+      clearTimeout(this.animating)
+      this.animating = null
     }
   },
   mounted () {
@@ -152,29 +155,37 @@ export default {
       })
 
       map.on('click', e => {
-        unhighlight()
-        if (this.animating) clearTimeout(this.animating)
+        if (!this.animating) this.startAnimating()
         popover.setData(null).remove()
-        this.startAnimating()
-        this.activeLayerIndex = YEARS.length - 1
+        unhighlight()
         openPopover.call(this, e.lngLat)
+        if (popover.isOpen()) {
+          map.flyTo({
+            center: e.lngLat,
+            zoom: 12
+          })
+        } else {
+          map.flyTo(SINGAPORE)
+        }
       })
     })
 
     this.$refs.search.$on('select', row => {
       const lngLat = [+row.LONGITUDE, +row.LATITUDE]
+      if (!this.animating) this.startAnimating()
+      popover.setData(null).remove()
+      unhighlight()
+      openPopover.call(this, lngLat)
       map.flyTo({
         center: lngLat,
         zoom: 12
       })
-      unhighlight()
-      this.startAnimating(true)
-      popover.setData(null).remove()
-      this.activeLayerIndex = YEARS.length - 1
-      openPopover.call(this, lngLat)
     })
 
     this.$refs.search.$on('clear', row => {
+      this.stopAnimating()
+      popover.setData(null).remove()
+      unhighlight()
       map.flyTo(SINGAPORE)
     })
 
@@ -207,7 +218,7 @@ export default {
           }, {highlighted: false})
         })
       } else {
-        if (this.animating) clearTimeout(this.animating)
+        this.stopAnimating()
         popover.setData(null).remove()
         unhighlight()
       }

@@ -12,8 +12,6 @@ import Vue from 'vue'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
-// import OnemapSearch from './OnemapSearch'
-import PopoverContent from './PopoverContent'
 import TooltipContent from './TooltipContent'
 
 const BEDOK = {
@@ -64,14 +62,6 @@ export default {
     const nav = new mapboxgl.NavigationControl({showCompass: false})
     map.addControl(nav, 'top-left')
 
-    let unhighlight = null
-    const popover = createPopup(PopoverContent, {
-      closeButton: false,
-      closeOnClick: false
-    }).on('close', () => {
-      popover.remove()
-      if (unhighlight) unhighlight()
-    })
     const tooltip = createPopup(TooltipContent, {
       closeButton: false,
       closeOnClick: false,
@@ -153,13 +143,11 @@ export default {
       this.$watch('activeLayer', (currLayer, prevLayer) => {
         map.setPaintProperty('fill_' + prevLayer, 'fill-opacity', 0)
         map.setPaintProperty('fill_' + currLayer, 'fill-opacity', 1)
-        if (popover.isOpen()) openPopover.call(this)
       })
 
       this.startAnimating()
 
       map.on('mousemove', e => {
-        if (popover.isOpen()) return
         const features = map.queryRenderedFeatures(e.point, {
           layers: ['fill_' + this.activeLayer, 'base_fill']
         })
@@ -171,60 +159,7 @@ export default {
           tooltip.setData(null).remove()
         }
       })
-
-      map.on('click', e => {
-        // openPopover.call(this, e.lngLat)
-      })
     })
-
-    /*
-    this.$refs.search.$on('select', row => {
-      const lngLat = [+row.LONGITUDE, +row.LATITUDE]
-      map.flyTo({
-        center: lngLat,
-        zoom: 12
-      })
-      openPopover.call(this, lngLat)
-    })
-
-    this.$refs.search.$on('clear', row => {
-      map.flyTo(BEDOK)
-    })
-    */
-
-    // fetch('/assets/legend.svg').then(res => res.text()).then(xml => {
-    //   this.$refs.legend.innerHTML = xml
-    // })
-
-    function openPopover (pt = popover.getLngLat()) {
-      const sourceLayer = 'ge-boundaries-' + this.activeLayer
-      const features = map.queryRenderedFeatures(map.project(pt), {
-        layers: ['fill_' + this.activeLayer]
-      })
-      if (features.length > 0) {
-        tooltip.setData(null).remove()
-        const data = Object.assign({}, features[0].properties)
-        Object.assign(data, this.additionalInfo[data.election][data.constituency])
-        popover.setData(data).setLngLat(pt).addTo(map)
-        if (unhighlight) unhighlight()
-        map.setFeatureState({
-          source: 'ge-boundaries',
-          sourceLayer,
-          id: features[0].id
-        }, {highlighted: true})
-        unhighlight = function () {
-          map.setFeatureState({
-            source: 'ge-boundaries',
-            sourceLayer,
-            id: features[0].id
-          }, {highlighted: false})
-          unhighlight = null
-        }
-      } else {
-        popover.setData(null).remove()
-        if (unhighlight) unhighlight()
-      }
-    }
   }
 }
 
