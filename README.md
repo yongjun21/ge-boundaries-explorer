@@ -4,6 +4,8 @@
 
 - https://historical-boundaries-explorer.netlify.com/
 - https://historical-boundaries-explorer.netlify.com/changes
+- https://historical-boundaries-explorer.netlify.com/stacked
+- https://historical-boundaries-explorer.netlify.com/buildings
 - https://historical-boundaries-explorer.netlify.com/grid
 - https://historical-boundaries-explorer.netlify.com/grid/cum
 
@@ -13,6 +15,7 @@
 - Latest boundaries: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries-new/
 - Boundaries change: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries-change/
 - Grid format: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries-grid/
+- Buildings: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries-buildings/
 
 ## Project setup
 ```
