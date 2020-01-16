@@ -1,8 +1,8 @@
 <template>
-  <div class="stacked-map">
-    <onemap-search ref="search" placeholder="eg. 1000 Toa Payoh or 318994" :max-length="0"></onemap-search>
+  <div class="buildings-map">
+    <!-- <onemap-search ref="search" placeholder="eg. 1000 Toa Payoh or 318994" :max-length="0"></onemap-search> -->
     <!-- <div class="legend" ref="legend"></div> -->
-    <input class="control" type="range" min="0" max="11" step="1" v-model="activeLayerIndex" />
+    <input class="control" type="range" min="0" max="6" step="1" v-model="activeLayerIndex" />
     <h1 class="map-title">GE {{activeLayer}} Boundaries</h1>
   </div>
 </template>
@@ -12,28 +12,26 @@ import Vue from 'vue'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
-import OnemapSearch from './OnemapSearch'
+// import OnemapSearch from './OnemapSearch'
+import PopoverContent from './PopoverContent'
 import TooltipContent from './TooltipContent'
 
-const SINGAPORE = {
-  center: [103.819836, 1.352083],
-  zoom: 11
+const BEDOK = {
+  center: [103.92840945179253, 1.3240468743758742],
+  zoom: 13
 }
 
-const YEARS = ['1968', '1972', '1976', '1980', '1984', '1988', '1991', '1997', '2001', '2006', '2011', '2015']
-
-const OPACITY_FILTER = [1, 0.05, 0.05, 0.05, 0.05]
+const YEARS = ['1988', '1991', '1997', '2001', '2006', '2011', '2015']
 
 export default {
-  name: 'StackedMap',
-  components: {
-    OnemapSearch
-  },
+  name: 'BuildingsMap',
+  // components: {
+  //   OnemapSearch
+  // },
   inject: ['additionalInfo'],
   data () {
     return {
-      activeLayerIndex: 0,
-      animating: null
+      activeLayerIndex: 0
     }
   },
   computed: {
@@ -46,7 +44,7 @@ export default {
       this.animating = setTimeout(() => {
         this.activeLayerIndex = this.activeLayerIndex === 0 ? YEARS.length - 1 : this.activeLayerIndex - 1
         this.startAnimating()
-      }, 1000)
+      }, 1500)
     }
   },
   mounted () {
@@ -60,21 +58,19 @@ export default {
       dragPan: true,
       dragRotate: false,
       accessToken: 'pk.eyJ1IjoiY2hhY2hvcGF6b3MiLCJhIjoiY2pkMDN3eW4wNHkwZDJ5bGc0cnpueGNxbCJ9.WWWg_OnK5e7L1RknMliY4A'
-    }, SINGAPORE))
+    }, BEDOK))
     map.touchZoomRotate.disableRotation()
 
     const nav = new mapboxgl.NavigationControl({showCompass: false})
     map.addControl(nav, 'top-left')
 
-    const highlighted = new Map()
-    function unhighlight () {
-      highlighted.forEach(f => f())
-      highlighted.clear()
-    }
-
-    const popover = createPopup(TooltipContent, {
+    let unhighlight = null
+    const popover = createPopup(PopoverContent, {
       closeButton: false,
       closeOnClick: false
+    }).on('close', () => {
+      popover.remove()
+      if (unhighlight) unhighlight()
     })
     const tooltip = createPopup(TooltipContent, {
       closeButton: false,
@@ -83,40 +79,58 @@ export default {
     })
 
     map.on('load', () => {
-      map.addSource('ge-boundaries', {
+      map.addSource('ge-boundaries-buildings', {
         type: 'vector',
-        url: 'mapbox://chachopazos.ge-boundaries'
+        url: 'mapbox://chachopazos.ge-boundaries-buildings'
+      })
+
+      map.addSource('ura_planning_areas', {
+        type: 'vector',
+        url: 'mapbox://chachopazos.ura_planning_areas'
+      })
+
+      map.addLayer({
+        id: 'base_fill',
+        source: 'ura_planning_areas',
+        'source-layer': 'ura_planning_areas',
+        type: 'fill',
+        paint: {
+          'fill-color': 'transparent'
+        }
       })
 
       YEARS.forEach(year => {
         map.addLayer({
           id: 'fill_' + year,
-          source: 'ge-boundaries',
-          'source-layer': 'ge-boundaries-' + year,
+          source: 'ge-boundaries-buildings',
+          'source-layer': 'ge-boundaries-buildings',
           type: 'fill',
           paint: {
-            'fill-opacity': 0
-          }
-        })
-
-        map.addLayer({
-          id: 'outline_' + year,
-          source: 'ge-boundaries',
-          'source-layer': 'ge-boundaries-' + year,
-          type: 'line',
-          paint: {
-            'line-color': ['case',
+            'fill-color': ['case',
               ['boolean', ['feature-state', 'highlighted'], false],
-              'rgb(196,0,0)',
-              'rgba(96,96,96, 0.2)'
+              'rgba(0,0,0,0.6)',
+              ['match',
+                ['get', 'GE ' + year],
+                'East Coast', 'rgba(255,0,0,0.6)',
+                'Bedok', 'rgba(255,0,0,0.6)',
+                'Tanah Merah', 'rgba(255,0,0,0.6)',
+                'Siglap', 'rgba(255,0,0,0.6)',
+                'Changi', 'rgba(255,0,0,0.6)',
+                'Kampong Chai Chee', 'rgba(255,0,0,0.6)',
+                'Marine Parade', 'rgba(0,0,255,0.6)',
+                'Geylang Serai', 'rgba(0,0,255,0.6)',
+                'Geylang East', 'rgba(0,0,255,0.6)',
+                'Katong', 'rgba(0,0,255,0.6)',
+                'Aljunied', 'rgba(0,128,0,0.6)',
+                'Paya Lebar', 'rgba(0,128,0,0.6)',
+                'Eunos', 'rgba(0,128,0,0.6)',
+                'Tampines', 'rgba(255,128,0,0.6)',
+                'Changkat', 'rgba(255,128,0,0.6)',
+                'rgba(128,128,128,0.6)'
+              ]
             ],
-            'line-width': ['case',
-              ['boolean', ['feature-state', 'highlighted'], false],
-              2.4,
-              1.2
-            ],
-            'line-opacity': 0,
-            'line-opacity-transition': {
+            'fill-opacity': this.activeLayer === year ? 1 : 0,
+            'fill-opacity-transition': {
               duration: 500,
               delay: 0
             }
@@ -124,59 +138,59 @@ export default {
         })
       })
 
-      this.$watch('activeLayerIndex', () => {
-        const index = YEARS.length - this.activeLayerIndex - 1
-        if (this.animating) {
-          YEARS.forEach((year, i) => {
-            const opacity = OPACITY_FILTER[index - i] || 0
-            map.setPaintProperty('outline_' + year, 'line-opacity', opacity)
-          })
-        } else {
-          YEARS.forEach((year, i) => {
-            map.setPaintProperty('outline_' + year, 'line-opacity', i === index ? 1 : 0)
-          })
+      map.addLayer({
+        id: 'base_outline',
+        source: 'ura_planning_areas',
+        'source-layer': 'ura_planning_areas',
+        type: 'line',
+        paint: {
+          'line-color': 'black',
+          'line-width': 2.4,
+          'line-opacity': 1
         }
+      })
+
+      this.$watch('activeLayer', (currLayer, prevLayer) => {
+        map.setPaintProperty('fill_' + prevLayer, 'fill-opacity', 0)
+        map.setPaintProperty('fill_' + currLayer, 'fill-opacity', 1)
         if (popover.isOpen()) openPopover.call(this)
-      }, {immediate: true})
+      })
+
+      this.startAnimating()
 
       map.on('mousemove', e => {
         if (popover.isOpen()) return
         const features = map.queryRenderedFeatures(e.point, {
-          layers: ['fill_' + this.activeLayer]
+          layers: ['fill_' + this.activeLayer, 'base_fill']
         })
         if (features.length > 0) {
-          tooltip.setData(features[0].properties.constituency).trackPointer().addTo(map)
+          const key = 'GE ' + this.activeLayer
+          if (!features[0].properties[key]) return
+          tooltip.setData(features[0].properties[key]).trackPointer().addTo(map)
         } else {
           tooltip.setData(null).remove()
         }
       })
 
       map.on('click', e => {
-        unhighlight()
-        if (this.animating) clearTimeout(this.animating)
-        popover.setData(null).remove()
-        this.startAnimating()
-        this.activeLayerIndex = YEARS.length - 1
-        openPopover.call(this, e.lngLat)
+        // openPopover.call(this, e.lngLat)
       })
     })
 
+    /*
     this.$refs.search.$on('select', row => {
       const lngLat = [+row.LONGITUDE, +row.LATITUDE]
       map.flyTo({
         center: lngLat,
         zoom: 12
       })
-      unhighlight()
-      this.startAnimating(true)
-      popover.setData(null).remove()
-      this.activeLayerIndex = YEARS.length - 1
       openPopover.call(this, lngLat)
     })
 
     this.$refs.search.$on('clear', row => {
-      map.flyTo(SINGAPORE)
+      map.flyTo(BEDOK)
     })
+    */
 
     // fetch('/assets/legend.svg').then(res => res.text()).then(xml => {
     //   this.$refs.legend.innerHTML = xml
@@ -189,27 +203,26 @@ export default {
       })
       if (features.length > 0) {
         tooltip.setData(null).remove()
-        const data = features[0].properties.constituency
+        const data = Object.assign({}, features[0].properties)
+        Object.assign(data, this.additionalInfo[data.election][data.constituency])
         popover.setData(data).setLngLat(pt).addTo(map)
+        if (unhighlight) unhighlight()
         map.setFeatureState({
           source: 'ge-boundaries',
           sourceLayer,
           id: features[0].id
         }, {highlighted: true})
-        map.setLayoutProperty('outline_' + this.activeLayer, 'line-sort-key',
-          ['case', ['==', ['get', 'constituency'], data], 1, 0])
-
-        highlighted.set(features[0].id, function () {
+        unhighlight = function () {
           map.setFeatureState({
             source: 'ge-boundaries',
             sourceLayer,
             id: features[0].id
           }, {highlighted: false})
-        })
+          unhighlight = null
+        }
       } else {
-        if (this.animating) clearTimeout(this.animating)
         popover.setData(null).remove()
-        unhighlight()
+        if (unhighlight) unhighlight()
       }
     }
   }
@@ -239,7 +252,7 @@ function createPopup (Content, options) {
 $font-CuratorRegular: 'CuratorRegular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-CuratorBold: 'CuratorBold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-.stacked-map {
+.buildings-map {
   width: 100%;
   height: 800px;
 
