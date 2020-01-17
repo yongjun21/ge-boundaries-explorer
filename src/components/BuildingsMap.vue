@@ -14,9 +14,63 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 import TooltipContent from './TooltipContent'
 
-const BEDOK = {
-  center: [103.92840945179253, 1.3240468743758742],
-  zoom: 13
+const AREAS = {
+  BEDOK: {
+    center: [103.92840945179253, 1.3240468743758742],
+    zoom: 13
+  },
+  SERANGOON: {
+    center: [103.86781807199124, 1.3652014832788346],
+    zoom: 13
+  }
+}
+
+const COLORS = {
+  red: 'rgba(255,0,0,0.6)',
+  blue: 'rgba(0,0,255,0.6)',
+  green: 'rgba(0,128,0,0.6)',
+  orange: 'rgba(255,128,0,0.6)',
+  purple: 'rgba(255,0,255,0.6)',
+  black: 'rgba(0,0,0,0.6)'
+}
+
+const COLOR_SCHEME = {
+  BEDOK: [    
+    'East Coast', COLORS.red,
+    'Bedok', COLORS.red,
+    'Tanah Merah', COLORS.red,
+    'Siglap', COLORS.red,
+    'Changi', COLORS.red,
+    'Kampong Chai Chee', COLORS.red,
+    'Marine Parade', COLORS.blue,
+    'Geylang Serai', COLORS.blue,
+    'Aljunied', COLORS.green,
+    'Paya Lebar', COLORS.green,
+    'Eunos', COLORS.green,
+    'Tampines', COLORS.orange,
+    'Changkat', COLORS.orange
+  ],
+  SERANGOON: [
+    'Aljunied', COLORS.green,
+    'Hougang', COLORS.green,
+    // 'Serangoon Gardens', COLORS.green,
+    'Paya Lebar', COLORS.green,
+    'Ang Mo Kio', COLORS.red,
+    'Yio Chu Kang', COLORS.red,
+    'Teck Ghee', COLORS.red,
+    'Kebun Baru', COLORS.red,
+    'Pasir Ris-Punggol', COLORS.blue,
+    'Pasir Ris', COLORS.blue,
+    'Punggol', COLORS.blue,
+    'Eunos', COLORS.blue,
+    'Cheng San', COLORS.purple,
+    'Marine Parade', COLORS.orange,
+    // 'Braddell Heights', COLORS.orange,
+    'Bishan-Toa Payoh', COLORS.black,
+    'Toa Payoh', COLORS.black,
+    'Thomson', COLORS.black,
+    'Kim Keat', COLORS.black
+  ]
 }
 
 const YEARS = ['1988', '1991', '1997', '2001', '2006', '2011', '2015']
@@ -46,6 +100,7 @@ export default {
     }
   },
   mounted () {
+    const area = this.$route.params.area.toUpperCase()
     const map = new mapboxgl.Map(Object.assign({
       container: this.$el,
       style: 'mapbox://styles/chachopazos/ck3fc0qpp0fyd1ct5ai5owqu0',
@@ -56,7 +111,7 @@ export default {
       dragPan: true,
       dragRotate: false,
       accessToken: 'pk.eyJ1IjoiY2hhY2hvcGF6b3MiLCJhIjoiY2pkMDN3eW4wNHkwZDJ5bGc0cnpueGNxbCJ9.WWWg_OnK5e7L1RknMliY4A'
-    }, BEDOK))
+    }, AREAS[area]))
     map.touchZoomRotate.disableRotation()
 
     const nav = new mapboxgl.NavigationControl({showCompass: false})
@@ -96,28 +151,10 @@ export default {
           'source-layer': 'ge-boundaries-buildings',
           type: 'fill',
           paint: {
-            'fill-color': ['case',
-              ['boolean', ['feature-state', 'highlighted'], false],
-              'rgba(0,0,0,0.6)',
-              ['match',
-                ['get', 'GE ' + year],
-                'East Coast', 'rgba(255,0,0,0.6)',
-                'Bedok', 'rgba(255,0,0,0.6)',
-                'Tanah Merah', 'rgba(255,0,0,0.6)',
-                'Siglap', 'rgba(255,0,0,0.6)',
-                'Changi', 'rgba(255,0,0,0.6)',
-                'Kampong Chai Chee', 'rgba(255,0,0,0.6)',
-                'Marine Parade', 'rgba(0,0,255,0.6)',
-                'Geylang Serai', 'rgba(0,0,255,0.6)',
-                'Geylang East', 'rgba(0,0,255,0.6)',
-                'Katong', 'rgba(0,0,255,0.6)',
-                'Aljunied', 'rgba(0,128,0,0.6)',
-                'Paya Lebar', 'rgba(0,128,0,0.6)',
-                'Eunos', 'rgba(0,128,0,0.6)',
-                'Tampines', 'rgba(255,128,0,0.6)',
-                'Changkat', 'rgba(255,128,0,0.6)',
-                'rgba(128,128,128,0.6)'
-              ]
+            'fill-color': ['match',
+              ['get', 'GE ' + year],
+              ...COLOR_SCHEME[area],
+              'rgba(128,128,128,0.6)'
             ],
             'fill-opacity': this.activeLayer === year ? 1 : 0,
             'fill-opacity-transition': {

@@ -17,7 +17,7 @@ export default new VueRouter({
     {path: '/stacked', component: StackedMap},
     {path: '/grid', component: GridMap},
     {path: '/grid/cumulative', component: GridMap, props: {cumulative: true}},
-    {path: '/buildings', component: BuildingsMap},
+    {path: '/buildings/:area', component: BuildingsMap},
     {path: '*', redirect: '/'}
   ]
 })
