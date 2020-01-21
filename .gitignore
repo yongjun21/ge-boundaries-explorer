@@ -1,5 +1,7 @@
 data/**/*.jsonl
 data/onemap.json
+data/hdb_units.csv
+data/private_properties.csv
 
 data/semi/
 

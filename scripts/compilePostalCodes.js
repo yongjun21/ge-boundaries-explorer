@@ -19,7 +19,7 @@ promiseMap(_range(0, 1000000, 500), retrieve, {concurrency: 50}).then(results =>
       }
     })
   })
-  fs.writeFileSync('data/postal-code.json', JSON.stringify(compiled, null, 2))
+  fs.writeFileSync('data/raw/postal-code.json', JSON.stringify(compiled, null, 2))
 })
 
 function retrieve (start) {

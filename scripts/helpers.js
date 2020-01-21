@@ -56,16 +56,17 @@ function isInsidePolygon (pt, polygon) {
 }
 
 function isInside ([lng, lat], linearRing) {
-  const bbox = getBbox(linearRing)
-  if (lng < bbox[0] || lng > bbox[2]) return false
-  if (lat < bbox[1] || lat > bbox[3]) return false
+  const coords = fromCache(linearRing)
+  const n = linearRing.length * 2
+  if (lng < coords[n + 0] || lng > coords[n + 2]) return false
+  if (lat < coords[n + 1] || lat > coords[n + 3]) return false
   let isInside = false
-  for (let i = 1; i < linearRing.length; i++) {
-    const deltaYplus = linearRing[i][1] - lat
-    const deltaYminus = lat - linearRing[i - 1][1]
+  for (let i = 2; i < n; i += 2) {
+    const deltaYplus = coords[i + 1] - lat
+    const deltaYminus = lat - coords[i - 1]
     if (deltaYplus > 0 && deltaYminus <= 0) continue
     if (deltaYplus < 0 && deltaYminus >= 0) continue
-    const deltaX = (deltaYplus * linearRing[i - 1][0] + deltaYminus * linearRing[i][0]) /
+    const deltaX = (deltaYplus * coords[i - 2] + deltaYminus * coords[i]) /
       (deltaYplus + deltaYminus) - lng
     if (deltaX <= 0) continue
     isInside = !isInside
@@ -73,16 +74,21 @@ function isInside ([lng, lat], linearRing) {
   return isInside
 }
 
-const bboxes = new WeakMap()
+const cache = new Map()
 
-function getBbox (linearRing) {
-  if (bboxes.has(linearRing)) return bboxes.get(linearRing)
-  const bbox = [
+function fromCache (linearRing) {
+  let cached = cache.get(linearRing)
+  if (cached) return cached
+  cached = new Float32Array(linearRing.length * 2 + 4)
+  linearRing.forEach((lnglat, i) => {
+    cached.set(lnglat, i * 2)
+  })
+  cached.set([
     linearRing.reduce((min, pt) => pt[0] < min[0] ? pt : min)[0],
     linearRing.reduce((min, pt) => pt[1] < min[1] ? pt : min)[1],
     linearRing.reduce((max, pt) => pt[0] > max[0] ? pt : max)[0],
     linearRing.reduce((max, pt) => pt[1] > max[1] ? pt : max)[1]
-  ]
-  bboxes.set(linearRing, bbox)
-  return bbox
+  ], linearRing.length * 2)
+  cache.set(linearRing, cached)
+  return cached
 }

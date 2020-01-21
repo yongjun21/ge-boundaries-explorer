@@ -35,7 +35,7 @@ const COLORS = {
 }
 
 const COLOR_SCHEME = {
-  BEDOK: [    
+  BEDOK: [
     'East Coast', COLORS.red,
     'Bedok', COLORS.red,
     'Tanah Merah', COLORS.red,
