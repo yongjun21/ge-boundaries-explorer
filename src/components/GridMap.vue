@@ -2,7 +2,7 @@
   <div class="grid-map">
     <onemap-search ref="search" placeholder="eg. 1000 Toa Payoh or 318994" :max-length="0"></onemap-search>
     <!-- <div class="legend" ref="legend"></div> -->
-    <input class="control" type="range" min="0" max="11" step="1" v-model="activeLayerIndex" />
+    <input class="control" type="range" min="0" max="6" step="1" v-model="activeLayerIndex" />
     <h1 class="map-title">GE {{activeLayer}} Boundaries</h1>
   </div>
 </template>
@@ -23,7 +23,7 @@ const SINGAPORE = {
   zoom: 11
 }
 
-const YEARS = ['1968', '1972', '1976', '1980', '1984', '1988', '1991', '1997', '2001', '2006', '2011', '2015']
+const YEARS = ['1988', '1991', '1997', '2001', '2006', '2011', '2015']
 
 export default {
   name: 'GridMap',
@@ -222,13 +222,11 @@ function getFillColor2 (year) {
   if (index === 0) return 'rgba(255,255,255,0.6)'
   const exp = ['match',
     ['+'],
-    1, 'rgba(255,255,178,0.6)',
-    2, 'rgba(254,217,118,0.6)',
-    3, 'rgba(254,178,76,0.6)',
-    4, 'rgba(253,141,60,0.6)',
-    5, 'rgba(252,78,42,0.6)',
-    6, 'rgba(227,26,28,0.6)',
-    7, 'rgba(177,0,38,0.6)',
+    1, 'rgba(254,237,222,0.8)',
+    2, 'rgba(253,190,133,0.8)',
+    3, 'rgba(253,141,60,0.8)',
+    4, 'rgba(230,85,13,0.8)',
+    5, 'rgba(166,54,3,0.8)',
     'rgba(255,255,255,0.6)'
   ]
   for (let i = 0; i < index; i++) {
