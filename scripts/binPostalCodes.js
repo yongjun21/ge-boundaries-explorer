@@ -5,15 +5,26 @@ const {isInsideFeature} = require('./helpers')
 
 const onemap = require('../data/onemap.json')
 
-const hdbUnits = {}
+const hdb = {}
+fs.readFileSync('data/hdb_built.csv', 'utf-8')
+  .replace(/"/g, '')
+  .split('\r\n')
+  .slice(1)
+  .forEach(line => {
+    const [code, town, built] = line.split(',')
+    hdb[code] = {
+      town,
+      built: built === 'NULL' ? null : built,
+      units: {}
+    }
+  })
 fs.readFileSync('data/hdb_units.csv', 'utf-8')
   .replace(/"/g, '')
   .split('\r\n')
   .slice(1)
   .forEach(line => {
     const [code, type, count] = line.split(',')
-    hdbUnits[code] = hdbUnits[code] || {}
-    hdbUnits[code][type] = +count
+    if (code in hdb) hdb[code].units[type] = +count
   })
 
 const privateProps = {}
@@ -50,7 +61,7 @@ onemap.forEach((row, i) => {
     street: row.ROAD_NAME,
     project: row.BUILDING,
     constituencies: matchedConstituencies,
-    hdb_units: hdbUnits[row.POSTAL],
+    hdb: hdb[row.POSTAL],
     private: privateProps[[row.ROAD_NAME, row.BUILDING]]
   }
 })
