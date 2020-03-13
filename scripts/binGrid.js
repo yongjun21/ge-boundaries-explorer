@@ -60,8 +60,8 @@ gridded.forEach(grid => {
   }
 })
 
-fs.writeFileSync('data/processed/grid.json', JSON.stringify(table, null, 2))
-fs.writeFileSync('data/processed/grid/fill.jsonl', geojson.map(f => JSON.stringify(f)).join('\n'))
+// fs.writeFileSync('data/processed/grid.json', JSON.stringify(table, null, 2))
+// fs.writeFileSync('data/processed/grid/fill.jsonl', geojson.map(f => JSON.stringify(f)).join('\n'))
 
 function getFeatures (years) {
   const features = []
@@ -78,7 +78,7 @@ function getFeatures (years) {
 
 const params = {
   spreadsheetId: '1K-ph37IQl_j0yAAa8MU8ahvY0DqABS7ECLKs1hNMw8o',
-  range: 'Grid!A1:P',
+  range: 'Grid!A1',
   valueInputOption: 'USER_ENTERED',
   resource: {
     fields: ['id', 'lon', 'lat', 'changed', ...YEARS.map(y => 'GE ' + y)],

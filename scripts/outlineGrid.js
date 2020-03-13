@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const data = fs.readFileSync('data/processed/grid.jsonl', 'utf-8').split('\n').map(JSON.parse)
+const data = fs.readFileSync('data/processed/grid/fill.jsonl', 'utf-8').split('\n').map(JSON.parse)
 
 const {YEARS} = require('./constants')
 const ADJACENTS = [

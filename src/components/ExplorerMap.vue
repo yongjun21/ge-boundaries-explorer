@@ -2,7 +2,7 @@
   <div class="explorer-map">
     <onemap-search ref="search" placeholder="eg. 1000 Toa Payoh or 318994" :max-length="0"></onemap-search>
     <div class="legend" ref="legend"></div>
-    <input class="control" type="range" min="0" max="11" step="1" v-model="activeLayerIndex" />
+    <input class="control" type="range" min="0" max="12" step="1" v-model="activeLayerIndex" />
     <h1 class="map-title">GE {{activeLayer}} Boundaries</h1>
   </div>
 </template>
@@ -21,7 +21,7 @@ const SINGAPORE = {
   zoom: 11
 }
 
-const YEARS = ['1968', '1972', '1976', '1980', '1984', '1988', '1991', '1997', '2001', '2006', '2011', '2015']
+const YEARS = ['1968', '1972', '1976', '1980', '1984', '1988', '1991', '1997', '2001', '2006', '2011', '2015', '2020']
 
 export default {
   name: 'ExplorerMap',
@@ -30,7 +30,7 @@ export default {
   },
   inject: ['additionalInfo'],
   data () {
-    const year = this.$route.query.year || '2015'
+    const year = this.$route.query.year || '2020'
     const index = YEARS.filter(y => year < y).length
     return {
       activeLayerIndex: Math.min(index, YEARS.length - 1)
@@ -141,7 +141,7 @@ export default {
             source: 'ge-boundaries',
             'source-layer': 'ge-boundaries-' + year,
             type: 'fill',
-            filter: ['!=', ['get', 'winner'], 'PAP'],
+            filter: ['all', ['has', 'winner'], ['!=', ['get', 'winner'], 'PAP']],
             paint: {
               'fill-pattern': 'pattern',
               'fill-opacity': this.activeLayer === year ? 1 : 0,

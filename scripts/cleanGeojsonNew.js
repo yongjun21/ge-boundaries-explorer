@@ -5,6 +5,9 @@ const _clockwise = require('@turf/boolean-clockwise').default
 
 const {isLinearRing, nestedMap, round} = require('./helpers')
 
+const SVY21 = require('./SVY21')
+const svy21 = new SVY21()
+
 let uid = 563
 
 getConstituencies().then(constituencies => {
@@ -15,7 +18,7 @@ getConstituencies().then(constituencies => {
   geojson.features.forEach(f => {
     try {
       const election = 'GE ' + year
-      const constituency = f.properties.constituency.toUpperCase().replace(' - ', '-')
+      const constituency = f.properties.ED_DESC.toUpperCase().replace(' - ', '-')
       const matched = constituencies.find(row => row.election === election && row.constituencyUpper === constituency)
       f.properties = {
         election,
@@ -66,7 +69,11 @@ function getConstituencies () {
 
 function getCoordinates (geometry) {
   const round7 = round(7)
-  const rounded = nestedMap(geometry.coordinates, round7, geometry.type === 'MultiPolygon' ? 4 : 3)
+  const coordinates = nestedMap(geometry.coordinates, ([x, y]) => {
+    const {lon, lat} = svy21.computeLatLon(y, x)
+    return [lon, lat]
+  }, geometry.type === 'MultiPolygon' ? 3 : 2)
+  const rounded = nestedMap(coordinates, round7, geometry.type === 'MultiPolygon' ? 4 : 3)
   const closedLoop = nestedMap(rounded, linestring => {
     if (!isLinearRing(linestring)) linestring.push(linestring[0])
     return linestring

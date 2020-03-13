@@ -25,7 +25,7 @@ YEARS.slice(5).forEach(year => {
       ) return
       const intersection = _intersect(_curr[i], _prev[j])
       if (!intersection) return
-      normGeometry(intersection.geometry).forEach(geometry => {
+      normGeometry(_buffer(intersection.geometry, BUFFER).geometry).forEach(geometry => {
         const feature = {
           id: n++,
           type: 'Feature',
@@ -35,7 +35,7 @@ YEARS.slice(5).forEach(year => {
             prev_constituency: g.properties.constituency,
             prev_grc: g.properties.grc
           },
-          geometry: _buffer(geometry, BUFFER).geometry
+          geometry
         }
         changes.push(feature)
       })

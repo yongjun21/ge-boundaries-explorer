@@ -23,7 +23,7 @@ const SINGAPORE = {
   zoom: 11
 }
 
-const YEARS = ['1988', '1991', '1997', '2001', '2006', '2011', '2015']
+const YEARS = ['1988', '1991', '1997', '2001', '2006', '2011', '2015', '2020']
 
 export default {
   name: 'GridMap',
@@ -33,7 +33,7 @@ export default {
   inject: ['additionalInfo'],
   props: ['cumulative'],
   data () {
-    const year = this.$route.query.year || '2015'
+    const year = this.$route.query.year || '2020'
     const index = YEARS.filter(y => year < y).length
     return {
       activeLayerIndex: Math.min(index, YEARS.length - 1)
