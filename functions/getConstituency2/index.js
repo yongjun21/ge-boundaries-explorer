@@ -20,7 +20,11 @@ exports.handler = async function (event) {
   if (!(postal in index)) return {statusCode: 404}
 
   const i = index[postal]
-  const result = {lon: coordinates[i * 2], lat: coordinates[i * 2] + 1}
+  const result = {
+    postal_code: postal,
+    lon: coordinates[i * 2],
+    lat: coordinates[i * 2 + 1]
+  }
   years.forEach(year => {
     const y = YEARS.filter(y => y <= year).shift()
     if (y == null) return
@@ -30,7 +34,9 @@ exports.handler = async function (event) {
     result['GE ' + y] = names[k - 1]
   })
 
-  const headers = {}
+  const headers = {
+    'Cache-Control': 'public, max-age=86400, must-revalidate'
+  }
   if (process.env.NODE_ENV === 'production') {
     const origin = event.headers && (event.headers.origin || event.headers.Origin)
     if (ALLOWED_ORIGINS.includes(origin)) headers['Access-Control-Allow-Origin'] = origin

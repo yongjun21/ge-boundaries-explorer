@@ -15,7 +15,7 @@ exports.handler = async function (event) {
   const lon = q && q.lon
   const lat = q && q.lat
   if (!lon || !lat) return {statusCode: 400}
-  const result = {}
+  const result = {lon, lat}
   years.forEach(year => {
     const y = YEARS.filter(y => y <= year).pop()
     if (y == null) return
@@ -24,7 +24,9 @@ exports.handler = async function (event) {
     result['GE ' + y] = constituency
   })
 
-  const headers = {}
+  const headers = {
+    'Cache-Control': 'public, max-age=86400, must-revalidate'
+  }
   if (process.env.NODE_ENV === 'production') {
     const origin = event.headers && (event.headers.origin || event.headers.Origin)
     if (ALLOWED_ORIGINS.includes(origin)) headers['Access-Control-Allow-Origin'] = origin
