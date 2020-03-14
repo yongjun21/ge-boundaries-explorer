@@ -10,7 +10,7 @@ data.forEach(datum => {
   if (!datum.constituencies['GE 2015']) return
   const row = {
     postal_code: datum.postal_code,
-    constituency: datum.constituencies['GE 2015'],
+    constituency: datum.constituencies['GE 2020'],
     is_landed: datum.private === 'Landed' ? 1 : 0,
     is_non_landed: datum.private === 'Non-landed' ? 1 : 0,
     is_hdb: datum.hdb ? 1 : 0,

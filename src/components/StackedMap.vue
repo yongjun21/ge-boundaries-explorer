@@ -2,7 +2,7 @@
   <div class="stacked-map">
     <onemap-search ref="search" placeholder="eg. 1000 Toa Payoh or 318994" :max-length="0"></onemap-search>
     <!-- <div class="legend" ref="legend"></div> -->
-    <input class="control" type="range" min="0" max="11" step="1" v-model="activeLayerIndex" />
+    <input class="control" type="range" min="0" max="12" step="1" v-model="activeLayerIndex" />
     <h1 class="map-title">GE {{activeLayer}} Boundaries</h1>
   </div>
 </template>
@@ -20,7 +20,7 @@ const SINGAPORE = {
   zoom: 11
 }
 
-const YEARS = ['1968', '1972', '1976', '1980', '1984', '1988', '1991', '1997', '2001', '2006', '2011', '2015']
+const YEARS = ['1968', '1972', '1976', '1980', '1984', '1988', '1991', '1997', '2001', '2006', '2011', '2015', '2020']
 
 const OPACITY_FILTER = [1, 0.05, 0.05, 0.05, 0.05]
 
