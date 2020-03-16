@@ -10,7 +10,7 @@ const LEVELS = {
 module.exports = function (features, width, height, padding = 0, preserveAspectRatio = 'xMidYMid meet') {
   const viewBox = `${-padding} ${-padding} ${width} ${height}`
   const pAR = preserveAspectRatio.match(/x(Min|Mid|Max)Y(Min|Mid|Max)( meet| slice)?/)
-  const header = `<svg viewBox="${viewBox}" preserveAspectRatio="${preserveAspectRatio}">`
+  const header = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" preserveAspectRatio="${preserveAspectRatio}">`
   const footer = '</svg>'
   const children = []
 
