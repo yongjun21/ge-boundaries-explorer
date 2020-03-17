@@ -7,22 +7,14 @@ const LEVELS = {
   'LineString': 1
 }
 
-module.exports = function (features, width, height, padding = 0, preserveAspectRatio = 'xMidYMid meet') {
+module.exports = function (features, width, height, padding = 0, bbox = null, preserveAspectRatio = 'xMidYMid meet') {
   const viewBox = `${-padding} ${-padding} ${width} ${height}`
   const pAR = preserveAspectRatio.match(/x(Min|Mid|Max)Y(Min|Mid|Max)( meet| slice)?/)
   const header = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" preserveAspectRatio="${preserveAspectRatio}">`
   const footer = '</svg>'
   const children = []
 
-  const origBbox = [Infinity, Infinity, -Infinity, -Infinity]
-  features.forEach(f => {
-    nestedMap(f.geometry.coordinates, pt => {
-      if (pt[0] < origBbox[0]) origBbox[0] = pt[0]
-      if (pt[1] < origBbox[1]) origBbox[1] = pt[1]
-      if (pt[0] > origBbox[2]) origBbox[2] = pt[0]
-      if (pt[1] > origBbox[3]) origBbox[3] = pt[1]
-    }, LEVELS[f.geometry.type])
-  })
+  const origBbox = bbox || getBboxFromData(features)
 
   const destBbox = [0, 0, width - 2 * padding, height - 2 * padding]
   const origAR = (origBbox[2] - origBbox[0]) / (origBbox[3] - origBbox[1])
@@ -115,6 +107,8 @@ module.exports = function (features, width, height, padding = 0, preserveAspectR
   return header + children.join() + footer
 }
 
+module.exports.getBboxFromData = getBboxFromData
+
 function getProjection (origBbox, destBbox) {
   return pt => {
     const tx = (pt[0] - origBbox[0]) / (origBbox[2] - origBbox[0])
@@ -124,4 +118,17 @@ function getProjection (origBbox, destBbox) {
       Math.round((1 - ty) * destBbox[1] + ty * destBbox[3])
     ]
   }
+}
+
+function getBboxFromData (data) {
+  const bbox = [Infinity, Infinity, -Infinity, -Infinity]
+  data.forEach(f => {
+    nestedMap(f.geometry.coordinates, pt => {
+      if (pt[0] < bbox[0]) bbox[0] = pt[0]
+      if (pt[1] < bbox[1]) bbox[1] = pt[1]
+      if (pt[0] > bbox[2]) bbox[2] = pt[0]
+      if (pt[1] > bbox[3]) bbox[3] = pt[1]
+    }, LEVELS[f.geometry.type])
+  })
+  return bbox
 }
