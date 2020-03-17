@@ -20,7 +20,7 @@ YEARS.forEach((year, i) => {
     if (
       props[currElection + '_constituency'] !== props[prevElection + '_constituency'] ||
       (props[currElection + '_grc'] === 'SMC') !== (props[prevElection + '_grc'] === 'SMC')
-    ) props[currElection + '_changed'] = 1
+    ) props['changed-' + year] = 1
   })
 })
 
@@ -28,17 +28,29 @@ grid.forEach(f => {
   const props = f.properties
   let changes = 0
   YEARS.slice(1).forEach(year => {
-    if (props['GE ' + year + '_changed']) {
+    if (props['changed-' + year]) {
       changes++
-      props['GE ' + year + '_cum_changes'] = changes
     }
+    props['changes-' + year] = changes
   })
 })
 
+const features = []
+
 YEARS.slice(1).forEach(year => {
   const background = require(`../data/processed/geojson/${year}.json`).features
-  const gridSubset = grid.filter(f => f.properties['GE ' + year + '_changed'])
-    .map(f => Object.assign({}, f, {properties: {changes: f.properties['GE ' + year + '_cum_changes']}}))
-  const svg = geojson2svg(background.concat(gridSubset), 2400, 1600, 100, bbox)
-  fs.writeFileSync(`data/svg/changes/${year}.svg`, svg)
+  background.forEach(f => features.push(f))
 })
+grid.forEach(f => {
+  const properties = {}
+  Object.entries(f.properties).forEach(([key, value]) => {
+    if (key.match(/^change(d|s)-/)) {
+      properties[key] = value
+    }
+  })
+  features.push(Object.assign({}, f, {properties}))
+})
+
+const svg = geojson2svg(features, 2400, 1600, 100, bbox)
+
+fs.writeFileSync('data/svg/changes/combined.svg', svg)
