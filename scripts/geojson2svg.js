@@ -104,7 +104,7 @@ module.exports = function (features, width, height, padding = 0, bbox = null, pr
     }
   })
 
-  return header + children.join() + footer
+  return header + children.join('') + footer
 }
 
 module.exports.getBboxFromData = getBboxFromData
