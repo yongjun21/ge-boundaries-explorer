@@ -35,20 +35,18 @@ grid.forEach(f => {
   })
 })
 
-const features = []
-
-YEARS.slice(1).forEach(year => {
-  const background = require(`../data/processed/geojson/${year}.json`).features
-  background.forEach(f => features.push(f))
-})
-grid.forEach(f => {
+const features = grid.map(f => {
   const properties = {}
   Object.entries(f.properties).forEach(([key, value]) => {
     if (key.match(/^change(d|s)-/)) {
       properties[key] = value
     }
   })
-  features.push(Object.assign({}, f, {properties}))
+  return Object.assign({}, f, {properties})
+})
+YEARS.slice(1).forEach(year => {
+  const background = require(`../data/processed/geojson/${year}.json`).features
+  background.forEach(f => features.push(f))
 })
 
 const svg = geojson2svg(features, 2400, 1600, 100, bbox)

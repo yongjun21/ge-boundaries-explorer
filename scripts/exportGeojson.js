@@ -39,6 +39,6 @@ YEARS.slice(1).forEach(year => {
   const background = require(`../data/processed/geojson/${year}.json`).features
   const gridSubset = grid.filter(f => f.properties['GE ' + year + '_changed'])
     .map(f => Object.assign({}, f, {properties: {changes: f.properties['GE ' + year + '_cum_changes']}}))
-  const svg = geojson2svg(background.concat(gridSubset), 2400, 1600, 100, bbox)
+  const svg = geojson2svg(gridSubset.concat(background), 2400, 1600, 100, bbox)
   fs.writeFileSync(`data/svg/changes/${year}.svg`, svg)
 })
