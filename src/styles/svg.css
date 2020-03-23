@@ -1,0 +1,336 @@
+path[data-election] {
+  display: none;
+  stroke: #333;
+  stroke-width: 2;
+  fill: none;
+  opacity: 0.3;
+}
+
+.ge-2020 [data-election="GE 2020"],
+.ge-2015 [data-election="GE 2015"],
+.ge-2011 [data-election="GE 2011"],
+.ge-2006 [data-election="GE 2006"],
+.ge-2001 [data-election="GE 2001"],
+.ge-1997 [data-election="GE 1997"],
+.ge-1991 [data-election="GE 1991"],
+.ge-1988 [data-election="GE 1988"] {
+  display: inline;
+}
+
+path[data-changes],
+path[data-changes-2020] {
+  stroke: none;
+  fill: none;
+  stroke-width: 0.5;
+  opacity: 0.8;
+}
+
+path[data-changes-2020] {
+  transition: fill 500ms;
+}
+
+path[data-changes="0"] {
+  fill: #eff5f9;
+  stroke: #eff5f9;
+}
+
+path[data-changes="1"] {
+  fill: #cfd9ed;
+  stroke: #cfd9ed;
+}
+
+path[data-changes="2"] {
+  fill: #b1bee0;
+  stroke: #b1bee0;
+}
+
+path[data-changes="3"] {
+  fill: #94a4d4;
+  stroke: #94a4d4;
+}
+
+path[data-changes="4"] {
+  fill: #8d80b9;
+  stroke: #8d80b9;
+}
+
+path[data-changes="5"] {
+  fill: #9d5594;
+  stroke: #9d5594;
+}
+
+path[data-changes="6"] {
+  fill: #ad2c70;
+  stroke: #ad2c70;
+}
+
+path[data-changes="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+
+.ge-1988 path[data-changes-1988="0"] {
+  fill: #eff5f9;
+  stroke: #eff5f9;
+}
+.ge-1988 path[data-changes-1988="1"] {
+  fill: #cfd9ed;
+  stroke: #cfd9ed;
+}
+.ge-1988 path[data-changes-1988="2"] {
+  fill: #b1bee0;
+  stroke: #b1bee0;
+}
+.ge-1988 path[data-changes-1988="3"] {
+  fill: #94a4d4;
+  stroke: #94a4d4;
+}
+.ge-1988 path[data-changes-1988="4"] {
+  fill: #8d80b9;
+  stroke: #8d80b9;
+}
+.ge-1988 path[data-changes-1988="5"] {
+  fill: #9d5594;
+  stroke: #9d5594;
+}
+.ge-1988 path[data-changes-1988="6"] {
+  fill: #ad2c70;
+  stroke: #ad2c70;
+}
+.ge-1988 path[data-changes-1988="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+
+.ge-1991 path[data-changes-1991="0"] {
+  fill: #eff5f9;
+  stroke: #eff5f9;
+}
+.ge-1991 path[data-changes-1991="1"] {
+  fill: #cfd9ed;
+  stroke: #cfd9ed;
+}
+.ge-1991 path[data-changes-1991="2"] {
+  fill: #b1bee0;
+  stroke: #b1bee0;
+}
+.ge-1991 path[data-changes-1991="3"] {
+  fill: #94a4d4;
+  stroke: #94a4d4;
+}
+.ge-1991 path[data-changes-1991="4"] {
+  fill: #8d80b9;
+  stroke: #8d80b9;
+}
+.ge-1991 path[data-changes-1991="5"] {
+  fill: #9d5594;
+  stroke: #9d5594;
+}
+.ge-1991 path[data-changes-1991="6"] {
+  fill: #ad2c70;
+  stroke: #ad2c70;
+}
+.ge-1991 path[data-changes-1991="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+
+.ge-1997 path[data-changes-1997="0"] {
+  fill: #eff5f9;
+  stroke: #eff5f9;
+}
+.ge-1997 path[data-changes-1997="1"] {
+  fill: #cfd9ed;
+  stroke: #cfd9ed;
+}
+.ge-1997 path[data-changes-1997="2"] {
+  fill: #b1bee0;
+  stroke: #b1bee0;
+}
+.ge-1997 path[data-changes-1997="3"] {
+  fill: #94a4d4;
+  stroke: #94a4d4;
+}
+.ge-1997 path[data-changes-1997="4"] {
+  fill: #8d80b9;
+  stroke: #8d80b9;
+}
+.ge-1997 path[data-changes-1997="5"] {
+  fill: #9d5594;
+  stroke: #9d5594;
+}
+.ge-1997 path[data-changes-1997="6"] {
+  fill: #ad2c70;
+  stroke: #ad2c70;
+}
+.ge-1997 path[data-changes-1997="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+
+.ge-2001 path[data-changes-2001="0"] {
+  fill: #eff5f9;
+  stroke: #eff5f9;
+}
+.ge-2001 path[data-changes-2001="1"] {
+  fill: #cfd9ed;
+  stroke: #cfd9ed;
+}
+.ge-2001 path[data-changes-2001="2"] {
+  fill: #b1bee0;
+  stroke: #b1bee0;
+}
+.ge-2001 path[data-changes-2001="3"] {
+  fill: #94a4d4;
+  stroke: #94a4d4;
+}
+.ge-2001 path[data-changes-2001="4"] {
+  fill: #8d80b9;
+  stroke: #8d80b9;
+}
+.ge-2001 path[data-changes-2001="5"] {
+  fill: #9d5594;
+  stroke: #9d5594;
+}
+.ge-2001 path[data-changes-2001="6"] {
+  fill: #ad2c70;
+  stroke: #ad2c70;
+}
+.ge-2001 path[data-changes-2001="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+
+.ge-2006 path[data-changes-2006="0"] {
+  fill: #eff5f9;
+  stroke: #eff5f9;
+}
+.ge-2006 path[data-changes-2006="1"] {
+  fill: #cfd9ed;
+  stroke: #cfd9ed;
+}
+.ge-2006 path[data-changes-2006="2"] {
+  fill: #b1bee0;
+  stroke: #b1bee0;
+}
+.ge-2006 path[data-changes-2006="3"] {
+  fill: #94a4d4;
+  stroke: #94a4d4;
+}
+.ge-2006 path[data-changes-2006="4"] {
+  fill: #8d80b9;
+  stroke: #8d80b9;
+}
+.ge-2006 path[data-changes-2006="5"] {
+  fill: #9d5594;
+  stroke: #9d5594;
+}
+.ge-2006 path[data-changes-2006="6"] {
+  fill: #ad2c70;
+  stroke: #ad2c70;
+}
+.ge-2006 path[data-changes-2006="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+
+.ge-2011 path[data-changes-2011="0"] {
+  fill: #eff5f9;
+  stroke: #eff5f9;
+}
+.ge-2011 path[data-changes-2011="1"] {
+  fill: #cfd9ed;
+  stroke: #cfd9ed;
+}
+.ge-2011 path[data-changes-2011="2"] {
+  fill: #b1bee0;
+  stroke: #b1bee0;
+}
+.ge-2011 path[data-changes-2011="3"] {
+  fill: #94a4d4;
+  stroke: #94a4d4;
+}
+.ge-2011 path[data-changes-2011="4"] {
+  fill: #8d80b9;
+  stroke: #8d80b9;
+}
+.ge-2011 path[data-changes-2011="5"] {
+  fill: #9d5594;
+  stroke: #9d5594;
+}
+.ge-2011 path[data-changes-2011="6"] {
+  fill: #ad2c70;
+  stroke: #ad2c70;
+}
+.ge-2011 path[data-changes-2011="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+
+.ge-2015 path[data-changes-2015="0"] {
+  fill: #eff5f9;
+  stroke: #eff5f9;
+}
+.ge-2015 path[data-changes-2015="1"] {
+  fill: #cfd9ed;
+  stroke: #cfd9ed;
+}
+.ge-2015 path[data-changes-2015="2"] {
+  fill: #b1bee0;
+  stroke: #b1bee0;
+}
+.ge-2015 path[data-changes-2015="3"] {
+  fill: #94a4d4;
+  stroke: #94a4d4;
+}
+.ge-2015 path[data-changes-2015="4"] {
+  fill: #8d80b9;
+  stroke: #8d80b9;
+}
+.ge-2015 path[data-changes-2015="5"] {
+  fill: #9d5594;
+  stroke: #9d5594;
+}
+.ge-2015 path[data-changes-2015="6"] {
+  fill: #ad2c70;
+  stroke: #ad2c70;
+}
+.ge-2015 path[data-changes-2015="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+
+.ge-2020 path[data-changes-2020="0"] {
+  fill: #eff5f9;
+  stroke: #eff5f9;
+}
+.ge-2020 path[data-changes-2020="1"] {
+  fill: #cfd9ed;
+  stroke: #cfd9ed;
+}
+.ge-2020 path[data-changes-2020="2"] {
+  fill: #b1bee0;
+  stroke: #b1bee0;
+}
+.ge-2020 path[data-changes-2020="3"] {
+  fill: #94a4d4;
+  stroke: #94a4d4;
+}
+.ge-2020 path[data-changes-2020="4"] {
+  fill: #8d80b9;
+  stroke: #8d80b9;
+}
+.ge-2020 path[data-changes-2020="5"] {
+  fill: #9d5594;
+  stroke: #9d5594;
+}
+.ge-2020 path[data-changes-2020="6"] {
+  fill: #ad2c70;
+  stroke: #ad2c70;
+}
+.ge-2020 path[data-changes-2020="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+
+/*# sourceMappingURL=svg.css.map */

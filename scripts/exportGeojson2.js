@@ -4,6 +4,8 @@ const geojson2svg = require('./geojson2svg')
 
 const {YEARS} = require('./constants')
 
+const STYLE = fs.readFileSync(path.join(__dirname, '../src/styles/svg.css'), 'utf-8')
+
 const grid = fs.readFileSync(path.join(__dirname, '../data/processed/grid/fill.jsonl'), 'utf-8').split('\n').map(line => JSON.parse(line))
 
 const background2020 = require(`../data/processed/geojson/2020.json`).features
@@ -49,6 +51,6 @@ YEARS.slice(1).forEach(year => {
   background.forEach(f => features.push(f))
 })
 
-const svg = geojson2svg(features, 2400, 1600, 100, bbox)
+const svg = geojson2svg(features, 2400, 1600, 100, bbox, undefined, 'ge-2020', STYLE)
 
 fs.writeFileSync('data/svg/changes/combined.svg', svg)

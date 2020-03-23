@@ -1,0 +1,91 @@
+$cols:
+  rgb(239, 245, 249),
+  rgb(207, 217, 237),
+  rgb(177, 190, 224),
+  rgb(148, 164, 212),
+  rgb(141, 128, 185),
+  rgb(157, 85, 148),
+  rgb(173, 44, 112),
+  rgb(189, 0, 79);
+
+@mixin get-grid-color ($col: #333) {
+  fill: $col;
+  stroke: $col;
+}
+
+@mixin set_year_color ($year) {
+  @for $i from 1 through length($cols) {
+    path[data-changes-#{$year}="#{$i - 1}"] {
+      @include get-grid-color(nth($cols, $i));
+    }
+  }
+}
+
+path[data-election] {
+  display: none;
+  stroke: #333;
+  stroke-width: 2;
+  fill: none;
+  opacity: 0.3;
+}
+
+.ge-2020 [data-election="GE 2020"],
+.ge-2015 [data-election="GE 2015"],
+.ge-2011 [data-election="GE 2011"],
+.ge-2006 [data-election="GE 2006"],
+.ge-2001 [data-election="GE 2001"],
+.ge-1997 [data-election="GE 1997"],
+.ge-1991 [data-election="GE 1991"],
+.ge-1988 [data-election="GE 1988"] {
+  display: inline;
+}
+
+path[data-changes],
+path[data-changes-2020] {
+  stroke: none;
+  fill: none;
+  stroke-width: 0.5;
+  opacity: 0.8;
+}
+
+path[data-changes-2020] {
+  transition: fill 500ms;
+}
+
+@for $i from 1 through length($cols) {
+  path[data-changes="#{$i - 1}"] {
+    @include get-grid-color(nth($cols, $i));
+  }
+}
+
+.ge-1988 {
+  @include set_year_color('1988');
+}
+
+.ge-1991 {
+  @include set_year_color('1991');
+}
+
+.ge-1997 {
+  @include set_year_color('1997');
+}
+
+.ge-2001 {
+  @include set_year_color('2001');
+}
+
+.ge-2006 {
+  @include set_year_color('2006');
+}
+
+.ge-2011 {
+  @include set_year_color('2011');
+}
+
+.ge-2015 {
+  @include set_year_color('2015');
+}
+
+.ge-2020 {
+  @include set_year_color('2020');
+}

@@ -7,10 +7,11 @@ const LEVELS = {
   'LineString': 1
 }
 
-module.exports = function (features, width, height, padding = 0, bbox = null, preserveAspectRatio = 'xMidYMid meet') {
+module.exports = function (features, width, height, padding = 0, bbox = null, preserveAspectRatio = 'xMidYMid meet', className = null, style = null) {
   const viewBox = `${-padding} ${-padding} ${width} ${height}`
   const pAR = preserveAspectRatio.match(/x(Min|Mid|Max)Y(Min|Mid|Max)( meet| slice)?/)
-  const header = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" preserveAspectRatio="${preserveAspectRatio}">`
+  let header = `<svg ${className ? `class="${className}" ` : ''}xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" preserveAspectRatio="${preserveAspectRatio}">`
+  if (style) header += `<style>${style}</style>`
   const footer = '</svg>'
   const children = []
 
