@@ -41,7 +41,7 @@ YEARS.slice(1).forEach(year => {
   const background = require(`../data/processed/geojson/${year}.json`).features
   const gridSubset = grid.filter(f => f.properties['GE ' + year + '_changed'])
     .map(f => Object.assign({}, f, {properties: {changes: f.properties['GE ' + year + '_changes']}}))
-  const gridFull = grid
+  const gridFull = grid.filter(f => f.properties['GE ' + year + '_constituency'])
     .map(f => Object.assign({}, f, {properties: {changes: f.properties['GE ' + year + '_changes']}}))
   const svgSubset = geojson2svg(gridSubset.concat(background), 2400, 1600, 100, bbox, undefined, 'ge-' + year, STYLE)
   const svgFull = geojson2svg(gridFull.concat(background), 2400, 1600, 100, bbox, undefined, 'ge-' + year, STYLE)
