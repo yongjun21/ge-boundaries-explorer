@@ -23,10 +23,11 @@ path[data-changes-2020] {
   fill: none;
   stroke-width: 0.5;
   opacity: 0.8;
+  transition: fill 500ms, stroke 500ms;
 }
-
-path[data-changes-2020] {
-  transition: fill 500ms;
+.filter path[data-changes],
+.filter path[data-changes-2020] {
+  display: none;
 }
 
 path[data-changes="0"] {
@@ -69,6 +70,9 @@ path[data-changes="7"] {
   stroke: #bd004f;
 }
 
+.ge-1988 path[data-changed-1988] {
+  display: inline;
+}
 .ge-1988 path[data-changes-1988="0"] {
   fill: #eff5f9;
   stroke: #eff5f9;
@@ -102,6 +106,9 @@ path[data-changes="7"] {
   stroke: #bd004f;
 }
 
+.ge-1991 path[data-changed-1991] {
+  display: inline;
+}
 .ge-1991 path[data-changes-1991="0"] {
   fill: #eff5f9;
   stroke: #eff5f9;
@@ -135,6 +142,9 @@ path[data-changes="7"] {
   stroke: #bd004f;
 }
 
+.ge-1997 path[data-changed-1997] {
+  display: inline;
+}
 .ge-1997 path[data-changes-1997="0"] {
   fill: #eff5f9;
   stroke: #eff5f9;
@@ -168,6 +178,9 @@ path[data-changes="7"] {
   stroke: #bd004f;
 }
 
+.ge-2001 path[data-changed-2001] {
+  display: inline;
+}
 .ge-2001 path[data-changes-2001="0"] {
   fill: #eff5f9;
   stroke: #eff5f9;
@@ -201,6 +214,9 @@ path[data-changes="7"] {
   stroke: #bd004f;
 }
 
+.ge-2006 path[data-changed-2006] {
+  display: inline;
+}
 .ge-2006 path[data-changes-2006="0"] {
   fill: #eff5f9;
   stroke: #eff5f9;
@@ -234,6 +250,9 @@ path[data-changes="7"] {
   stroke: #bd004f;
 }
 
+.ge-2011 path[data-changed-2011] {
+  display: inline;
+}
 .ge-2011 path[data-changes-2011="0"] {
   fill: #eff5f9;
   stroke: #eff5f9;
@@ -267,6 +286,9 @@ path[data-changes="7"] {
   stroke: #bd004f;
 }
 
+.ge-2015 path[data-changed-2015] {
+  display: inline;
+}
 .ge-2015 path[data-changes-2015="0"] {
   fill: #eff5f9;
   stroke: #eff5f9;
@@ -300,6 +322,9 @@ path[data-changes="7"] {
   stroke: #bd004f;
 }
 
+.ge-2020 path[data-changed-2020] {
+  display: inline;
+}
 .ge-2020 path[data-changes-2020="0"] {
   fill: #eff5f9;
   stroke: #eff5f9;

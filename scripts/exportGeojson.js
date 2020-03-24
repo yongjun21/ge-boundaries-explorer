@@ -32,15 +32,19 @@ grid.forEach(f => {
   YEARS.slice(1).forEach(year => {
     if (props['GE ' + year + '_changed']) {
       changes++
-      props['GE ' + year + '_cum_changes'] = changes
     }
+    props['GE ' + year + '_changes'] = changes
   })
 })
 
 YEARS.slice(1).forEach(year => {
   const background = require(`../data/processed/geojson/${year}.json`).features
   const gridSubset = grid.filter(f => f.properties['GE ' + year + '_changed'])
-    .map(f => Object.assign({}, f, {properties: {changes: f.properties['GE ' + year + '_cum_changes']}}))
-  const svg = geojson2svg(gridSubset.concat(background), 2400, 1600, 100, bbox, undefined, 'ge-' + year, STYLE)
-  fs.writeFileSync(`data/svg/changes/${year}.svg`, svg)
+    .map(f => Object.assign({}, f, {properties: {changes: f.properties['GE ' + year + '_changes']}}))
+  const gridFull = grid
+    .map(f => Object.assign({}, f, {properties: {changes: f.properties['GE ' + year + '_changes']}}))
+  const svgSubset = geojson2svg(gridSubset.concat(background), 2400, 1600, 100, bbox, undefined, 'ge-' + year, STYLE)
+  const svgFull = geojson2svg(gridFull.concat(background), 2400, 1600, 100, bbox, undefined, 'ge-' + year, STYLE)
+  fs.writeFileSync(`data/svg/changes/${year}.svg`, svgSubset)
+  fs.writeFileSync(`data/svg/gif/${year}.svg`, svgFull)
 })
