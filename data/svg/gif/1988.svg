@@ -1,9 +1,9 @@
 <svg class="ge-1988" xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 2400 1600" preserveAspectRatio="xMidYMid meet"><style>path[data-election] {
   display: none;
-  stroke: #333;
+  stroke: #999999;
   stroke-width: 2;
   fill: none;
-  opacity: 0.3;
+  opacity: 1;
 }
 
 .ge-2020 [data-election="GE 2020"],
@@ -21,7 +21,7 @@ path[data-changes],
 path[data-changes-2020] {
   stroke: none;
   fill: none;
-  stroke-width: 0.5;
+  stroke-width: 0.3;
   opacity: 0.8;
   transition: fill 500ms, stroke 500ms;
 }
