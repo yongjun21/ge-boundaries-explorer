@@ -6,6 +6,7 @@ $cols:
   rgb(141, 128, 185),
   rgb(157, 85, 148),
   rgb(173, 44, 112),
+  rgb(189, 0, 79),
   rgb(189, 0, 79);
 
 @mixin get-grid-color ($col: #333) {
@@ -48,7 +49,7 @@ path[data-changes],
 path[data-changes-2020] {
   stroke: none;
   fill: none;
-  stroke-width: 0.3;
+  stroke-width: 0;
   opacity: 0.8;
   transition: fill 500ms, stroke 500ms;
 

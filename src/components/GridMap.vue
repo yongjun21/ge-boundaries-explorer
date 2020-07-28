@@ -55,14 +55,14 @@ export default {
   mounted () {
     const map = new mapboxgl.Map(Object.assign({
       container: this.$el,
-      style: 'mapbox://styles/chachopazos/ck3fc0qpp0fyd1ct5ai5owqu0',
+      style: 'mapbox://styles/yongjun21/ckd5mel1y0r3t1is4tkv0ye89',
       minZoom: 10,
       maxZoom: 16,
       maxBounds: [[103.42295489648154, 1.0774867904165433], [104.21671710351262, 1.6266481512753188]],
       scrollZoom: true,
       dragPan: true,
       dragRotate: false,
-      accessToken: 'pk.eyJ1IjoiY2hhY2hvcGF6b3MiLCJhIjoiY2pkMDN3eW4wNHkwZDJ5bGc0cnpueGNxbCJ9.WWWg_OnK5e7L1RknMliY4A'
+      accessToken: 'pk.eyJ1IjoieW9uZ2p1bjIxIiwiYSI6ImNpdTY5c2tyZzBqaDgyemxwYjk0Nnlic2UifQ.A5OHCYPcLTupbo1Qi3t5OQ'
     }, SINGAPORE))
     map.touchZoomRotate.disableRotation()
 
@@ -85,7 +85,7 @@ export default {
     map.on('load', () => {
       map.addSource('ge-boundaries-grid', {
         type: 'vector',
-        url: 'mapbox://chachopazos.ge-boundaries-grid'
+        url: 'mapbox://yongjun21.ge-boundaries-grid'
       })
 
       YEARS.forEach(year => {

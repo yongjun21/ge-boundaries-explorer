@@ -21,7 +21,7 @@ path[data-changes],
 path[data-changes-2020] {
   stroke: none;
   fill: none;
-  stroke-width: 0.3;
+  stroke-width: 0;
   opacity: 0.8;
   transition: fill 500ms, stroke 500ms;
 }
@@ -70,6 +70,11 @@ path[data-changes="7"] {
   stroke: #bd004f;
 }
 
+path[data-changes="8"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+
 .ge-1988 path[data-changed-1988] {
   display: inline;
 }
@@ -102,6 +107,10 @@ path[data-changes="7"] {
   stroke: #ad2c70;
 }
 .ge-1988 path[data-changes-1988="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+.ge-1988 path[data-changes-1988="8"] {
   fill: #bd004f;
   stroke: #bd004f;
 }
@@ -141,6 +150,10 @@ path[data-changes="7"] {
   fill: #bd004f;
   stroke: #bd004f;
 }
+.ge-1991 path[data-changes-1991="8"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
 
 .ge-1997 path[data-changed-1997] {
   display: inline;
@@ -174,6 +187,10 @@ path[data-changes="7"] {
   stroke: #ad2c70;
 }
 .ge-1997 path[data-changes-1997="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+.ge-1997 path[data-changes-1997="8"] {
   fill: #bd004f;
   stroke: #bd004f;
 }
@@ -213,6 +230,10 @@ path[data-changes="7"] {
   fill: #bd004f;
   stroke: #bd004f;
 }
+.ge-2001 path[data-changes-2001="8"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
 
 .ge-2006 path[data-changed-2006] {
   display: inline;
@@ -246,6 +267,10 @@ path[data-changes="7"] {
   stroke: #ad2c70;
 }
 .ge-2006 path[data-changes-2006="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+.ge-2006 path[data-changes-2006="8"] {
   fill: #bd004f;
   stroke: #bd004f;
 }
@@ -285,6 +310,10 @@ path[data-changes="7"] {
   fill: #bd004f;
   stroke: #bd004f;
 }
+.ge-2011 path[data-changes-2011="8"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
 
 .ge-2015 path[data-changed-2015] {
   display: inline;
@@ -321,6 +350,10 @@ path[data-changes="7"] {
   fill: #bd004f;
   stroke: #bd004f;
 }
+.ge-2015 path[data-changes-2015="8"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
 
 .ge-2020 path[data-changed-2020] {
   display: inline;
@@ -354,6 +387,10 @@ path[data-changes="7"] {
   stroke: #ad2c70;
 }
 .ge-2020 path[data-changes-2020="7"] {
+  fill: #bd004f;
+  stroke: #bd004f;
+}
+.ge-2020 path[data-changes-2020="8"] {
   fill: #bd004f;
   stroke: #bd004f;
 }
