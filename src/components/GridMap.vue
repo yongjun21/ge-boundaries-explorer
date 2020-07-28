@@ -324,6 +324,7 @@ $font-CuratorBold: 'CuratorBold', 'Helvetica Neue', Helvetica, Arial, sans-serif
 
   .control {
     position: absolute;
+    left: 0;
     z-index: 1;
     width: 500px;
     height: 16px;

@@ -1,22 +1,21 @@
-# historical-boundaries-explorer
+# ge-boundaries-explorer
 
 ## Prototype
 
-- https://historical-boundaries-explorer.netlify.com/
-- https://historical-boundaries-explorer.netlify.com/changes
-- https://historical-boundaries-explorer.netlify.com/stacked
-- https://historical-boundaries-explorer.netlify.com/buildings/bedok
-- https://historical-boundaries-explorer.netlify.com/buildings/serangoon
-- https://historical-boundaries-explorer.netlify.com/grid
-- https://historical-boundaries-explorer.netlify.com/grid/cumulative
+- https://ge-boundaries-explorer.netlify.app/
+- https://ge-boundaries-explorer.netlify.app/changes
+- https://ge-boundaries-explorer.netlify.app/stacked
+- https://ge-boundaries-explorer.netlify.app/buildings/bedok
+- https://ge-boundaries-explorer.netlify.app/buildings/serangoon
+- https://ge-boundaries-explorer.netlify.app/grid
+- https://ge-boundaries-explorer.netlify.app/grid/cumulative
 
 ## Tilesets:
 
-- Historical boundaries: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries/
-- Latest boundaries: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries-new/
-- Boundaries change: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries-change/
-- Grid format: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries-grid/
-- Buildings: https://studio.mapbox.com/tilesets/chachopazos.ge-boundaries-buildings/
+- Historical boundaries: https://studio.mapbox.com/tilesets/yongjun.ge-boundaries/
+- Boundaries change: https://studio.mapbox.com/tilesets/yongjun.ge-boundaries-change/
+- Grid format: https://studio.mapbox.com/tilesets/yongjun.ge-boundaries-grid/
+- Buildings: https://studio.mapbox.com/tilesets/yongjun.ge-boundaries-buildings/
 
 ## Deploy tilesets
 
