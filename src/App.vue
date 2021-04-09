@@ -6,7 +6,7 @@
 
 <script>
 const additionalInfo = {}
-window.fetch('https://st-graphics-dev-json.s3-ap-southeast-1.amazonaws.com/1HH5MLZu2lukbjDGMWhW_wdT7Jm0PxJN37i6EC3CaaD0/690133933.json')
+window.fetch('https://assets.yongjun.sg/election/constituencies.json')
   .then(res => res.json())
   .then(data => {
     data.forEach(row => {
