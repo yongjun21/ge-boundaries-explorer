@@ -1,5 +1,5 @@
 function deploy {
-  tilesets delete-source chachopazos ge-boundaries-$1 && tilesets add-source chachopazos ge-boundaries-$1 data/processed/geojson/$1.jsonl
+  tilesets delete-source yongjun21 ge-boundaries-$1 && tilesets add-source yongjun21 ge-boundaries-$1 data/processed/geojson/$1.jsonl
 }
 
 for year in $@
